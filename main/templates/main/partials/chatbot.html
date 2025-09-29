@@ -1,0 +1,135 @@
+{% load static %}
+
+<div id="chatbot-container" class="chatbot">
+    <div class="chatbot-header">
+        <h3 class="chat-title">Чат с Expertsmet</h3>
+        <button class="chatbot-close" id="chatbot-close">x</button>
+    </div>
+    <div class="chatbot-messages"></div>
+    <div class="chatbot-input">
+        <textarea id="chatbot-input" placeholder="Введите сообщение..."></textarea>
+        <button id="chatbot-send">Отправить</button>
+    </div>
+</div>
+<button id="chatbot-toggle">Чат</button>
+
+
+<div id="chat-notification">
+    Нужна смета?
+</div>
+
+<script>
+    // =============================
+// Chatbot Functionality
+// =============================
+document.addEventListener("DOMContentLoaded", () => {
+  const chatbotContainer = document.getElementById("chatbot-container");
+  const chatbotToggle = document.getElementById("chatbot-toggle");
+  const chatbotClose = document.getElementById("chatbot-close");
+  const chatbotInput = document.getElementById("chatbot-input");
+  const chatbotSend = document.getElementById("chatbot-send");
+  const chatbotMessages = document.querySelector(".chatbot-messages");
+  const notification = document.getElementById("chat-notification");
+  
+  if (!chatbotToggle || !chatbotClose || !chatbotInput || !chatbotSend || !chatbotMessages || !notification) {
+    console.error("Не все элементы чата найдены. Проверьте HTML-разметку.");
+    return;
+  }
+  
+  let sessionId = null;
+  const h1Element = document.querySelector("h1");
+const pageTitle = h1Element ? h1Element.textContent.trim() : "данной теме";
+const welcomeMessage = `Здравствуйте! Вас интересует «${pageTitle}»? Готовы обсудить и предложить оптимальное решение под ваши задачи`;
+
+
+  
+  function addMessageWithTypewriter(text, sender) {
+    const messageElement = document.createElement("div");
+    messageElement.className = `message ${sender}`;
+    messageElement.style.cssText = "padding: 8px; margin: 5px 0; border-radius: 5px; max-width: 80%; word-wrap: break-word;";
+    chatbotMessages.appendChild(messageElement);
+    let index = 0;
+    const delay = 30;
+    const interval = setInterval(() => {
+      messageElement.innerHTML = text.substring(0, index).replace(/\n/g, "<br>");
+      index++;
+      if (index > text.length) clearInterval(interval);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }, delay);
+  }
+  
+  function addMessage(text, sender) {
+    const messageElement = document.createElement("div");
+    messageElement.className = `message ${sender}`;
+    messageElement.innerHTML = text;
+    chatbotMessages.appendChild(messageElement);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+  
+  function sendMessage() {
+    const message = chatbotInput.value.trim();
+    if (!message) return;
+    addMessage(message, "user");
+    chatbotInput.value = "";
+    const requestData = sessionId ? { message, session_id: sessionId } : { message };
+  
+    fetch("https://api.expert-ai.ru/api/chat/expertsmet", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestData)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Ошибка сервера: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (!sessionId && data.session_id) sessionId = data.session_id;
+        if (data.reply) {
+          addMessageWithTypewriter(data.reply, "bot");
+        } else {
+          addMessage("Не удалось получить ответ от AI", "bot");
+        }
+      })
+      .catch(error => {
+        console.error("Ошибка запроса:", error);
+        addMessage("Произошла ошибка при отправке запроса", "bot");
+      });
+  }
+  
+  function openChat() {
+    if (chatbotContainer.style.display === "none" || chatbotContainer.style.display === "") {
+      chatbotContainer.style.display = "flex";
+    }
+    notification.style.display = "none";
+    chatbotToggle.style.display = "none";
+    if (chatbotMessages.childElementCount === 0) {
+      addMessageWithTypewriter(welcomeMessage, "bot");
+    }
+  }
+  
+  chatbotToggle.addEventListener("click", openChat);
+  chatbotClose.addEventListener("click", () => {
+    chatbotContainer.style.display = "none";
+    chatbotToggle.style.display = "block";
+  });
+  notification.addEventListener("click", openChat);
+  
+  // Показываем уведомление через 15 секунд
+  setTimeout(() => { notification.style.display = "block"; }, 15000);
+  
+  // Автоматически открываем окно ввода через 30 секунд
+  setTimeout(() => { openChat(); }, 30000);
+
+  
+
+  chatbotSend.addEventListener("click", sendMessage);
+  chatbotInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+});
+</script>

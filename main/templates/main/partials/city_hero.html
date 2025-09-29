@@ -1,0 +1,70 @@
+{% load static %}
+
+<section class="hero">
+    <div style="height: 100%; display: flex; position: relative;">
+        <!-- Слайдер -->
+        <div class="slideshow is-loaded" id="js-header" style="flex: 1;">
+            <!-- Слайды будут загружены динамически через JavaScript -->
+        </div>
+        
+        <!-- Фиксированная форма обратной связи -->
+        <div class="hero__form-container" style="position: absolute; right: 80px; top: 50%; transform: translateY(-50%); width: 400px; z-index: 100;">
+            <div class="contact-form">
+                <h2 class="form-title">Получите <span class="form-highlight">бесплатную</span>
+                    консультацию эксперта</h2>
+                <p class="form-subtitle">
+                    {% if current_city and current_city.name_prep %}
+                        Ответим на все вопросы и рассчитаем стоимость услуг в {{ current_city.name_prep }}
+                    {% elif current_city %}
+                        Ответим на все вопросы и рассчитаем стоимость услуг в {{ current_city.name }}
+                    {% else %}
+                        Ответим на все вопросы и рассчитаем стоимость услуг
+                    {% endif %}
+                </p>
+
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-input" placeholder="Номер телефона" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Название компании">
+                    </div>
+                    <button type="submit" class="form-button">Получить консультацию</button>
+                    <p class="form-privacy">
+                        Нажимая на кнопку, вы соглашаетесь с <a href="#">политикой обработки персональных данных</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Позволяет переопределить изображения слайдов на уровне города #}
+{% block city_hero_overrides %}
+  {% if current_city %}
+    <script>
+      window.CITY_NAME = "{{ current_city.name|escapejs }}";
+      {% if current_city.name_prep %}
+      window.CITY_NAME_PREP = "{{ current_city.name_prep|escapejs }}";
+      {% endif %}
+    </script>
+  {% endif %}
+{% endblock %}
+
+<!-- Подключаем JavaScript для динамической загрузки слайдов -->
+<script src="{% static 'main/js/city-slideshow.js' %}?v=2"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Обработка форм
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+            form.reset();
+        });
+    });
+</script>

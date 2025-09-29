@@ -1,0 +1,498 @@
+/* ===== ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
+
+/* ===== ПРЕДОТВРАЩЕНИЕ ГОРИЗОНТАЛЬНОГО СКРОЛЛА ===== */
+
+/* Базовые правила для всех элементов */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Предотвращение переполнения контейнеров */
+.exs-wrap,
+.container,
+.exs-section,
+.section,
+.city-specific,
+.stats-city {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Предотвращение переполнения сеток */
+.exs-grid,
+.exs-grid-2,
+.exs-grid-3,
+.exs-grid-4,
+.city-info__grid,
+.stats__grid {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Предотвращение переполнения карточек */
+.exs-card,
+.city-info__item,
+.stat-item {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Предотвращение переполнения текста */
+h1, h2, h3, h4, h5, h6,
+p, .exs-lead, .hero__subtitle {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Предотвращение переполнения кнопок */
+.exs-btn,
+.exs-pill,
+.exs-aud-btn {
+  max-width: 100%;
+  width: auto;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* ===== УЛУЧШЕНИЯ ПРОИЗВОДИТЕЛЬНОСТИ ===== */
+
+/* Оптимизация для мобильных GPU */
+.exs-card,
+.exs-btn,
+.city-info__item,
+.stat-item,
+.hero__image {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Улучшения для скролла */
+.exs-compare__wrap,
+.exs-solutions .exs-audiences,
+.city-info__grid {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ТАЧ-УСТРОЙСТВ ===== */
+
+/* Минимальные размеры для тач-элементов */
+.exs-btn,
+.exs-pill,
+.exs-aud-btn,
+.exs-subnav a,
+.city-info__item,
+.stat-item {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Улучшения для тач-событий */
+.exs-btn:active,
+.exs-pill:active,
+.exs-aud-btn:active,
+.city-info__item:active,
+.stat-item:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* Убираем hover эффекты на тач-устройствах */
+@media (hover: none) and (pointer: coarse) {
+  .exs-card:hover,
+  .exs-btn:hover,
+  .city-info__item:hover,
+  .stat-item:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+  
+  .exs-card:active,
+  .exs-btn:active,
+  .city-info__item:active,
+  .stat-item:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ФОРМ НА МОБИЛЬНЫХ ===== */
+
+/* Предотвращение зума на iOS */
+.exs-input,
+.exs-select,
+.exs-textarea {
+  font-size: 16px !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Улучшения для select элементов */
+.exs-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+/* Улучшения для чекбоксов и радио кнопок */
+.exs-choice input[type="checkbox"],
+.exs-choice input[type="radio"] {
+  min-width: 20px;
+  min-height: 20px;
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ТАБЛИЦ НА МОБИЛЬНЫХ ===== */
+
+/* Горизонтальный скролл для таблиц */
+.exs-compare__wrap {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Индикатор скролла */
+.exs-compare__wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.exs-compare__wrap:hover::after {
+  opacity: 1;
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ НАВИГАЦИИ ===== */
+
+/* Sticky навигация для мобильных */
+@media (max-width: 768px) {
+  .exs-subnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border, #e5e7eb);
+  }
+  
+  .exs-subnav__wrap {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .exs-subnav__wrap::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ИЗОБРАЖЕНИЙ ===== */
+
+/* Оптимизация изображений для мобильных */
+.hero__image,
+.city-info__item img,
+.stat-item img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius, 8px);
+}
+
+/* Ленивая загрузка изображений */
+.hero__image[loading="lazy"],
+.city-info__item img[loading="lazy"],
+.stat-item img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero__image[loading="lazy"].loaded,
+.city-info__item img[loading="lazy"].loaded,
+.stat-item img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ АНИМАЦИЙ ===== */
+
+/* Оптимизированные анимации для мобильных */
+@media (max-width: 768px) {
+  .exs-card,
+  .city-info__item,
+  .stat-item {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+  }
+  
+  /* Упрощенные анимации для мобильных */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .exs-section__head {
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  .exs-card,
+  .city-info__item,
+  .stat-item {
+    animation: fadeIn 0.4s ease-out;
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ДОСТУПНОСТИ ===== */
+
+/* Улучшения для фокуса */
+.exs-btn:focus-visible,
+.exs-pill:focus-visible,
+.exs-aud-btn:focus-visible,
+.exs-subnav a:focus-visible {
+  outline: 2px solid var(--city-primary, #059669);
+  outline-offset: 2px;
+  border-radius: var(--radius, 8px);
+}
+
+/* Улучшения для скринридеров */
+.exs-card[aria-label],
+.city-info__item[aria-label],
+.stat-item[aria-label] {
+  position: relative;
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ РАЗНЫХ ОРИЕНТАЦИЙ ===== */
+
+/* Портретная ориентация */
+@media (orientation: portrait) and (max-width: 768px) {
+  /* Предотвращение горизонтального скролла */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .hero__content {
+    flex-direction: column;
+    gap: 30px;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .city-info__grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* Ландшафтная ориентация */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Предотвращение горизонтального скролла */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .hero {
+    padding: 30px 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .exs-section,
+  .section {
+    padding: 40px 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .city-specific,
+  .stats-city {
+    padding: 30px 0;
+    margin: 20px 0;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .city-info__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .stats__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ РАЗНЫХ ПЛОТНОСТЕЙ ПИКСЕЛЕЙ ===== */
+
+/* Retina дисплеи */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .exs-btn,
+  .exs-card,
+  .city-info__item,
+  .stat-item {
+    border-width: 0.5px;
+  }
+}
+
+/* Высококачественные дисплеи */
+@media (min-resolution: 3dppx) {
+  .exs-btn,
+  .exs-card,
+  .city-info__item,
+  .stat-item {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ РАЗНЫХ БРАУЗЕРОВ ===== */
+
+/* Safari специфичные улучшения */
+@supports (-webkit-touch-callout: none) {
+  .exs-compare__wrap,
+  .exs-solutions .exs-audiences {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .exs-btn,
+  .exs-pill,
+  .exs-aud-btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Firefox специфичные улучшения */
+@supports (scrollbar-width: thin) {
+  .exs-compare__wrap,
+  .exs-solutions .exs-audiences {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border, #e5e7eb) transparent;
+  }
+}
+
+/* Edge специфичные улучшения */
+@supports (-ms-ime-align: auto) {
+  .exs-compare__wrap,
+  .exs-solutions .exs-audiences {
+    -ms-overflow-style: auto;
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ПЕЧАТИ ===== */
+
+@media print {
+  .exs-btn,
+  .exs-subnav,
+  .hero__image {
+    display: none !important;
+  }
+  
+  .exs-section,
+  .section {
+    padding: 20px 0;
+    break-inside: avoid;
+  }
+  
+  .exs-card,
+  .city-info__item,
+  .stat-item {
+    border: 1px solid #000;
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .city-info__grid,
+  .stats__grid {
+    display: block;
+  }
+  
+  .city-info__item,
+  .stat-item {
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ РЕЖИМА ЭКОНОМИИ ЭНЕРГИИ ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .exs-card,
+  .city-info__item,
+  .stat-item {
+    will-change: auto;
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ РЕЖИМА ЭКОНОМИИ ДАННЫХ ===== */
+
+@media (prefers-reduced-data: reduce) {
+  .hero__image,
+  .city-info__item img,
+  .stat-item img {
+    filter: grayscale(100%);
+  }
+  
+  .exs-card,
+  .city-info__item,
+  .stat-item {
+    box-shadow: none;
+    border: 1px solid var(--border, #e5e7eb);
+  }
+}

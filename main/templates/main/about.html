@@ -1,0 +1,334 @@
+{% extends 'main/base.html' %}
+
+{% block title %}О нас - Expertsmet{% endblock %}
+{% block meta_description %}EXPERTsmet — команда профессионалов по разработке, проверке и экспертизе сметной документации. Более 15 лет опыта и проекты по всей России.{% endblock %}
+
+{% block content %}
+<div class="site-container">
+  <div class="wrapper">
+    <div class="article wrapper flex">
+      <main class="article__main">
+        <!-- Breadcrumbs -->
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a href="{% url 'index' %}">Главная</a>
+          </li>
+          <li class="breadcrumb__item">
+            О нас
+          </li>
+        </ul>
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">Сметы, которые проходят госэкспертизу с первого раза</h1>
+            <p class="hero-subtitle">С 2010 года мы помогаем строительным компаниям экономить время и деньги, обеспечивая высококачественную сметную документацию</p>
+            
+            <div class="hero-stats">
+              <div class="stat-card">
+                <div class="stat-value">19,3 млрд ₽</div>
+                <div class="stat-label">смет прошли экспертизу</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">0,8 %</div>
+                <div class="stat-label">средний уровень замечаний</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">специалистов в штате</div>
+              </div>
+            </div>
+            
+            <div class="hero-cta">
+              <a href="#contact-form" class="primary-button">Получить бесплатный аудит</a>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Company Overview -->
+        <section class="company-overview">
+          <div class="section-header">
+            <h2>Наша история</h2>
+          </div>
+          
+          <div class="overview-content">
+            <p>Компания Expertsmet была основана в 2010 году группой опытных сметчиков с целью предоставления высококачественных услуг по составлению сметной документации. За более чем 15 лет мы выросли из небольшой команды специалистов в ведущую компанию в своей области, обслуживая клиентов по всей России.</p>
+            
+            <p>Наш фокус всегда был на качестве и надежности. Мы понимаем, насколько важна точность сметной документации для успеха строительных проектов, поэтому каждый проект получает индивидуальный подход и тщательную проверку.</p>
+          </div>
+          
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">2010</div>
+              <div class="timeline-content">
+                <h3>Основание компании</h3>
+                <p>Компания Expertsmet основана тремя опытными сметчиками в Москве</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-year">2013</div>
+              <div class="timeline-content">
+                <h3>Первые крупные проекты</h3>
+                <p>Получены первые госконтракты на сумму более 100 млн ₽</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-year">2017</div>
+              <div class="timeline-content">
+                <h3>Расширение географии</h3>
+                <p>Открытие филиалов в Санкт-Петербурге и Екатеринбурге</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-year">2020</div>
+              <div class="timeline-content">
+                <h3>Цифровая трансформация</h3>
+                <p>Внедрение современных технологий и автоматизация процессов</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-content">
+                <h3>Новые достижения</h3>
+                <p>Обслужены проекты на сумму более 19 млрд ₽</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Mission, Vision, Values -->
+        <section class="mvv-section">
+          <div class="section-header">
+            <h2>Наша миссия, видение и ценности</h2>
+          </div>
+          
+          <div class="mvv-content">
+            <div class="mvv-item">
+              <div class="mvv-icon">🎯</div>
+              <h3>Миссия</h3>
+              <p>Обеспечивать строительные компании точной и надежной сметной документацией, которая проходит госэкспертизу с первого раза, экономя время и деньги клиентов.</p>
+            </div>
+            
+            <div class="mvv-item">
+              <div class="mvv-icon">👁️</div>
+              <h3>Видение</h3>
+              <p>Стать ведущим провайдером сметных услуг в России, известным своим профессионализмом, инновациями и безупречной репутацией.</p>
+            </div>
+            
+            <div class="mvv-item">
+              <div class="mvv-icon">💎</div>
+              <h3>Ценности</h3>
+              <ul>
+                <li>Качество в каждой детали</li>
+                <li>Честность и прозрачность</li>
+                <li>Постоянное развитие</li>
+                <li>Ориентация на клиента</li>
+                <li>Профессионализм и экспертиза</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Leadership Team -->
+        <section class="leadership-section">
+          <div class="section-header">
+            <h2>Руководство</h2>
+          </div>
+          
+          <div class="leadership-grid">
+            <div class="leader-card">
+              <div class="leader-image">
+                <div class="image-placeholder">Фото руководителя</div>
+              </div>
+              <div class="leader-info">
+                <h3>Иван Петров</h3>
+                <p class="leader-position">Генеральный директор</p>
+                <p class="leader-bio">Опыт в сфере сметного дела более 20 лет. Один из основателей компании Expertsmet.</p>
+              </div>
+            </div>
+            
+            <div class="leader-card">
+              <div class="leader-image">
+                <div class="image-placeholder">Фото руководителя</div>
+              </div>
+              <div class="leader-info">
+                <h3>Анна Сидорова</h3>
+                <p class="leader-position">Технический директор</p>
+                <p class="leader-bio">Эксперт в области цифровых технологий в сметном деле. Отвечает за внедрение инноваций.</p>
+              </div>
+            </div>
+            
+            <div class="leader-card">
+              <div class="leader-image">
+                <div class="image-placeholder">Фото руководителя</div>
+              </div>
+              <div class="leader-info">
+                <h3>Дмитрий Козлов</h3>
+                <p class="leader-position">Директор по качеству</p>
+                <p class="leader-bio">Сертифицированный специалист по госэкспертизе. Контролирует качество всех проектов.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Company Culture -->
+        <section class="culture-section">
+          <div class="section-header">
+            <h2>Корпоративная культура</h2>
+          </div>
+          
+          <div class="culture-content">
+            <p>В Expertsmet мы создали уникальную корпоративную культуру, основанную на профессионализме, взаимном уважении и стремлении к совершенству. Наши сотрудники — это наша главная ценность.</p>
+            
+            <div class="culture-features">
+              <div class="culture-feature">
+                <div class="feature-icon">📚</div>
+                <h3>Непрерывное обучение</h3>
+                <p>Регулярные тренинги и семинары для повышения квалификации</p>
+              </div>
+              
+              <div class="culture-feature">
+                <div class="feature-icon">👥</div>
+                <h3>Командная работа</h3>
+                <p>Сотрудничество и обмен знаниями между специалистами</p>
+              </div>
+              
+              <div class="culture-feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Признание достижений</h3>
+                <p>Система поощрений за высокие результаты и инновации</p>
+              </div>
+              
+              <div class="culture-feature">
+                <div class="feature-icon">⚖️</div>
+                <h3>Баланс работы и жизни</h3>
+                <p>Гибкий график и комфортные условия труда</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Achievements -->
+        <section class="achievements-section">
+          <div class="section-header">
+            <h2>Наши достижения</h2>
+          </div>
+          
+          <div class="achievements-grid">
+            <div class="achievement-card">
+              <div class="achievement-icon">📋</div>
+              <div class="achievement-value">173</div>
+              <div class="achievement-label">Положительных заключений</div>
+            </div>
+            
+            <div class="achievement-card">
+              <div class="achievement-icon">🏛️</div>
+              <div class="achievement-value">25</div>
+              <div class="achievement-label">Регионов присутствия</div>
+            </div>
+            
+            <div class="achievement-card">
+              <div class="achievement-icon">⏱️</div>
+              <div class="achievement-value">2,4 дня</div>
+              <div class="achievement-label">Средний срок исправления</div>
+            </div>
+            
+            <div class="achievement-card">
+              <div class="achievement-icon">💰</div>
+              <div class="achievement-value">12%</div>
+              <div class="achievement-label">Средняя экономия для клиентов</div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+          <div class="section-header">
+            <h2>Отзывы клиентов</h2>
+          </div>
+          
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>«Смета прошла экспертизу с первого раза – впервые за 10 лет строительства. Экономия 7,2 млн рублей – это реальные деньги для проекта.»</p>
+                <p class="testimonial-author">— Генеральный директор строительной компании</p>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>«Профессиональный подход и высокое качество работы. Команда Expertsmet помогла нам сэкономить время и избежать доработок.»</p>
+                <p class="testimonial-author">— Руководитель проектного отдела</p>
+              </div>
+            </div>
+            
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>«Надежные партнеры в сфере сметного дела. Всегда готовы помочь и дать профессиональные рекомендации.»</p>
+                <p class="testimonial-author">— Главный инженер проекта</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Секция тарифов -->
+        {% include 'main/partials/pricing.html' %}
+        
+        <!-- Contact CTA -->
+        <section class="contact-cta-section" id="contact-form">
+          <div class="cta-content">
+            <h2>Получите бесплатный аудит вашей сметы</h2>
+            <p>Отправьте нам вашу смету и получите рекомендации по улучшению в течение 24 часов</p>
+            
+            <form class="contact-form" action="{% url 'send_form_email' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="file" name="file" required>
+                <p class="file-note">Прикрепите файл сметы (PDF)</p>
+              </div>
+              <button type="submit" class="form-button">Отправить на аудит</button>
+            </form>
+            
+            <p class="form-guarantee">Мы подпишем NDA до начала проверки</p>
+          </div>
+        </section>
+      </main>
+      
+      <aside class="article__aside">
+        <h3 class="article__aside-news">Последние новости</h3>
+        <ul class="article__aside-list">
+          <li class="article__aside-item">
+            <h4 class="article__aside-title">Как правильно составить смету</h4>
+            <p class="article__aside-discr">Полезные советы по составлению сметной документации</p>
+            <span class="article__aside-data">15.07.2025</span>
+          </li>
+          <li class="article__aside-item">
+            <h4 class="article__aside-title">Новости рынка сметных услуг</h4>
+            <p class="article__aside-discr">Обзор текущих тенденций в сфере сметного дела</p>
+            <span class="article__aside-data">10.07.2025</span>
+          </li>
+        </ul>
+        
+        <form class="article__aside-form" action="{% url 'subscribe' %}" method="post">
+          {% csrf_token %}
+          <label class="article__aside-label">Подписаться на рассылку</label>
+          <input class="article__aside-input" type="email" name="email" placeholder="Ваш email" required>
+          <button class="article__aside-button" type="submit">Подписаться</button>
+        </form>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}

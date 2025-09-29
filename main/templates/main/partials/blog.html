@@ -1,0 +1,97 @@
+{% load static %}
+
+<section class="blog-section" id="blog">
+    <div class="wrapper">
+        <!-- Заголовок блога -->
+        <h2 class="blog-title">
+            Блог <span class="blog-title-accent">EXPERT</span>smet
+        </h2>
+        
+        <!-- Основная статья -->
+        <div class="featured-article">
+            <div class="featured-article-content">
+                <span class="article-date">18.09.2023</span>
+                <h3 class="featured-article-title">
+                    Ресурсный метод и ресурсно-индексный метод в строительстве
+                </h3>
+                <p class="featured-article-excerpt">
+                    Ресурсный метод в сметном деле: от теории к практике. Узнайте, как применить этот
+                    метод для минимизации затрат и оптимизации сметы на строительство
+                </p>
+                <a href="articles/resursnyj-metod/" class="btn btn-primary">
+                    <span>Читать полностью</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Блок последних статей -->
+        <div class="recent-articles-block">
+            <div class="articles-header">
+                <h3 class="section-subtitle">Последние новости и статьи</h3>
+                
+                <!-- Форма поиска -->
+                <div class="search-container">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Поиск по блогу" class="search-input">
+                </div>
+            </div>
+            
+            <!-- Сетка статей -->
+            <div class="articles-grid">
+                {% for article in last_articles %}
+                <article class="article-card">
+                    <a href="{{ article.get_absolute_url }}" class="article-link">
+                        <div class="article-image-wrapper">
+                            {% with image_url=article.display_image_url %}
+                                <img src="{{ image_url }}" alt="{{ article.title }}" class="article-image">
+                            {% endwith %}
+                        </div>
+                        <div class="article-content">
+                            <span class="article-date">{{ article.data|date:"d.m.Y" }}</span>
+                            <h3 class="article-title">{{ article.title }}</h3>
+                            <p class="article-excerpt">{{ article.discr|default:article.title }}</p>
+                            <span class="read-more">
+                                Читать
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="M12 5l7 7-7 7"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Блок подписки -->
+        <div class="subscribe-section">
+            <div class="subscribe-content">
+                <h3 class="subscribe-title">Не пропускайте новые статьи</h3>
+                <p class="subscribe-description">
+                    Подпишитесь на рассылку и получайте новости от экспертов, инструкции и полезные материалы
+                </p>
+                
+                <form action="{% url 'subscribe' %}" class="subscribe-form" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="email" name="email" id="subscribe-email" class="subscribe-input" placeholder="Ваша почта" required>
+                        <button type="submit" class="btn btn-subscribe">Подписаться</button>
+                    </div>
+                    
+                    <!-- Скрытые поля для статистики -->
+                    <input type="hidden" name="page_url" value="{{ request.build_absolute_uri }}">
+                    <input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER|default:'' }}">
+                    <input type="hidden" name="user_agent" value="{{ request.META.HTTP_USER_AGENT }}">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,139 @@
+/* FAQ секция - единая стилистика для всех страниц */
+
+/* ===== СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ И ГОРОДОВ (faq-* классы) ===== */
+
+/* FAQ section для главной страницы и городов */
+.faq-section {
+  padding: 70px 0;
+  background-color: #1A1C1F;
+  font-family: 'Manrope', sans-serif;
+  color: #F5F7FA;
+}
+
+/* Заголовок и описание */
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+}
+
+.faq-intro {
+  font-size: 18px;
+  color: #B8C4D9;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Контейнер для вопросов-ответов */
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+/* Стили для отдельного вопроса */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #FFAC30;
+}
+
+.faq-question span {
+  flex: 1;
+}
+
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  color: #B8C4D9;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: #FFAC30;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px 0 0;
+  transition: all 0.5s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 2000px;
+  padding-bottom: 20px;
+}
+
+.faq-answer p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #B8C4D9;
+}
+
+.faq-answer ul, 
+.faq-answer ol {
+  margin: 0 0 20px 20px;
+  padding: 0;
+}
+
+.faq-answer li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #B8C4D9;
+}
+
+.faq-answer strong {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 50px 0;
+  }
+  
+  .faq-title {
+    font-size: 28px;
+  }
+  
+  .faq-intro {
+    font-size: 16px;
+  }
+  
+  .faq-question {
+    font-size: 16px;
+    padding: 16px 0;
+  }
+  
+  .faq-container {
+    margin: 0 auto 40px;
+  }
+}

@@ -1,0 +1,106 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Контакты{% endblock %}
+{% block meta_description %}Контакты EXPERTsmet: телефоны, email и адрес офиса. Ответим на вопросы и поможем с разработкой и экспертизой сметной документации.{% endblock %}
+
+{% block content %}
+<div class="site-container">
+  <div class="wrapper">
+    <div class="article wrapper flex">
+      <main class="article__main">
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a href="{% url 'index' %}">Главная</a>
+          </li>
+          <li class="breadcrumb__item">
+            Контакты
+          </li>
+        </ul>
+        
+        <h1>Контакты</h1>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>Телефоны</h3>
+            <p><a href="tel:88003008772">8 (800) 300 87 72</a> (бесплатно по России)</p>
+            <p><a href="tel:+79957903777">+7 (995) 790-37-77</a> (WhatsApp, Telegram)</p>
+          </div>
+          
+          <div class="contact-item">
+            <h3>Email</h3>
+            <p><a href="mailto:mail@expertsmet.ru">mail@expertsmet.ru</a></p>
+          </div>
+          
+          <div class="contact-item">
+            <h3>Адрес</h3>
+            <p>123290, Россия, г. Москва, Шелепихинская набережная, дом 34, корпус 6</p>
+          </div>
+          
+          <div class="contact-item">
+            <h3>Режим работы</h3>
+            <p>Пн-Пт: 9:00–18:00</p>
+            <p>Сб-Вс: выходной</p>
+          </div>
+        </div>
+        
+        <div class="map-container">
+          <h3>Как нас найти</h3>
+          <div class="map-placeholder">
+            <p>Здесь будет карта с нашим местоположением</p>
+          </div>
+        </div>
+        
+        <!-- Секция тарифов -->
+        {% include 'main/partials/pricing.html' %}
+        
+        <div class="contact-form-section">
+          <h3>Связаться с нами</h3>
+          <form class="contact-form" action="{% url 'send_form_email' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Ваш email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Ваш телефон">
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+              <input type="file" name="file" multiple>
+            </div>
+            <button type="submit" class="form-button">Отправить сообщение</button>
+          </form>
+        </div>
+      </main>
+      
+      <aside class="article__aside">
+        <h3 class="article__aside-news">Последние новости</h3>
+        <ul class="article__aside-list">
+          <!-- This section would be populated with recent articles -->
+          <li class="article__aside-item">
+            <h4 class="article__aside-title">Как правильно составить смету</h4>
+            <p class="article__aside-discr">Полезные советы по составлению сметной документации</p>
+            <span class="article__aside-data">15.07.2025</span>
+          </li>
+          <li class="article__aside-item">
+            <h4 class="article__aside-title">Новости рынка сметных услуг</h4>
+            <p class="article__aside-discr">Обзор текущих тенденций в сфере сметного дела</p>
+            <span class="article__aside-data">10.07.2025</span>
+          </li>
+        </ul>
+        
+        <form class="article__aside-form" action="{% url 'subscribe' %}" method="post">
+          {% csrf_token %}
+          <label class="article__aside-label">Подписаться на рассылку</label>
+          <input class="article__aside-input" type="email" name="email" placeholder="Ваш email" required>
+          <button class="article__aside-button" type="submit">Подписаться</button>
+        </form>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}

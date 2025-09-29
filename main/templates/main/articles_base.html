@@ -1,0 +1,213 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="{% static 'favicon-120.png' %}" type="image/png">
+  <link rel="icon" href="{% static 'favicon-120.png' %}" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon-120.png' %}">
+  
+  <!-- SEO / Meta и Open Graph -->
+  <link rel="canonical" href="{{ canonical_url|default:request.build_absolute_uri }}">
+  <title>{% block title %}{{ title }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{{ meta_description }}{% endblock %}">
+  <meta name="keywords" content="{% block meta_keywords %}оформление сметной документации, разработать смету, разработать проектно сметную документацию, выполнение проектно сметной документации, стоимость разработки сметной документации, составить смету онлайн, экспертиза проектно сметной документации, составить смету цена, изготовление сметной документации, стоимость подготовки сметной документации, составление сметной документации цена, стоимость проверки сметной документации{% endblock %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content="#111111">
+  <meta name="google-site-verification" content="fXwA70CuHIoNmA2CYIpQu6LJgu4oz6pSEdbds4DeCnM">
+  <meta name="zen-verification" content="D1jYG1E2cbpdSCZjKMdhidMIA0pt5m7bMcQgckJEVY4eKZULH6OVSTazIFDCBf4J">
+  <meta name="yandex-verification" content="c68248fabe0a97d8">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="business.business">
+  <meta property="og:title" content="{% block og_title %}Разработка сметной документации{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}EXPERTsmet - профессиональная разработка сметной документации с гарантией прохождения экспертизы. Мы работаем по всей России, обеспечивая качественные услуги для проектов любой сложности.{% endblock %}">
+  <meta property="og:url" content="{{ canonical_url|default:request.build_absolute_uri }}">
+  <meta property="og:image" content="https://expertsmet.ru/static/favicon-120.png">
+  <meta property="og:site_name" content="EXPERTsmet">
+  <meta property="og:locale" content="ru">
+  
+  <!-- Стили -->
+  <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Скрипты внешних библиотек, от которых зависит main.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script async src="https://www.google.com/recaptcha/api.js?render=6LcOQr8oAAAAAMymne_Kb0M2RfPf6-i9lQ4Z0J0g"></script>
+  
+  <!-- Ваш основной скрипт, который теперь будет выполняться после загрузки зависимостей -->
+  <script defer src="{% static 'main/js/main.js' %}"></script>
+  
+  <!-- Структурированные данные, аналитика и прочее -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "EXPERTsmet",
+      "url": "https://expertsmet.ru",
+      "logo": "https://expertsmet.ru/static/favicon-120.png",
+      "email": "mail@expertsmet.ru",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+78003008772",
+        "contactType": "customer service"
+      }],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "25"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Шелепихинская набережная, дом 34, корпус 6",
+        "addressLocality": "Москва",
+        "postalCode": "123290",
+        "addressCountry": "RU"
+      }
+    }
+  </script>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое сметная документация?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сметная документация - это набор документов, который содержит оценку затрат на выполнение строительных, ремонтных или других работ. Она включает в себя информацию о стоимости материалов, труда, оборудования и других ресурсов, необходимых для завершения проекта."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какова цель разработки сметной документации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Цель разработки сметной документации состоит в оценке примерной стоимости проекта, планировании бюджета, контроле затрат и обеспечении прозрачности финансовых аспектов строительных или ремонтных работ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие услуги предоставляет ваша компания в области разработки сметной документации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Наша компания предлагает широкий спектр услуг по разработке сметной документации:<br>Составление смет на строительство, ремонт, реконструкцию и другие виды работ.<br>Анализ и корректировка существующих смет.<br>Консультации и аудит смет третьих лиц.<br>Подбор и анализ поставщиков, материалов, подготовка конъюнктурного анализа цен на оборудование и материалы.<br>Сопровождение проекта на всех этапах, включая загрузку документов на экспертизу и сопровождение на экспертизе."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие данные и документы мне необходимо предоставить для составления сметной документации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Необходимые данные и документы могут варьироваться в зависимости от проекта, но в общем случае включают:<br>Проектную и рабочую документацию.<br>Технические условия и задания.<br>Информацию о материалах, оборудовании, подрядчиках.<br>Предполагаемые сроки выполнения работ.<br>Договоры и соглашения с поставщиками и подрядчиками.<br>Любые другие документы, специфичные для вашего проекта."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Каковы основные этапы процесса составления сметной документации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Предварительный анализ и определение требований заказчика.<br>Сбор и анализ необходимой информации и документов.<br>Выбор методологии и инструментов для расчета.<br>Составление первоначального варианта сметы.<br>Обсуждение с заказчиком, внесение корректировок.<br>Оптимизация затрат и выбор оптимальных решений.<br>Финальное согласование и утверждение сметы.<br>Постоянное сопровождение и возможные корректировки в процессе выполнения работ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Каковы преимущества заказа сметной документации у вас в сравнении с другими компаниями?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Мы предлагаем не просто составление смет, но комплексное решение, включая анализ, оптимизацию, сопровождение и поддержку на всех этапах. Наш подход основан на индивидуальности, гибкости, профессионализме, и непрерывном взаимодействии с клиентом."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Каким образом вы гарантируете точность и надежность сметной документации, составленной вашей компанией?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Гарантии точности и надежности обеспечиваются через:<br>Использование проверенных методик и стандартов.<br>Работу с квалифицированными специалистами.<br>Множественные внутренние проверки и корректировки.<br>Постоянное взаимодействие с заказчиком и учет его потребностей и пожеланий."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сроки составления сметной документации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сроки зависят от множества факторов, таких как объем и сложность работ, наличие готовой документации и др. В среднем процесс занимает от 2 дней до 6 недель. Мы всегда готовы обсудить сроки индивидуально с каждым клиентом, учитывая его потребности и возможности, и предоставить более точную оценку после изучения конкретного проекта, пожеланий."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Могу ли я использовать сметную документацию в качестве юридического документа?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, сметная документация может использоваться в юридических целях, например, при заключении контракта на выполнение строительных или ремонтных работ. Она служит важным доказательством обсужденных условий и ожидаемых затрат."
+          }
+        }
+      ]
+    }
+  </script>
+  {# Yandex Analytics #}
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(94382938, "init", {
+       clickmap:true,
+       trackLinks:true,
+       accurateTrackBounce:true,
+       webvisor:true
+  });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/94382938" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+  <!-- Google Tag Manager -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1855YNEQ1J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1855YNEQ1J');
+  </script>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "EXPERTsmet",
+      "url": "https://expertsmet.ru",
+      "logo": "https://expertsmet.ru/static/favicon-120.png",
+      "image": "https://expertsmet.ru/company.png",
+      "description": "EXPERTsmet предлагает профессиональные услуги по разработке сметной документации для любых видов работ в любом регионе РФ.",
+      "telephone": "8 (800) 300 87 72",
+      "email": "mail@expertsmet.ru",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Шелепихинская набережная. д. 34 к 6",
+        "addressLocality": "Москва",
+        "addressCountry": "RU"
+      },
+      "priceRange": "от 5 000 ₽ до 50 000 ₽ и выше",
+      "areaServed": "любой регион РФ"
+    }
+  </script>
+</head>
+{% include 'main/partials/header.html' %}
+<body class="page__body">
+  {% block content %}
+  {% endblock %}
+</body>
+{% include 'main/partials/footer.html' %}
+</html>

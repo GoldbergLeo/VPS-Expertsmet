@@ -1,0 +1,500 @@
+/* ===== ПОЛНОЕ ИСПРАВЛЕНИЕ ГОРИЗОНТАЛЬНОГО СКРОЛЛА В ГОРОДАХ ===== */
+
+/* Глобальные правила предотвращения переполнения */
+* {
+  box-sizing: border-box;
+}
+
+html, 
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+/* Основные контейнеры */
+.exs-wrap,
+.container,
+.exs-section,
+.section,
+[data-city] {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* ===== ИСПРАВЛЕНИЕ ТАБЛИЦ СРАВНЕНИЯ ===== */
+
+/* Основная проблема: таблицы с фиксированной шириной */
+.exs-compare__table {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+  word-wrap: break-word !important;
+}
+
+/* Контейнер таблицы с правильным скроллом */
+.exs-compare__wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin !important;
+}
+
+/* Ячейки таблицы */
+.exs-compare__table th,
+.exs-compare__table td {
+  padding: 12px 8px !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  min-width: 120px !important;
+  max-width: 200px !important;
+}
+
+/* Первая колонка (sticky) */
+.exs-compare__table th:first-child,
+.exs-compare__table td:first-child {
+  position: sticky !important;
+  left: 0 !important;
+  background: #ffffff !important;
+  z-index: 10 !important;
+  min-width: 140px !important;
+  max-width: 180px !important;
+  font-weight: 600 !important;
+}
+
+/* ===== ИСПРАВЛЕНИЕ СЕТОК И LAYOUT ===== */
+
+/* Все grid контейнеры */
+.exs-grid,
+.exs-grid-2,
+.exs-grid-3,
+.exs-grid-4,
+.city-info__grid,
+.stats__grid,
+.exs-calc-grid,
+.grid--cards-3,
+.grid--psr,
+.exs-leadpack {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* КРИТИЧЕСКИЕ ИСПРАВЛЕНИЯ ДЛЯ ГОРОДСКИХ СТРАНИЦ */
+
+/* Исправление leadpack с фиксированной шириной 450px */
+.exs-leadpack {
+  grid-template-columns: 1fr !important;
+  gap: 30px !important;
+}
+
+@media (min-width: 992px) {
+  .exs-leadpack {
+    grid-template-columns: 1fr 400px !important;
+    gap: 40px !important;
+  }
+}
+
+/* Панель форм не должна иметь фиксированную ширину */
+.exs-leadpack__panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: unset !important;
+  position: static !important;
+}
+
+/* Исправление сеток с minmax(350px) */
+.grid--cards-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+
+@media (max-width: 768px) {
+  .grid--cards-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Исправление timeline элементов */
+.timeline {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.timeline li {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Карточки */
+.exs-card,
+.city-info__item,
+.stat-item {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* ===== ИСПРАВЛЕНИЕ ФОРМ ===== */
+
+/* Формы и поля */
+.exs-form-row,
+.exs-form-group,
+.exs-input,
+.exs-select,
+.exs-textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ===== ИСПРАВЛЕНИЕ КНОПОК И НАВИГАЦИИ ===== */
+
+/* Кнопки */
+.exs-btn,
+.exs-pill,
+.exs-aud-btn {
+  width: auto !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+}
+
+/* Навигация табов */
+.exs-audiences {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+}
+
+.exs-audiences::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ===== ИСПРАВЛЕНИЕ ТЕКСТА ===== */
+
+/* Заголовки и текст */
+h1, h2, h3, h4, h5, h6,
+p, .exs-lead, .hero__subtitle,
+.exs-card__title, .exs-card__desc {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  max-width: 100% !important;
+}
+
+/* ===== МОБИЛЬНЫЕ МЕДИА ЗАПРОСЫ ===== */
+
+@media (max-width: 768px) {
+  /* Основные исправления */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+  
+  /* Контейнеры */
+  .exs-wrap,
+  .container {
+    padding: 0 16px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Таблицы на мобильных */
+  .exs-compare__wrap {
+    margin: 0 -16px !important;
+    width: calc(100vw - 0px) !important;
+    max-width: calc(100vw - 0px) !important;
+  }
+  
+  .exs-compare__table {
+    min-width: 600px !important;
+  }
+  
+  .exs-compare__table th,
+  .exs-compare__table td {
+    padding: 8px 6px !important;
+    font-size: 13px !important;
+    min-width: 100px !important;
+    max-width: 150px !important;
+  }
+  
+  .exs-compare__table th:first-child,
+  .exs-compare__table td:first-child {
+    min-width: 120px !important;
+    max-width: 140px !important;
+  }
+  
+  /* Сетки на мобильных */
+  .exs-grid-2,
+  .exs-grid-3,
+  .exs-grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Формы на мобильных */
+  .exs-calc-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Еще более жесткие ограничения */
+  .exs-wrap,
+  .container {
+    padding: 0 12px !important;
+  }
+  
+  .exs-compare__wrap {
+    margin: 0 -12px !important;
+  }
+  
+  .exs-compare__table {
+    min-width: 500px !important;
+  }
+  
+  .exs-compare__table th,
+  .exs-compare__table td {
+    padding: 6px 4px !important;
+    font-size: 12px !important;
+    min-width: 80px !important;
+    max-width: 120px !important;
+  }
+  
+  .exs-compare__table th:first-child,
+  .exs-compare__table td:first-child {
+    min-width: 100px !important;
+    max-width: 120px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Максимальные ограничения */
+  .exs-wrap,
+  .container {
+    padding: 0 10px !important;
+  }
+  
+  .exs-compare__wrap {
+    margin: 0 -10px !important;
+  }
+  
+  .exs-compare__table {
+    min-width: 400px !important;
+  }
+  
+  .exs-compare__table th,
+  .exs-compare__table td {
+    padding: 4px 3px !important;
+    font-size: 11px !important;
+    min-width: 70px !important;
+    max-width: 100px !important;
+  }
+  
+  .exs-compare__table th:first-child,
+  .exs-compare__table td:first-child {
+    min-width: 90px !important;
+    max-width: 110px !important;
+  }
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ ИСПРАВЛЕНИЯ ===== */
+
+/* Исправление изображений */
+img,
+.hero__image,
+.city-info__item img,
+.stat-item img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
+
+/* Исправление встраиваемых элементов */
+iframe,
+video,
+embed,
+object {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Исправление pre и code блоков */
+pre,
+code {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  word-wrap: break-word !important;
+  white-space: pre-wrap !important;
+}
+
+/* ===== ИНДИКАТОР СКРОЛЛА ДЛЯ ТАБЛИЦ ===== */
+
+.exs-compare__wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.exs-compare__wrap:hover::after,
+.exs-compare__wrap:focus::after {
+  opacity: 1;
+}
+
+/* ===== ОТЛАДОЧНЫЕ СТИЛИ (только для разработки) ===== */
+
+/*
+Раскомментируйте для отладки переполнения:
+
+* {
+  outline: 1px solid red !important;
+}
+
+.exs-wrap,
+.container {
+  outline: 2px solid blue !important;
+}
+
+.exs-compare__wrap {
+  outline: 3px solid green !important;
+}
+*/
+
+/* ===== ПРИНУДИТЕЛЬНОЕ ИСПРАВЛЕНИЕ СПЕЦИФИЧНОСТИ ===== */
+
+/* Для случаев, когда другие стили имеют высокую специфичность */
+body .exs-compare__table {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+}
+
+body .exs-wrap,
+body .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Исправление для любых элементов с data-city */
+[data-city] * {
+  max-width: 100% !important;
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ ГОРОДСКИЕ ИСПРАВЛЕНИЯ ===== */
+
+/* Исправление проблем с фиксированными размерами в city-sections.css */
+
+/* Proofs блоки */
+.proofs__list,
+.proofs__regions {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Form контейнеры */
+.form-container {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Все секции должны быть ограничены */
+.section,
+.section--proofs,
+.section--audience,
+.section--psr,
+.section--packages,
+.section--process,
+.section--explain,
+.section--compare,
+.section--calculators,
+.exs-section {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Timeline исправления для проблем с absolute positioning */
+.timeline::before {
+  left: 20px !important;
+}
+
+.timeline li::before {
+  left: 10px !important;
+}
+
+.timeline li::after {
+  left: 22px !important;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 15px !important;
+  }
+  
+  .timeline li::before {
+    left: 5px !important;
+  }
+  
+  .timeline li::after {
+    left: 16px !important;
+  }
+  
+  .timeline li {
+    padding-left: 60px !important;
+  }
+}
+
+/* Исправление FAQ секции */
+.faq-container,
+.faq-item {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* ===== УЛУЧШЕНИЯ ДОСТУПНОСТИ ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .exs-compare__wrap {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== ПОДДЕРЖКА СТАРЫХ БРАУЗЕРОВ ===== */
+
+@supports not (overflow-wrap: break-word) {
+  .exs-compare__table th,
+  .exs-compare__table td,
+  .exs-card,
+  .exs-card__title,
+  .exs-card__desc {
+    word-wrap: break-word !important;
+  }
+}

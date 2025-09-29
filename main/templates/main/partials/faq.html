@@ -1,0 +1,95 @@
+{% load static %}
+
+{% comment %}
+FAQ секция - базовый шаблон для всех страниц
+Может быть переопределена в городских шаблонах
+{% endcomment %}
+
+{% block faq_content %}
+<!-- Базовый FAQ для главной страницы -->
+<section class="faq-section" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="faq-header">
+      <h2 id="faq-title" class="faq-title">Часто задаваемые вопросы</h2>
+      <p class="faq-intro">Ответы на популярные вопросы о наших услугах</p>
+    </div>
+    
+    <div class="faq-container" role="region" aria-label="Вопросы и ответы">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+          <span>Сколько времени занимает разработка сметы?</span>
+          <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5"/>
+          </svg>
+        </button>
+        <div id="faq-answer-1" class="faq-answer" aria-labelledby="faq-1">
+          <p>Сроки зависят от сложности проекта и объёма работ. Простая смета на ремонт квартиры — 2-3 дня, комплексная смета на строительство — 1-2 недели. При срочности можем ускорить процесс.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+          <span>Какие документы нужны для составления сметы?</span>
+          <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5"/>
+          </svg>
+        </button>
+        <div id="faq-answer-2" class="faq-answer" aria-labelledby="faq-2">
+          <p>Минимальный набор: техническое задание, планы помещений, спецификации материалов. Для сложных проектов — проектная документация, чертежи, ведомости объёмов работ.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+          <span>Работаете ли вы по договору?</span>
+          <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5"/>
+          </svg>
+        </button>
+        <div id="faq-answer-3" class="faq-answer" aria-labelledby="faq-3">
+          <p>Да, всегда заключаем официальный договор с чётким описанием работ, сроков и стоимости. Это гарантирует защиту ваших интересов и качество результата.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+          <span>Можете ли вы помочь с прохождением экспертизы?</span>
+          <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5"/>
+          </svg>
+        </button>
+        <div id="faq-answer-4" class="faq-answer" aria-labelledby="faq-4">
+          <p>Конечно! Мы не только составляем сметы, но и сопровождаем их прохождение в экспертизе, готовим ответы на замечания и корректируем документы при необходимости.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// FAQ функциональность для главной страницы
+(function() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      const faqItem = this.closest('.faq-item');
+      const isActive = faqItem.classList.contains('active');
+      
+      // Закрываем все открытые вопросы
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Если текущий вопрос не был активен, открываем его
+      if (!isActive) {
+        faqItem.classList.add('active');
+        this.setAttribute('aria-expanded', 'true');
+      } else {
+        this.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+})();
+</script>
+{% endblock %}

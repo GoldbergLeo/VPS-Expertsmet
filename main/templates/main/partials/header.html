@@ -1,0 +1,446 @@
+{% load static %}
+<!-- Header -->
+<header class="header">
+    <div class="wrapper">
+        <!-- Верхняя часть шапки -->
+        <div class="header__upper">
+            <ul class="header__upper-list">
+                <li class="header__upper-item">
+                    <a class="header__upper-logo" href="{% url 'index' %}" aria-label="Перейти на главную страницу">
+                        <img src="{% static 'main/img/logo-wb.png' %}" alt="ЭкспертСмет" class="header__logo-img">
+                    </a>
+                </li>
+                <li class="header__upper-item city-selector">
+                    <span class="header__upper-adress">
+                        Регионы
+                    </span>
+                    <div class="city-select-wrapper">
+                        <p class="header__upper-location city-select-trigger">
+                            <span class="current-city default-text">Работаем по всей России</span>
+                            <svg class="city-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="#596780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </p>
+                    </div>
+                </li>
+                <li class="header__upper-item">
+                    <a href="mailto:mail@expertsmet.ru" aria-label="Отправить E-mail">
+                        <span class="header__upper-mail">
+                            E-mail
+                        </span>
+                        <p class="header__upper-email">
+                            mail@expertsmet.ru
+                        </p>
+                    </a>
+                </li>
+                <li class="header__upper-item">
+                    <a href="https://yandex.ru/profile/161896391894" class="rating__link" target="_blank">
+                        <div class="rating__container">
+                            <div class="rating__zone">
+                                <p class="rating__main">
+                                    5.0
+                                </p>
+                            </div>
+                            <div class="rating__block">
+                                <div class="rating__stars">
+                                    <div class="stars__block">
+                                        <svg class="stars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z" fill="#ffc107"></path></svg>
+                                        <svg class="stars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z" fill="#ffc107"></path></svg>
+                                        <svg class="stars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z" fill="#ffc107"></path></svg>
+                                        <svg class="stars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z" fill="#ffc107"></path></svg>
+                                        <svg class="stars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23.363 8.584-7.378-1.127-3.307-7.044c-.247-.526-1.11-.526-1.357 0l-3.306 7.044-7.378 1.127c-.606.093-.848.83-.423 1.265l5.36 5.494-1.267 7.767c-.101.617.558 1.08 1.103.777l6.59-3.642 6.59 3.643c.54.3 1.205-.154 1.103-.777l-1.267-7.767 5.36-5.494c.425-.436.182-1.173-.423-1.266z" fill="#ffc107"></path></svg>
+                                    </div>
+                                    <div class="stars__text">
+                                        Рейтинг компании <br>
+                                        на Яндекс отзывы
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="header__upper-item">
+                  <span class="header__upper-work">
+                      Пн-Пт 9:00–18:00
+                  </span>
+                </li>
+                <li class="header__upper-item">
+                    <a href="tel:88003008772" aria-label="Позвонить нам" target="_blank">
+                        <p class="header__upper-tel">
+                            8 (800) 300 87 72
+                        </p>
+                    </a>
+                    <a href="tel:+79957903777" aria-label="Позвонить нам" target="_blank">
+                        <p class="header__upper-tel">
+                            +7 (995) 790-37-77
+                        </p>
+                    </a>
+                </li>
+                <li class="header__upper-item burger-container">
+                    <button class="burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                        <span class="burger__line"></span>
+                    </button>
+                </li>
+                <li class="header__upper-item">
+                    <script data-b24-form="click/4/8udadw" data-skip-moving="true">
+                        (function (w, d, u) { 
+                            var s = d.createElement('script'); 
+                            s.async = true; 
+                            s.src = u + '?' + (Date.now() / 180000 | 0); 
+                            var h = d.getElementsByTagName('script')[0]; 
+                            h.parentNode.insertBefore(s, h); 
+                        })(window, document, 'https://cdn-ru.bitrix24.ru/b26908828/crm/form/loader_4.js');
+                    </script>
+                    <button class="header__upper-button">
+                        <div class="icon-wrapper">
+                            <svg class="call-svg" viewBox="0 0 29 26" fill="none">
+                                <path d="M23.9187 14.2314C23.809 14.0818 23.0798 13.7654 23.0798 13.7654C22.7895 13.6388 20.6537 12.7067 20.2536 12.5744C19.9116 12.4651 19.518 12.3385 19.1696 12.8045C18.905 13.1555 18.1307 13.961 17.8726 14.2142C17.6984 14.3925 17.5306 14.4501 17.137 14.2774C17.0725 14.2487 15.169 13.5237 13.8591 12.4881C12.6976 11.5733 11.8911 10.4398 11.5942 9.99679C11.4136 9.72638 11.5297 9.5998 11.7556 9.39842C11.8911 9.2776 12.4976 8.62745 12.5428 8.56991C12.6396 8.43758 12.8073 8.12689 12.8073 8.12689C12.9815 7.82195 12.8719 7.55728 12.7751 7.37892C12.7041 7.2581 11.6136 4.90489 11.5039 4.68626C11.1942 4.0246 10.8586 3.99007 10.5425 4.00158C10.3876 4.01309 8.93577 4.01884 8.47764 4.46762L8.39376 4.54242C7.94208 4.96818 7 5.85998 7 7.5803C7 7.97729 7.07098 8.39155 7.21939 8.85184C7.4904 9.68035 8.01306 10.5894 8.70993 11.4179C8.72284 11.4352 9.78752 12.747 10.3166 13.2936C11.9943 15.0139 13.8849 16.2854 15.7949 16.9529C18.2339 17.8044 19.2793 18 19.8729 18C20.131 18 20.6795 17.8849 20.7956 17.8734C21.5441 17.8159 23.3121 16.9931 23.6864 16.0668C24.0477 15.1923 24.0542 14.427 23.9187 14.2314Z" fill="#FFE6D8" />
+                            </svg>
+                        </div>
+                        <span>
+                            Заказать звонок
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Нижняя часть шапки -->
+        <nav class="header__lower">
+            <ul class="header__lower-list">
+                <li class="header__lower-item">
+                    <a href="#services" class="header__lower-link" aria-label="Услуги">
+                        УСЛУГИ
+                    </a>
+                </li>
+                <li class="header__lower-item">
+                    <a href="#portfolio" class="header__lower-link" aria-label="Наши проекты">
+                        НАШИ ПРОЕКТЫ
+                    </a>
+                </li>
+                <li class="header__lower-item">
+                    <a href="#calculator" class="header__lower-link" aria-label="Калькулятор стоимости">
+                        КАЛЬКУЛЯТОР СТОИМОСТИ
+                    </a>
+                </li>
+                <li class="header__lower-item">
+                    <a href="{% url 'about' %}" class="header__lower-link" aria-label="О компании">
+                        О КОМПАНИИ
+                    </a>
+                </li>
+                <li class="header__lower-item">
+                    <a href="https://expertsmet.ru/articles/" class="header__lower-link" aria-label="Блог">
+                        СТАТЬИ
+                    </a>
+                </li>
+                <li class="header__lower-item">
+                    <a href="{% url 'contacts' %}" class="header__lower-link" aria-label="Контакты">
+                        КОНТАКТЫ
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Компактное мобильное меню в стилистике footer -->
+    <div class="mobile-menu">
+        <div class="mobile-menu__container">
+            <div class="mobile-menu__header">
+                <div class="mobile-menu__logo-block">
+                    <img src="{% static 'main/img/logo-wb.png' %}" alt="ЭкспертСмет" class="mobile-menu__logo">
+                </div>
+                <button class="mobile-menu__close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mobile-menu__main">
+                <div class="mobile-menu__nav">
+                    <ul class="mobile-menu__list">
+                        <li class="mobile-menu__item">
+                            <a href="#services" class="mobile-menu__link">
+                                <span>УСЛУГИ</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#portfolio" class="mobile-menu__link">
+                                <span>НАШИ ПРОЕКТЫ</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="#calculator" class="mobile-menu__link">
+                                <span>КАЛЬКУЛЯТОР СТОИМОСТИ</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="{% url 'about' %}" class="mobile-menu__link">
+                                <span>О КОМПАНИИ</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="https://expertsmet.ru/articles/" class="mobile-menu__link">
+                                <span>СТАТЬИ</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobile-menu__item">
+                            <a href="{% url 'contacts' %}" class="mobile-menu__link">
+                                <span>КОНТАКТЫ</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="mobile-menu__contact">
+                    <div class="mobile-menu__contact-row">
+                        <div class="mobile-menu__contact-col">
+                            <a href="tel:88003008772" class="mobile-menu__tel">8 (800) 300 87 72</a>
+                            <a href="tel:+79957903777" class="mobile-menu__tel">+7 (995) 790-37-77</a>
+                        </div>
+                        <div class="mobile-menu__contact-col">
+                            <span class="mobile-menu__work-time">Пн-Пт 9:00–18:00</span>
+                            <a href="mailto:mail@expertsmet.ru" class="mobile-menu__email">mail@expertsmet.ru</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-menu__buttons">
+                        <div class="mobile-menu__buttons-row">
+                            <a href="https://wa.me/79957903777" class="mobile-menu__btn mobile-menu__btn--wa">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.5 3.5C18.25 1.25 15.2 0 12 0C5.4 0 0 5.4 0 12C0 14.1 0.6 16.1 1.7 17.9L0 24L6.3 22.3C8 23.3 10 23.9 12 23.9C18.6 23.9 24 18.5 24 11.9C24 8.7 22.8 5.7 20.5 3.5ZM12 21.9C10.3 21.9 8.6 21.4 7.1 20.4L6.7 20.2L2.9 21.2L3.9 17.5L3.7 17.1C2.6 15.5 2.1 13.8 2.1 12C2.1 6.5 6.5 2.1 12 2.1C14.7 2.1 17.2 3.1 19.1 5C21 6.9 22 9.4 22 12.1C22 17.5 17.6 21.9 12 21.9ZM17.4 14.3C17.1 14.2 15.6 13.4 15.4 13.4C15.1 13.3 14.9 13.3 14.7 13.6C14.5 13.9 13.9 14.6 13.7 14.8C13.5 15 13.3 15 13 14.9C11.3 14.1 10.2 13.3 9 11.4C8.7 10.9 9.3 11 9.8 10C9.9 9.8 9.8 9.6 9.7 9.5C9.6 9.4 9 7.9 8.8 7.3C8.5 6.7 8.3 6.8 8.1 6.8C7.9 6.8 7.7 6.8 7.5 6.8C7.3 6.8 6.9 6.9 6.7 7.2C6.4 7.5 5.6 8.3 5.6 9.8C5.6 11.3 6.7 12.7 6.8 12.9C7 13.1 9 16.1 12 17.5C13.9 18.2 14.7 18.3 15.7 18.2C16.3 18.1 17.5 17.4 17.8 16.7C18.1 16 18.1 15.4 18 15.3C17.9 15.1 17.7 15.1 17.4 14.3Z" fill="currentColor"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="https://t.me/expertsmet" class="mobile-menu__btn mobile-menu__btn--tg">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.78 18.65L10.06 14.56L17.74 7.57C18.08 7.26 17.67 7.09 17.22 7.36L7.74 13.56L3.8 12.19C2.95 11.94 2.94 11.32 3.98 10.89L19.73 5.07C20.45 4.76 21.12 5.25 20.86 6.31L17.98 18.64C17.81 19.5 17.27 19.73 16.56 19.33L12.5 16.41L10.59 18.25C10.38 18.46 10.21 18.64 9.78 18.65Z" fill="currentColor"/>
+                                </svg>
+                                <span>Telegram</span>
+                            </a>
+                        </div>
+                        
+                        <script data-b24-form="click/4/8udadw" data-skip-moving="true">
+                            (function (w, d, u) { 
+                                var s = d.createElement('script'); 
+                                s.async = true; 
+                                s.src = u + '?' + (Date.now() / 180000 | 0); 
+                                var h = d.getElementsByTagName('script')[0]; 
+                                h.parentNode.insertBefore(s, h); 
+                            })(window, document, 'https://cdn-ru.bitrix24.ru/b26908828/crm/form/loader_4.js');
+                        </script>
+                        <button class="mobile-menu__call-button">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4741 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4018C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77383 17.3147 6.72534 15.2662 5.19 12.85C3.49998 10.2412 2.44824 7.27097 2.12 4.18C2.09501 3.90347 2.12788 3.62476 2.2165 3.36162C2.30513 3.09849 2.44757 2.85669 2.63477 2.65162C2.82196 2.44655 3.04981 2.28271 3.30379 2.17052C3.55778 2.05834 3.83213 2.00026 4.11 2.00001H7.11C7.59541 1.99523 8.06631 2.16711 8.43418 2.48357C8.80204 2.80002 9.0425 3.23954 9.11 3.72C9.23668 4.68008 9.47151 5.62272 9.81 6.53C9.94454 6.88793 9.97366 7.27692 9.8939 7.65089C9.81415 8.02486 9.62886 8.36813 9.36 8.64L8.09 9.91C9.51356 12.4136 11.5865 14.4865 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9752 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5285 19.3199 14.7633 20.28 14.89C20.7648 14.9584 21.2082 15.2032 21.5265 15.5775C21.8447 15.9518 22.0156 16.4296 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Заказать звонок</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Модальное окно выбора города -->
+<div class="city-modal" id="cityModal">
+    <div class="city-modal-content">
+        <div class="city-modal-header">
+            <h3>Выберите ваш город</h3>
+            <button class="city-modal-close">&times;</button>
+        </div>
+        <div class="city-modal-body">
+            <div class="city-list">
+                {% for city in all_cities %}
+                    <a href="{{ city.url }}" class="city-item">{{ city.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Бургер-меню
+    const burgerButton = document.querySelector('.burger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const body = document.body;
+    const header = document.querySelector('.header');
+    
+    // Функция для добавления оверлея
+    function createOverlay() {
+        const overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        document.body.appendChild(overlay);
+        
+        setTimeout(() => {
+            overlay.classList.add('active');
+        }, 10);
+        
+        return overlay;
+    }
+    
+    // Функция удаления оверлея
+    function removeOverlay() {
+        const overlay = document.querySelector('.menu-overlay');
+        if (overlay) {
+            overlay.classList.remove('active');
+            setTimeout(() => {
+                overlay.remove();
+            }, 300);
+        }
+    }
+    
+    // Открытие мобильного меню
+    burgerButton.addEventListener('click', function() {
+        burgerButton.classList.toggle('is-active');
+        mobileMenu.classList.toggle('is-active');
+        body.classList.toggle('no-scroll');
+        
+        // Добавляем/удаляем класс menu-active для header
+        header.classList.toggle('menu-active');
+        
+        if (mobileMenu.classList.contains('is-active')) {
+            createOverlay();
+        } else {
+            removeOverlay();
+        }
+        
+        // Обновляем ARIA-атрибуты для доступности
+        const isExpanded = burgerButton.classList.contains('is-active');
+        burgerButton.setAttribute('aria-expanded', isExpanded);
+    });
+    
+    // Закрытие мобильного меню
+    const mobileMenuClose = document.querySelector('.mobile-menu__close');
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+            burgerButton.classList.remove('is-active');
+            mobileMenu.classList.remove('is-active');
+            body.classList.remove('no-scroll');
+            header.classList.remove('menu-active'); // Удаляем класс menu-active
+            removeOverlay();
+            burgerButton.setAttribute('aria-expanded', 'false');
+        });
+    }
+    
+    // Закрытие меню при клике на оверлей
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('menu-overlay')) {
+            burgerButton.classList.remove('is-active');
+            mobileMenu.classList.remove('is-active');
+            body.classList.remove('no-scroll');
+            header.classList.remove('menu-active'); // Удаляем класс menu-active
+            removeOverlay();
+            burgerButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+    
+    // Закрытие мобильного меню при клике на ссылку
+    const mobileLinks = document.querySelectorAll('.mobile-menu__link');
+    mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            burgerButton.classList.remove('is-active');
+            mobileMenu.classList.remove('is-active');
+            body.classList.remove('no-scroll');
+            header.classList.remove('menu-active'); // Удаляем класс menu-active
+            removeOverlay();
+            burgerButton.setAttribute('aria-expanded', 'false');
+        });
+    });
+    
+    // Обработчик нажатия Escape для закрытия меню
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && mobileMenu.classList.contains('is-active')) {
+            burgerButton.classList.remove('is-active');
+            mobileMenu.classList.remove('is-active');
+            body.classList.remove('no-scroll');
+            header.classList.remove('menu-active'); // Удаляем класс menu-active
+            removeOverlay();
+            burgerButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+    
+    // Код для работы с выбором города (существующий)
+    const cityTrigger = document.querySelector('.city-select-trigger');
+    const cityModal = document.getElementById('cityModal');
+    const cityModalClose = document.querySelector('.city-modal-close');
+    const cityItems = document.querySelectorAll('.city-item');
+    const currentCityElement = document.querySelector('.current-city');
+    
+    if (cityTrigger && cityModal && cityModalClose && cityItems && currentCityElement) {
+        // Открытие модального окна при клике на селектор города
+        cityTrigger.addEventListener('click', function() {
+            cityModal.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Блокировка прокрутки страницы
+        });
+        
+        // Закрытие модального окна при клике на крестик
+        cityModalClose.addEventListener('click', function() {
+            cityModal.classList.remove('show');
+            document.body.style.overflow = ''; // Восстановление прокрутки страницы
+        });
+        
+        // Закрытие модального окна при клике вне его содержимого
+        window.addEventListener('click', function(event) {
+            if (event.target === cityModal) {
+                cityModal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Обработка клика на город
+        cityItems.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                // Получаем текст выбранного города
+                const selectedCity = item.textContent.trim();
+                
+                // Обновляем текст текущего города
+                currentCityElement.textContent = selectedCity;
+                
+                // Удаляем класс default-text, так как выбран конкретный город
+                currentCityElement.classList.remove('default-text');
+                
+                // Закрываем модальное окно
+                cityModal.classList.remove('show');
+                document.body.style.overflow = '';
+                
+                // Сохраняем выбранный город в localStorage для сохранения между сессиями
+                localStorage.setItem('selectedCity', selectedCity);
+            });
+        });
+        
+        // Восстановление выбранного города из localStorage при загрузке страницы
+        const savedCity = localStorage.getItem('selectedCity');
+        if (savedCity) {
+            currentCityElement.textContent = savedCity;
+            currentCityElement.classList.remove('default-text');
+        } else {
+            currentCityElement.textContent = 'Работаем по всей России';
+            currentCityElement.classList.add('default-text');
+        }
+    }
+});
+</script>

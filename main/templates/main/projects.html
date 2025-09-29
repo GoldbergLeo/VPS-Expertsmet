@@ -1,0 +1,171 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Проекты{% endblock %}
+{% block meta_description %}Примеры реализованных проектов EXPERTsmet: сметное сопровождение, разработка смет и экспертиза для строительства и реконструкции по всей России.{% endblock %}
+
+{% block content %}
+<div class="site-container">
+  <div class="wrapper">
+    <div class="article wrapper flex">
+      <main class="article__main">
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a href="{% url 'index' %}">Главная</a>
+          </li>
+          <li class="breadcrumb__item">
+            Проекты
+          </li>
+        </ul>
+        
+        <h1>Наши проекты</h1>
+        
+        <p>Компания EXPERTsmet имеет богатый опыт работы над проектами различной сложности и масштаба. Мы гордимся нашими достижениями и качеством выполненных работ.</p>
+        
+        <div class="projects-intro">
+          <div class="stats-block">
+            <h3>Статистика нашей работы</h3>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Реализованных проектов</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Лет опыта</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Довольных клиентов</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">50</div>
+                <div class="stat-label">Городов присутствия</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="services-overview">
+            <h3>Основные направления работы</h3>
+            <ul>
+              <li>Сметное сопровождение строительных проектов</li>
+              <li>Разработка сметной документации для промышленных объектов</li>
+              <li>Сметы для жилой и коммерческой недвижимости</li>
+              <li>Экспертиза сметной документации</li>
+              <li>Консультации по вопросам сметного нормирования</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="featured-projects">
+          <h2>Крупные проекты</h2>
+          
+          <div class="project-card">
+            <div class="project-image">
+              <div class="image-placeholder">Изображение проекта</div>
+            </div>
+            <div class="project-content">
+              <div class="project-date">2024</div>
+              <h3 class="project-title">Сметное сопровождение строительства бизнес-центра в Москве</h3>
+              <p class="project-description">Полное сметное сопровождение строительства 25-этажного бизнес-центра класса А в деловом центре Москвы. Общая стоимость проекта составила 15 млрд рублей.</p>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-image">
+              <div class="image-placeholder">Изображение проекта</div>
+            </div>
+            <div class="project-content">
+              <div class="project-date">2023</div>
+              <h3 class="project-title">Разработка смет для реконструкции промышленного комплекса в Екатеринбурге</h3>
+              <p class="project-description">Подготовка полного комплекта сметной документации для реконструкции производственных помещений общей площадью 50 000 кв. м.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="all-projects">
+          <h2>Все проекты</h2>
+          
+          <div class="projects-grid">
+            <div class="project-item">
+              <div class="project-image">
+                <div class="image-placeholder">Изображение проекта</div>
+              </div>
+              <div class="project-content">
+                <div class="project-date">2024</div>
+                <h4 class="project-title">Жилой комплекс в Казани</h4>
+                <p class="project-desc">Сметное сопровождение строительства жилого комплекса из 5 корпусов.</p>
+              </div>
+            </div>
+            
+            <div class="project-item">
+              <div class="project-image">
+                <div class="image-placeholder">Изображение проекта</div>
+              </div>
+              <div class="project-content">
+                <div class="project-date">2023</div>
+                <h4 class="project-title">Реконструкция торгового центра в Новосибирске</h4>
+                <p class="project-desc">Разработка сметной документации для реконструкции торгового центра.</p>
+              </div>
+            </div>
+            
+            <div class="project-item">
+              <div class="project-image">
+                <div class="image-placeholder">Изображение проекта</div>
+              </div>
+              <div class="project-content">
+                <div class="project-date">2023</div>
+                <h4 class="project-title">Спортивный комплекс в Краснодаре</h4>
+                <p class="project-desc">Полное сметное сопровождение строительства спортивного комплекса.</p>
+              </div>
+            </div>
+            
+            <div class="project-item">
+              <div class="project-image">
+                <div class="image-placeholder">Изображение проекта</div>
+              </div>
+              <div class="project-content">
+                <div class="project-date">2022</div>
+                <h4 class="project-title">Офисное здание в Самаре</h4>
+                <p class="project-desc">Разработка сметной документации для строительства офисного здания.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Секция тарифов -->
+        {% include 'main/partials/pricing.html' %}
+        
+        <div class="cta-banner">
+          <h3>Хотите обсудить ваш проект?</h3>
+          <p>Наши специалисты готовы проконсультировать вас по всем вопросам сметного дела и помочь с реализацией вашего проекта.</p>
+          <a href="{% url 'contacts' %}" class="cta-button">Связаться с нами</a>
+        </div>
+      </main>
+      
+      <aside class="article__aside">
+        <h3 class="article__aside-news">Последние новости</h3>
+        <ul class="article__aside-list">
+          <!-- This section would be populated with recent articles -->
+          <li class="article__aside-item">
+            <h4 class="article__aside-title">Как правильно составить смету</h4>
+            <p class="article__aside-discr">Полезные советы по составлению сметной документации</p>
+            <span class="article__aside-data">15.07.2025</span>
+          </li>
+          <li class="article__aside-item">
+            <h4 class="article__aside-title">Новости рынка сметных услуг</h4>
+            <p class="article__aside-discr">Обзор текущих тенденций в сфере сметного дела</p>
+            <span class="article__aside-data">10.07.2025</span>
+          </li>
+        </ul>
+        
+        <form class="article__aside-form" action="{% url 'subscribe' %}" method="post">
+          {% csrf_token %}
+          <label class="article__aside-label">Подписаться на рассылку</label>
+          <input class="article__aside-input" type="email" name="email" placeholder="Ваш email" required>
+          <button class="article__aside-button" type="submit">Подписаться</button>
+        </form>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}

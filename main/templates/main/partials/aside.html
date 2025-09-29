@@ -1,0 +1,34 @@
+{% load static %}
+
+<aside class="article__aside">
+    <p class="article__aside-news">
+        Популярные статьи
+    </p>
+    <ul class="article__aside-list">
+        {% if latest_articles %}
+            {% for a in latest_articles %}
+            <li class="article__aside-item">
+                <a href="{% url 'news_detail' slug=a.slug %}" class="article__aside-link">
+                    <h3 class="article__aside-title">
+                        {{ a.title }}
+                    </h3>
+                    <p class="article__aside-discr">
+                        {{ a.discr }}
+                    </p>
+                    <span class="article__aside-data">
+                        {{ a.data|date:"d.m.Y" }}
+                    </span>
+                </a>
+            </li>
+            {% endfor %}
+        {% else %}
+            <li>Нет опубликованных статей.</li>
+        {% endif %}
+    </ul>
+
+    <form class="article__aside-form" id="subscribe-form">
+        <label class="article__aside-label">Подписка на рассылку</label>
+        <input class="article__aside-input" type="email" id="email" placeholder="Введите ваш email" required>
+        <button class="article__aside-button" type="submit">Подписаться</button>
+    </form>
+</aside>

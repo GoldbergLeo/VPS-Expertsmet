@@ -1,0 +1,30 @@
+{% extends 'main/base_main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="site-container">
+  <div id="wrapper">
+    {# Секция с слайдером – вынесена в отдельный partial #}
+    {% include 'main/partials/hero.html' %}
+    
+    <main>
+      {# Остальные секции вынесены в partial – изменения можно централизованно вносить в нужном файле #}
+      {% include 'main/partials/advantages.html' %}
+      {% include 'main/partials/services.html' %}
+      {% include 'main/partials/ceo.html' %}
+      {% include 'main/partials/smi.html' %}
+      {% include 'main/partials/calculator.html' %}
+      {% include 'main/partials/portfolio.html' %}
+      {% include 'main/partials/expertise.html' %}
+      {% include 'main/partials/team.html' %}
+      {% include 'main/partials/materials.html' %}
+      {% include 'main/partials/programs.html' %}
+      {% include 'main/partials/pricing.html' %}
+      {% include 'main/partials/blog.html' %}
+      {% include 'main/partials/partners.html' %}
+      {% include 'main/partials/faq.html' %}
+    </main>
+  </div>
+  <div class="fade-screen" id="fadeScreen"></div>
+</div>
+{% endblock %}

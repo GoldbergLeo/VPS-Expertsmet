@@ -1,0 +1,160 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Тест форм{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <h1>Тест форм (без JavaScript)</h1>
+    
+    <div class="test-section">
+        <h2>1. Форма подписки</h2>
+        <form action="{% url 'subscribe' %}" method="post">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="Ваш email" required>
+            <button type="submit">Подписаться</button>
+        </form>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Быстрая форма</h2>
+        <form action="{% url 'quick_contact' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" placeholder="Ваш телефон" required>
+            <textarea name="message" placeholder="Сообщение" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Форма калькулятора</h2>
+        <form action="{% url 'calculator' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш email" required>
+            <input type="tel" name="phone" placeholder="Ваш телефон">
+            <select name="project_type" required>
+                <option value="">Выберите тип проекта</option>
+                <option value="residential">Жилое строительство</option>
+                <option value="commercial">Коммерческое строительство</option>
+            </select>
+            <input type="number" name="area" placeholder="Площадь в м²" required>
+            <select name="complexity" required>
+                <option value="">Выберите сложность</option>
+                <option value="low">Низкая</option>
+                <option value="medium">Средняя</option>
+                <option value="high">Высокая</option>
+            </select>
+            <input type="checkbox" name="services" value="estimate"> Составление сметы
+            <input type="checkbox" name="services" value="consultation"> Консультации
+            <select name="urgency" required>
+                <option value="">Выберите срочность</option>
+                <option value="standard">Стандартно (5-7 дней)</option>
+                <option value="expedited">Ускоренно (2-3 дня)</option>
+                <option value="urgent">Срочно (1 день)</option>
+            </select>
+            <textarea name="additional_info" placeholder="Дополнительная информация"></textarea>
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Форма контактов</h2>
+        <form action="{% url 'send_form_email' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш email" required>
+            <input type="tel" name="phone" placeholder="Ваш телефон">
+            <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+            <input type="file" name="file">
+            <button type="submit">Отправить сообщение</button>
+        </form>
+    </div>
+    
+    {% if messages %}
+    <div class="messages">
+        <h2>Сообщения Django:</h2>
+        {% for message in messages %}
+        <div class="message message-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+<style>
+.test-section {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.test-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.test-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.test-section input,
+.test-section select,
+.test-section textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.test-section button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.test-section button:hover {
+    background-color: #0056b3;
+}
+
+.messages {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.message-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+</style>
+{% endblock %}

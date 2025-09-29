@@ -1,0 +1,1056 @@
+/* ===== СОВРЕМЕННЫЙ ДИЗАЙН ДЛЯ ГОРОДСКИХ СЕКЦИЙ EXPERTsmet ===== */
+
+/* CSS переменные для дизайн-системы */
+:root {
+  --section-spacing: 120px;
+  --section-spacing-mobile: 80px;
+  --border-radius: 20px;
+  --border-radius-small: 12px;
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.12);
+  --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.16);
+  --gradient-primary: linear-gradient(135deg, #972635 0%, #b13243 100%);
+  --gradient-secondary: linear-gradient(135deg, #264773 0%, #3a5a8a 100%);
+  --gradient-accent: linear-gradient(135deg, #FFAC30 0%, #ffc107 100%);
+  --gradient-light: linear-gradient(135deg, #F5F7FA 0%, #ffffff 100%);
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Общие стили для секций с современным подходом */
+.section {
+  padding: var(--section-spacing) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(151, 38, 53, 0.3), transparent);
+}
+
+.section h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 60px;
+  text-align: center;
+  color: var(--black);
+  position: relative;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.section h3 {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  color: var(--black);
+}
+
+/* (2) Пруф-блок - современный дизайн с градиентами */
+.section--proofs {
+  background: var(--gradient-light);
+  position: relative;
+}
+
+.section--proofs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23972635" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.proofs__headline {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.proofs__num {
+  font-size: clamp(64px, 12vw, 120px);
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 0.8;
+  margin-bottom: 30px;
+  display: block;
+  animation: numberPulse 2s ease-in-out infinite;
+}
+
+@keyframes numberPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.proofs__headline p {
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: var(--dark-grey);
+  margin-bottom: 40px;
+  font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proofs__list {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  z-index: 2;
+}
+
+.proofs__item {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+  border-left: 6px solid transparent;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  box-shadow: var(--shadow-soft);
+  font-size: 16px;
+  color: var(--dark-grey);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.proofs__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: var(--transition-smooth);
+}
+
+.proofs__item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-medium);
+  border-left-color: transparent;
+}
+
+.proofs__item:hover::before {
+  width: 100%;
+  opacity: 0.1;
+}
+
+.proofs__item a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.proofs__item a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: var(--transition-smooth);
+}
+
+.proofs__item a:hover::after {
+  width: 100%;
+}
+
+.proofs__regions {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(151, 38, 53, 0.1);
+}
+
+.proofs__regions summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(151, 38, 53, 0.05);
+  border-radius: var(--border-radius-small);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.proofs__regions summary:hover {
+  background: rgba(151, 38, 53, 0.1);
+}
+
+.proofs__regions summary::after {
+  content: '▼';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: var(--transition-smooth);
+  color: var(--primary);
+}
+
+.proofs__regions[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.proofs__regions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.proofs__regions li {
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(151, 38, 53, 0.1);
+}
+
+.proofs__regions li:last-child {
+  border-bottom: none;
+}
+
+.proofs__regions a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: var(--border-radius-small);
+  background: rgba(38, 71, 115, 0.05);
+}
+
+.proofs__regions a:hover {
+  color: var(--primary);
+  background: rgba(151, 38, 53, 0.1);
+  transform: translateX(8px);
+}
+
+/* (3) Для кого - современные карточки с hover-эффектами */
+.section--audience {
+  background: var(--white);
+  position: relative;
+}
+
+.section--audience::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(245, 247, 250, 0.5) 100%);
+  pointer-events: none;
+}
+
+.grid--cards-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-bounce);
+  border: 1px solid rgba(231, 235, 239, 0.5);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-16px) scale(1.03);
+  box-shadow: var(--shadow-strong);
+  border-color: rgba(151, 38, 53, 0.2);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-size: 24px;
+  position: relative;
+}
+
+.card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.card:hover h3::after {
+  width: 60px;
+}
+
+.card .pain {
+  background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+  border-left: 4px solid #ff6b6b;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+  color: #d63031;
+  font-style: italic;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.card .pain::before {
+  content: '⚠️';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  opacity: 0.3;
+}
+
+.card .gain {
+  background: linear-gradient(135deg, #f0fff4, #e8f5e8);
+  border-left: 4px solid #51cf66;
+  padding: 20px;
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+  color: #2f9e44;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.card .gain::before {
+  content: '✅';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  opacity: 0.3;
+}
+
+/* (4) Боль → Решение → Результат - современный дизайн с иконками */
+.section--psr {
+  background: var(--gradient-light);
+  position: relative;
+}
+
+.grid--psr {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.psr {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(231, 235, 239, 0.5);
+}
+
+.psr::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(151, 38, 53, 0.02));
+  transition: var(--transition-smooth);
+}
+
+.psr:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-medium);
+}
+
+.psr:hover::before {
+  background: linear-gradient(135deg, transparent, rgba(151, 38, 53, 0.05));
+}
+
+.psr__pain {
+  background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+  color: #d63031;
+  padding: 20px;
+  border-radius: var(--border-radius-small);
+  margin-bottom: 25px;
+  font-weight: 700;
+  border: 2px solid #ff6b6b;
+  position: relative;
+  overflow: hidden;
+}
+
+.psr__pain::before {
+  content: '🔥';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+  opacity: 0.6;
+}
+
+.psr__solution {
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  color: #f39c12;
+  padding: 20px;
+  border-radius: var(--border-radius-small);
+  margin-bottom: 25px;
+  font-weight: 600;
+  border: 2px solid #f1c40f;
+  position: relative;
+  overflow: hidden;
+}
+
+.psr__solution::before {
+  content: '💡';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+  opacity: 0.6;
+}
+
+.psr__result {
+  background: linear-gradient(135deg, #f0fff4, #e8f5e8);
+  color: #2f9e44;
+  padding: 20px;
+  border-radius: var(--border-radius-small);
+  font-weight: 700;
+  border: 2px solid #51cf66;
+  position: relative;
+  overflow: hidden;
+}
+
+.psr__result::before {
+  content: '🎯';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+  opacity: 0.6;
+}
+
+/* (5) Пакеты услуг - современные карточки с градиентами */
+.section--packages {
+  background: var(--white);
+  position: relative;
+}
+
+.package {
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.package::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: var(--transition-smooth);
+}
+
+.package:hover::before {
+  transform: scaleX(1);
+}
+
+.package__list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.package__list li {
+  padding: 12px 0;
+  position: relative;
+  padding-left: 35px;
+  font-weight: 500;
+  color: var(--dark-grey);
+  transition: var(--transition-smooth);
+}
+
+.package__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 20px;
+  background: rgba(151, 38, 53, 0.1);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.package:hover .package__list li::before {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.package__meta {
+  font-size: 14px;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(231, 235, 239, 0.5);
+  background: rgba(245, 247, 250, 0.5);
+  padding: 20px;
+  border-radius: var(--border-radius-small);
+}
+
+.package__meta b {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* (6) Процесс в 5 шагов - современный timeline */
+.section--process {
+  background: var(--gradient-light);
+  position: relative;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step-counter;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.timeline li {
+  position: relative;
+  padding: 40px 0 40px 120px;
+  margin-bottom: 30px;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  counter-increment: step-counter;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(231, 235, 239, 0.5);
+  overflow: hidden;
+}
+
+.timeline li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition-smooth);
+}
+
+.timeline li:hover {
+  transform: translateX(16px);
+  box-shadow: var(--shadow-medium);
+}
+
+.timeline li:hover::before {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-strong);
+}
+
+.timeline li::after {
+  content: '';
+  position: absolute;
+  left: 53px;
+  top: 70px;
+  bottom: -30px;
+  width: 2px;
+  background: var(--gradient-primary);
+  opacity: 0.3;
+}
+
+.timeline li:last-child::after {
+  display: none;
+}
+
+/* (7) Почему иногда поднимаем стоимость - современный текст */
+.section--explain {
+  background: var(--white);
+  position: relative;
+}
+
+.section--explain p {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: var(--dark-grey);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+}
+
+.section--explain p:first-child {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 600;
+  color: var(--black);
+}
+
+.section--explain p:last-child {
+  background: rgba(151, 38, 53, 0.05);
+  padding: 25px;
+  border-radius: var(--border-radius-small);
+  border-left: 4px solid var(--primary);
+  font-style: italic;
+  max-width: 800px;
+}
+
+/* (8) Сравнение моделей - современная таблица */
+.section--compare {
+  background: var(--gradient-light);
+  position: relative;
+}
+
+.table--compare {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 60px 0;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(231, 235, 239, 0.5);
+}
+
+.table--compare th,
+.table--compare td {
+  padding: 25px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(231, 235, 239, 0.5);
+}
+
+.table--compare th {
+  background: var(--gradient-primary);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table--compare th:first-child {
+  background: var(--gradient-secondary);
+}
+
+.table--compare tr:nth-child(even) {
+  background: rgba(245, 247, 250, 0.5);
+}
+
+.table--compare tr:hover {
+  background: rgba(151, 38, 53, 0.02);
+  transform: scale(1.01);
+  transition: var(--transition-smooth);
+}
+
+.table--compare td {
+  font-weight: 500;
+  color: var(--dark-grey);
+}
+
+/* (9) Калькуляторы - современная форма */
+.section--calculators {
+  background: var(--white);
+  position: relative;
+}
+
+.calculator-placeholder {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.calculator-placeholder p {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--dark-grey);
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.form-container {
+  background: linear-gradient(135deg, rgba(245, 247, 250, 0.8), rgba(255, 255, 255, 0.9));
+  backdrop-filter: blur(20px);
+  padding: 50px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(231, 235, 239, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: var(--black);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 18px 20px;
+  border: 2px solid rgba(231, 235, 239, 0.8);
+  border-radius: var(--border-radius-small);
+  font-size: 16px;
+  transition: var(--transition-smooth);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(151, 38, 53, 0.1);
+  background: var(--white);
+  transform: translateY(-2px);
+}
+
+.form-control::placeholder {
+  color: var(--grey);
+  font-style: italic;
+}
+
+/* Общие стили для заметок */
+.note {
+  font-size: 14px;
+  color: var(--grey);
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(151, 38, 53, 0.05);
+  border-radius: var(--border-radius-small);
+  border-left: 4px solid var(--primary);
+}
+
+.note--sm {
+  font-size: 12px;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+/* Адаптивность для новых секций */
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: var(--section-spacing-mobile);
+  }
+  
+  .section {
+    padding: var(--section-spacing-mobile) 0;
+  }
+  
+  .section h2 {
+    font-size: clamp(28px, 6vw, 36px);
+    margin-bottom: 40px;
+  }
+  
+  .grid--cards-3,
+  .grid--psr {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .timeline {
+    margin: 40px auto 0;
+  }
+  
+  .timeline li {
+    padding-left: 100px;
+    margin-bottom: 25px;
+  }
+  
+  .timeline li::before {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    left: 20px;
+  }
+  
+  .timeline::before {
+    left: 40px;
+  }
+  
+  .timeline li::after {
+    left: 42px;
+  }
+  
+  .table--compare {
+    font-size: 14px;
+  }
+  
+  .table--compare th,
+  .table--compare td {
+    padding: 20px 15px;
+  }
+  
+  .form-container {
+    padding: 30px 20px;
+  }
+  
+  .proofs__item,
+  .card,
+  .psr {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section h2 {
+    font-size: clamp(24px, 7vw, 28px);
+    margin-bottom: 30px;
+  }
+  
+  .proofs__num {
+    font-size: clamp(48px, 15vw, 64px);
+  }
+  
+  .proofs__headline p {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+  
+  .grid--cards-3,
+  .grid--psr {
+    gap: 25px;
+  }
+  
+  .timeline li {
+    padding-left: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .timeline li::before {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    left: 15px;
+  }
+  
+  .timeline::before {
+    left: 32px;
+  }
+  
+  .timeline li::after {
+    left: 33px;
+  }
+  
+  .form-container {
+    padding: 25px 15px;
+  }
+  
+  .proofs__regions {
+    padding: 20px;
+  }
+  
+  .proofs__item,
+  .card,
+  .psr {
+    padding: 20px 15px;
+  }
+}
+
+/* Анимации появления секций */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hover-эффекты для интерактивных элементов */
+.btn-primary {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  border-radius: var(--border-radius-small);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Дополнительные современные эффекты */
+.card,
+.psr,
+.proofs__item {
+  position: relative;
+}
+
+.card::after,
+.psr::after,
+.proofs__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transition: var(--transition-smooth);
+  pointer-events: none;
+}
+
+.card:hover::after,
+.psr:hover::after,
+.proofs__item:hover::after {
+  opacity: 1;
+}

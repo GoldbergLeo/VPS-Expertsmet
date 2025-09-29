@@ -1,0 +1,156 @@
+{# {% include 'main/partials/portfolio.html' %} #}
+{% load static %}
+<!-- Блок реализованных проектов -->
+<div class="expertsmet-projects-container wrapper">
+    <!-- Заголовок раздела -->
+    <div class="expertsmet-section-title">
+        <h2 class="expertsmet-title-text">Наши реализованные проекты</h2>
+    </div>
+    
+    <!-- Статистика проектов -->
+    <div class="expertsmet-stats-block">
+        <div class="expertsmet-stats-flex">
+            <div class="expertsmet-stats-column">
+                <h3 class="expertsmet-stats-heading">Более 300+ успешно реализованных проектов</h3>
+                <p class="expertsmet-stats-text">
+                    Наша компания специализируется на разработке сметной документации с гарантией прохождения экспертизы. Мы сопровождаем проекты от начала до конца и решаем самые сложные задачи в кратчайшие сроки.
+                </p>
+            </div>
+            <div class="expertsmet-stats-column">
+                <h4 class="expertsmet-services-heading">Наши основные услуги:</h4>
+                <ul class="expertsmet-services-list">
+                    <li class="expertsmet-services-item">Разработка сметной документации на все виды работ</li>
+                    <li class="expertsmet-services-item">Сопровождение и прохождение государственной экспертизы</li>
+                    <li class="expertsmet-services-item">Разработка документации по Постановлению №1315</li>
+                    <li class="expertsmet-services-item">Согласование сметной документации с заказчиком</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Основная секция с большими карточками -->
+    <div class="expertsmet-featured-section">
+        <!-- Карточка 1 -->
+        <div class="expertsmet-featured-card">
+            <img src="{% static 'main/img/info_2.webp' %}" alt="Областной онкологический центр" class="expertsmet-featured-image">
+            <div class="expertsmet-featured-content">
+                <div class="expertsmet-project-date">Июль 2023</div>
+                <h3 class="expertsmet-project-title">Областной онкологический центр. Калининградская область</h3>
+                <p class="expertsmet-project-description">
+                    <strong>Что сделано:</strong> Разработаны сопоставительные ведомости объемов работ, сметная документация, ведомости объемов работ, конъюнктурный анализ. Проведен анализ соответствия объемов работ в сметах с проектной и рабочей документацией. Получено положительное заключение экспертизы.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Карточка 2 -->
+        <div class="expertsmet-featured-card">
+            <img src="{% static 'main/img/info_1.webp' %}" alt="Храмовый комплекс Скоропослушница" class="expertsmet-featured-image">
+            <div class="expertsmet-featured-content">
+                <div class="expertsmet-project-date">Сентябрь 2022</div>
+                <h3 class="expertsmet-project-title">Храмовый комплекс во имя иконы Божией Матери Скоропослушница в г. Зеленограде</h3>
+                <p class="expertsmet-project-description">
+                    <strong>Что сделано:</strong> Разработана сметная документация в ТСН г. Москвы в ПК "ГРАНДсмета" в соответствии с Рабочей документацией. Комплект сметной документации согласован с Московским Патриархатом. Проект успешно реализован в соответствии с утвержденной сметой.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Сетка проектов -->
+    <div class="expertsmet-projects-grid">
+        <!-- Проект 1 -->
+        <div class="expertsmet-project-card">
+            <img src="{% static 'main/img/info_5.webp' %}" alt="Зачатьевский монастырь" class="expertsmet-project-image">
+            <div class="expertsmet-project-content">
+                <div class="expertsmet-project-date">Июнь 2022</div>
+                <h3 class="expertsmet-project-title">Ансамбль Зачатьевского монастыря, XVII в., XIX вв.</h3>
+                <p class="expertsmet-project-desc">Разработаны ЛСР на реставрационные работы. Документация согласована с РПЦ.</p>
+            </div>
+        </div>
+        
+        <!-- Проект 2 -->
+        <div class="expertsmet-project-card">
+            <img src="{% static 'main/img/info_main.webp' %}" alt="Гостиничный комплекс в Анапе" class="expertsmet-project-image">
+            <div class="expertsmet-project-content">
+                <div class="expertsmet-project-date">Март 2023</div>
+                <h3 class="expertsmet-project-title">Строительство гостиничного комплекса в Анапе</h3>
+                <p class="expertsmet-project-desc">Разработан комплект документации на основании проектной документации и объекта-аналога.</p>
+            </div>
+        </div>
+        
+        <!-- Проект 3 -->
+        <div class="expertsmet-project-card">
+            <img src="{% static 'main/img/info_3.webp' %}" alt="Капитальный ремонт административного здания" class="expertsmet-project-image">
+            <div class="expertsmet-project-content">
+                <div class="expertsmet-project-date">Октябрь 2022</div>
+                <h3 class="expertsmet-project-title">Капитальный ремонт холла 1 этажа, лифтового холла 2 этажа здания</h3>
+                <p class="expertsmet-project-desc">Разработан комплект документации по Постановлению №1315. Увеличена цена контракта.</p>
+            </div>
+        </div>
+        
+        <!-- Проект 4 -->
+        <div class="expertsmet-project-card">
+            <img src="{% static 'main/img/project_5.webp' %}" alt="Комплекс многоквартирных домов" class="expertsmet-project-image">
+            <div class="expertsmet-project-content">
+                <div class="expertsmet-project-date">Ноябрь 2023</div>
+                <h3 class="expertsmet-project-title">Комплекс многоквартирных домов в жилом районе Приморский города Вилючинска</h3>
+                <p class="expertsmet-project-desc">Разработан комплект документации по Постановлению №1315. Положительное заключение экспертизы.</p>
+            </div>
+        </div>
+        
+        <!-- Проект 5 -->
+        <div class="expertsmet-project-card">
+            <img src="{% static 'main/img/project_6.webp' %}" alt="Строительство участка автомобильной дороги" class="expertsmet-project-image">
+            <div class="expertsmet-project-content">
+                <div class="expertsmet-project-date">Май 2023</div>
+                <h3 class="expertsmet-project-title">Строительство участка автомобильной дороги "Мины-Новинка до дер. Клетно"</h3>
+                <p class="expertsmet-project-desc">Разработан комплект документации по Постановлению №1315. Увеличена цена госконтракта.</p>
+            </div>
+        </div>
+        
+        <!-- Проект 6 -->
+        <div class="expertsmet-project-card">
+            <img src="{% static 'main/img/articles_1.webp' %}" alt="Модернизация земной станции управления" class="expertsmet-project-image">
+            <div class="expertsmet-project-content">
+                <div class="expertsmet-project-date">Апрель 2022</div>
+                <h3 class="expertsmet-project-title">Модернизация земной станции управления ТМИ ГПКС-ЗР для КА «Экспресс-АМУ4»</h3>
+                <p class="expertsmet-project-desc">Разработан комплект сметной документации, ведомости объемов работ, расчет командировок.</p>
+            </div>
+        </div>
+        
+        <!-- Проект 7 -->
+        <div class="expertsmet-project-card">
+            <img src="{% static 'main/img/project_10.webp' %}" alt="Гостиничный комплекс" class="expertsmet-project-image">
+            <div class="expertsmet-project-content">
+                <div class="expertsmet-project-date">Февраль 2024</div>
+                <h3 class="expertsmet-project-title">Строительство гостиничного комплекса на основании проектной документации</h3>
+                <p class="expertsmet-project-desc">Разработка полного комплекта сметной документации, получение положительного заключения экспертизы.</p>
+            </div>
+        </div>
+        
+        <!-- Проект 8 -->
+        <div class="expertsmet-project-card">
+            <img src="{% static 'main/img/hero_4.webp' %}" alt="Документация по Постановлению №1315" class="expertsmet-project-image">
+            <div class="expertsmet-project-content">
+                <div class="expertsmet-project-date">Январь 2024</div>
+                <h3 class="expertsmet-project-title">Разработка комплекта документации по Постановлению №1315</h3>
+                <p class="expertsmet-project-desc">Подготовка полного пакета документов для увеличения цены государственного контракта.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Секция с баннером -->
+    <div class="expertsmet-banner-section">
+        <div class="expertsmet-banner">
+            <h3 class="expertsmet-banner-title">С нами вы получаете гарантированный результат</h3>
+            <ul class="expertsmet-banner-list">
+                <li class="expertsmet-banner-item">Положительное заключение экспертизы сметной документации</li>
+                <li class="expertsmet-banner-item">Согласование сметной документации у вашего заказчика</li>
+                <li class="expertsmet-banner-item">Возможность выйти на стройку с нашими сметами</li>
+                <li class="expertsmet-banner-item">Решение любых вопросов, возникших в ходе реализации проекта</li>
+                <li class="expertsmet-banner-item">Увеличение цены государственного контракта по Постановлению №1315</li>
+            </ul>
+            <a href="#" class="expertsmet-banner-button">Обсудить ваш проект</a>
+        </div>
+        <img src="{% static 'main/img/map.png' %}" alt="EXPERTSMET" class="expertsmet-banner-image">
+    </div>
+</div>

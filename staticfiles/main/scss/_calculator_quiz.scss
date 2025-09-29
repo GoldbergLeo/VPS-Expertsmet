@@ -1,0 +1,630 @@
+
+
+
+
+
+#quizContainer {
+    display: block; /* Изначально скрываем квиз */
+    overflow: hidden;
+    background-color: inherit; /* Полупрозрачный фон */
+    z-index: 9999; /* Убедитесь, что z-index выше, чем у других элементов */
+    justify-content: center; /* Центрирование содержимого по горизонтали */
+    align-items: center; /* Центрирование содержимого по вертикали */
+    transition: opacity 0.4s ease-in-out;
+}
+
+.quiz {
+    height: 80vh;
+    background-color: inherit; /* Полупрозрачный фон */
+    color: #FFFF;
+    overflow-y: auto; /* Добавляем прокрутку, если содержимое не помещается */
+}
+
+.question__input.selected {
+    background-color: #f09e22; /* Цвет выделения выбранного элемента */
+    color: #ffffff; /* Цвет текста выбранного элемента */
+    border-color: #f09e22; /* Цвет границы выбранного элемента */
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.quiz__close-button {
+    position: absolute;
+    top: 6vh; /* Расстояние от верхнего края контейнера квиза */
+    right: 10vh; /* Расстояние от правого края контейнера квиза */
+    background-color: transparent; /* Прозрачный фон */
+    color: rgba(255, 255, 255, 0.5);
+    border: none; /* Убрать рамку */
+    font-size: 44px; /* Размер иконки закрытия */
+    cursor: pointer; /* Курсор в виде указателя */
+    transition: all ease-in-out 0.3s;
+}
+
+.quiz__close-button:hover {
+    color: #f09e22; /* Цвет при наведении (красный) */
+}
+
+
+
+
+
+.welcome-block {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    background-image: url(../img/welcome.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.welcome__main {
+    height: 100%;
+    padding-top: 60px;
+    padding-left: 70px;
+    margin-left: 40vw;
+    padding-right: 80px;
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);;
+}
+.welcome__main-logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 50px;
+}
+.welcome__main-title {
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 110%;
+    padding: 0;
+    margin: 0;
+}
+.welcome__main-discr {
+    font-size: 20px;
+    line-height: 110%;
+    text-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+
+.welcome__main-button {
+    width: 245px;
+    height: 60px;
+    background-color: #FFAC30;
+    box-shadow: 0 4px 13.7px rgba(255, 187, 12, 0.25);
+    border-radius: 35px;
+    border: none;
+    color: #FFFF;
+    font-size: 16px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome__main-button::before {
+    content: '';
+    position: absolute;
+    top: -100%; /* Увеличиваем начальную точку для лучшего эффекта */
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(40deg, transparent 45%, rgba(255, 255, 255, 0.4) 50%, transparent 45%);
+    animation: question 2s infinite linear;
+}
+
+@keyframes question {
+    100% {
+        transform: translateX(200%); /* Перемещаем градиент под углом 45 градусов */
+    }
+}
+
+
+.welcome__main-button:hover {
+    background-color: #f09e22;
+}
+
+
+
+
+
+
+
+.welcome__main-contact {
+    display: flex;
+    flex-direction: column;
+}
+.welcome__main-tel {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: all ease-in-out 0.3s;
+}
+
+.welcome__main-tel:hover {
+    color: #FFFF;
+}
+
+
+fieldset {
+    margin-bottom: 20px;
+}
+
+
+#result {
+    margin-top: 20px;
+}
+
+.question {
+    position: relative;
+    display: none;
+    transition: all ease-in-out 0.3s;
+}
+
+.question__container {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+}
+
+
+.question__block {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    height: 400px;
+}
+
+.question.active {
+    display: block;
+}
+
+.question__input {
+    width: auto;
+    font-size: 18px;
+    font-weight: 200;
+    padding: 15px 460px 15px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all ease-in-out 0.5s;
+    text-wrap: nowrap;
+    cursor: pointer;
+}
+
+
+
+/* Стили для кастомного чекбокса */
+.question__input input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-right: 10px;
+    width: 15px; /* Начальный размер */
+    height: 15px; /* Начальный размер */
+    border: 0.5px solid rgba(255, 255, 255, 0.13); /* Граница неактивного чекбокса */
+    border-radius: 50%; /* Делаем круглым */
+    outline: none; /* Убираем контур на фокусе */
+    cursor: pointer;
+   background-color: rgba(255, 255, 255, 0.13);
+    transition: all ease-in-out 0.3s /* Плавное увеличение и изменение цвета */
+}
+
+/* Стили для активного состояния чекбокса */
+.question__input input[type="radio"]:checked {
+    background-color: #f09e22; /* Меняем цвет на жёлтый */
+    box-shadow: 0 4px 13.7px rgba(255, 187, 12, 0.25);
+}
+
+
+
+
+
+
+
+
+
+.question__title {
+    font-size: 24px;
+    margin-bottom: 35px;
+}
+
+
+.question__container-lower {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 5vw 40px 5vw;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.question__button-block {
+    display: flex;
+    gap: 30px;
+}
+
+
+
+.question__button {
+    position: relative;
+    border-radius: 35px;
+    color: #FFFF;
+    background-color: #FFAC30;
+    transition: all ease-in-out 0.3s;
+    box-shadow: 0 4px 13.7px rgba(255, 187, 12, 0.25);
+    padding: 10px 60px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.question__button::before {
+    content: '';
+    position: absolute;
+    top: -100%; /* Увеличиваем начальную точку для лучшего эффекта */
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(40deg, transparent 45%, rgba(255, 255, 255, 0.4) 50%, transparent 45%);
+    animation: question 2s infinite linear;
+}
+
+
+
+
+.question__button:hover {
+    background: linear-gradient(90deg, #f09e22 0%, #e7bb1e 100%);
+}
+
+.question__button-back {
+    width: 50px; /* Установите желаемый размер */
+    height: 50px; /* Установите желаемый размер, равный ширине для создания круга */
+    border-radius: 50%; /* Делает кнопку круглой */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Убирает стандартную рамку кнопки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    padding: 0; /* Убрать стандартный padding кнопки, если он есть */
+    cursor: pointer; /* Изменяет курсор на указатель */
+    outline: none; /* Убирает стандартный контур при фокусе для некоторых браузеров */
+    transition: all ease-in-out 0.3s;
+}
+
+.question__button-back:hover {
+    fill: white;
+    box-shadow: 0 1px 6.7px rgba(255, 255, 255, 0.25);
+}
+
+
+
+
+.question__button-back svg {
+    fill: white; /* Цвет иконки */
+}
+
+
+
+.progress-container {
+    width: 50%;
+}
+
+.progress-label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.progress-bar-background {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 3px 6.7px rgba(255, 199, 0, 0.25);
+}
+
+.progress-bar {
+    height: 5px;
+    background: linear-gradient(90deg, #f09e22 0%, #e7bb1e 100%);
+    border-radius: 8px;
+    transition: width 0.3s ease-in-out;
+    box-shadow: 0 7px 6.7px rgba(255, 199, 0, 0.25);
+}
+
+
+.questions__contact-container {
+    max-width: 50vw;
+    margin: 0 auto;
+    text-align: center;
+}
+.questions__contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.questions__contact-title {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 45px;
+}
+
+.questions__contact-discr {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+
+.questions__contact-form input{
+    color: #FFFF;
+    padding: 0 25px;
+    font-weight: 300;
+    outline: none;
+    height: 45px;
+    margin-bottom: 40px;
+    background-color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all ease-in-out 0.4s;
+}
+
+
+.questions__contact-form input:hover {
+    background-color: rgb(45, 50, 52);
+    border: 1px solid rgba(255, 255, 255);
+}
+
+.questions__contact-tel {
+    margin-bottom: 80px;
+}
+
+
+
+
+
+
+
+.questions__contact-button {
+    height: 60px;
+    background-color: #FFAC30;
+    box-shadow: 0 4px 13.7px rgba(255, 187, 12, 0.25);
+    border-radius: 35px;
+    border: none;
+    color: #FFFF;
+    font-size: 16px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.questions__contact-button::before {
+    content: '';
+    position: absolute;
+    top: -100%; /* Увеличиваем начальную точку для лучшего эффекта */
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(40deg, transparent 45%, rgba(255, 255, 255, 0.4) 50%, transparent 45%);
+    animation: question 4.5s infinite linear;
+}
+
+
+
+.questions__contact-button:hover {
+    background-color: #f09e22;
+}
+
+.questions__contact-social {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+
+
+.questions__contact-wa {
+    color: inherit;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+}
+
+.questions__contact-tg {
+    color: inherit;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+}
+
+.questions__contact-tg:hover {
+    color:#f9d298;
+}
+
+.questions__contact-wa:hover {
+    color:#f9d298;
+}
+
+
+
+
+/* Медиа-запросы для адаптации под мобильные устройства */
+@media (max-width: 768px) {
+    #quizContainer {
+        padding-top: 20px; /* Добавляем отступ сверху */
+    }
+
+    .quiz {
+        margin: 5vh 5vw; /* Уменьшаем маржин */
+        height: auto; /* Делаем высоту автоматической */
+        max-height: 80vh; /* Ограничиваем максимальную высоту */
+        overflow-y: auto; /* Поддерживаем прокрутку, если содержимое не помещается */
+    }
+
+    .quiz__close-button {
+        top: 4vh; /* Уменьшаем отступ сверху */
+        right: 4vh; /* Уменьшаем отступ справа */
+        font-size: 36px; /* Уменьшаем размер иконки закрытия */
+    }
+
+    .welcome__main {
+        margin-left: 10vw; /* Уменьшаем левый маржин */
+        padding-right: 30px; /* Уменьшаем правый паддинг */
+        max-width: 80%; /* Увеличиваем максимальную ширину для более лучшего использования пространства */
+    }
+
+    .welcome__main-title {
+        font-size: 24px; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    .welcome__main-discr {
+        font-size: 16px; /* Уменьшаем размер шрифта описания */
+    }
+
+    .welcome__main-button {
+        width: 200px; /* Уменьшаем ширину кнопки */
+        height: 50px; /* Уменьшаем высоту кнопки */
+    }
+
+    .question__input {
+        padding: 15px 15px 15px 10px; /* Уменьшаем паддинг справа */
+    }
+
+    .question__button {
+        padding: 10px 30px; /* Уменьшаем паддинг кнопки */
+    }
+
+    .question__button-back {
+        width: 40px; /* Уменьшаем размер кнопки назад */
+        height: 40px; /* Уменьшаем высоту кнопки назад */
+    }
+
+    .question__container-lower {
+        padding: 30px 5vw; /* Уменьшаем паддинг снизу */
+    }
+
+    .questions__contact-form {
+        padding: 40px; /* Уменьшаем паддинг формы */
+    }
+
+    .email__modal-social {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+        font-size: 1.2em;
+    }
+    
+}
+
+@media (max-width: 640px) {
+    #quizContainer {
+        padding-top: 10px; /* Еще меньше отступа сверху */
+    }
+
+    .quiz {
+        margin: 2vh 2vw; /* Сокращаем отступы вокруг квиза */
+        height: 95vh; /* Уменьшаем максимально возможную высоту */
+    }
+
+    .question__container {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+    flex-direction: column;
+    height: auto;
+    }
+
+    .question__block {
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .quiz__close-button {
+        top: 2vh; /* Еще меньше отступа сверху */
+        right: 2vh; /* Еще меньше отступа справа */
+        font-size: 30px; /* Дальнейшее уменьшение размера иконки закрытия */
+    }
+
+    .welcome__main {
+        margin-left: 5vw; /* Уменьшаем левый маржин */
+        margin-right: 5wv;
+        padding-right: 5vw; /* Уменьшаем правый паддинг */
+        padding-left: 5vw;
+        width: 95vw; /* Увеличиваем максимальную ширину для лучшего использования пространства */
+        border-left: none;
+    }
+
+    .question__input {
+        font-size: 14px;
+    }
+    .welcome__main-logo {
+        width: 120px; /* Уменьшаем размер лого */
+    }
+
+    .welcome__main-title {
+        font-size: 20px; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    .welcome__main-discr {
+        font-size: 14px; /* Уменьшаем размер шрифта описания */
+    }
+
+    .welcome__main-button {
+        width: 180px; /* Уменьшаем ширину кнопки */
+        height: 45px; /* Уменьшаем высоту кнопки */
+        font-size: 14px; /* Уменьшаем размер шрифта кнопки */
+    }
+
+    .question__input {
+        padding: 12px 12px 12px 10px; /* Уменьшаем паддинги */
+    }
+
+    .question__button {
+        padding: 8px 20px; /* Уменьшаем размер кнопок */
+        font-size: 14px; /* Уменьшаем размер текста в кнопках */
+    }
+
+    .question__button-back {
+        width: 35px; /* Уменьшаем размер кнопки назад */
+        height: 35px; /* Уменьшаем высоту кнопки назад */
+    }
+
+    .question__container-lower {
+        padding: 20px 3vw; /* Уменьшаем паддинг снизу и по бокам */
+    }
+
+    .questions__contact-form {
+        padding: 20px; /* Уменьшаем паддинг формы */
+    }
+
+    .questions__contact-button {
+        height: 50px; /* Уменьшаем высоту кнопки */
+        font-size: 14px; /* Уменьшаем размер шрифта кнопки */
+    }
+
+    .progress-container {
+        width: 30%;
+    }
+
+    .questions__contact-container {
+        max-width: 80vw;
+    }
+}
+
+
+
+
+
+

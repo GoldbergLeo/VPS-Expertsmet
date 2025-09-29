@@ -1,0 +1,80 @@
+# =============================
+# .htaccess — Django (Timeweb)
+# =============================
+
+# Разрешаем доступ к каталогу (фикс AH01630)
+Require all granted
+
+# Полностью выключаем PHP
+<FilesMatch "\.ph(p[0-9]?|t|tml)$">
+    SetHandler none
+    Require all denied
+</FilesMatch>
+
+# Разрешаем исполнение WSGI-скриптов
+Options +ExecCGI
+AddHandler wsgi-script .py
+
+# Включаем mod_rewrite
+RewriteEngine On
+RewriteBase /
+
+# --- Канонизация домена (один внешний редирект, без HTTPS-принуждения) ---
+# www -> apex (оставляем схему как есть, чтобы не словить петлю за прокси)
+RewriteCond %{HTTP_HOST} ^www\.expertsmet\.ru$ [NC]
+RewriteRule ^ %{REQUEST_SCHEME}://expertsmet.ru%{REQUEST_URI} [R=301,L]
+
+# --- Ранний отсев мусорных путей (WP и архивы/бэкапы) ---
+RewriteRule ^(wp-login\.php|xmlrpc\.php|wp-admin|wp-content|wp-includes) - [F,L,NC]
+RewriteRule \.(zip|tar|gz|tgz|7z|rar|sql|bak|backup)$ - [F,L,NC]
+
+# --- Короткое замыкание для существующих файлов (статика/медиа/сгенерённые файлы) ---
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# --- Легаси и мелкие фиксы (до проброса в WSGI) ---
+# .html статьи -> каноничный URL со слэшем
+RewriteRule ^articles/(.+)\.html$ /articles/$1/ [R=301,L]
+
+# Плейсхолдер вместо мёртвого API
+RewriteRule ^api/placeholder/400/320$ /static/img/placeholder/400x320.webp [L]
+
+# Favicon по корню
+RewriteRule ^favicon\.ico$ /static/main/favicon.ico [L]
+
+# --- Проброс в Django через wsgi.py (без внешних редиректов) ---
+# Корень сайта -> wsgi.py/
+RewriteCond %{REQUEST_URI} !^/wsgi\.py/?$
+RewriteRule ^$ /wsgi.py/ [QSA,PT,L]
+
+# Остальные пути -> wsgi.py/<path>
+RewriteCond %{REQUEST_URI} !^/wsgi\.py/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /wsgi.py/$1 [QSA,PT,L]
+
+# --- Исполнение ТОЛЬКО для wsgi.py ---
+<Files "wsgi.py">
+    Require all granted
+    SetHandler wsgi-script
+</Files>
+
+# --- Прячем потенциально чувствительные файлы ---
+<FilesMatch "^(\.env|\.git|\.hg|\.svn|composer\.(json|lock)|package(-lock)?\.json)$">
+    Require all denied
+</FilesMatch>
+
+
+<RequireAll>
+  Require all granted
+  Require not ip 16.62.61.143
+  Require not ip 100.64.15.0
+  Require not ip 40.122.164.151
+  Require not ip 135.225.85.23
+  Require not ip 74.241.245.97
+  Require not ip 51.57.79.77
+  Require not ip 185.93.89.60
+  Require not ip 172.190.142.176
+  Require not ip 85.174.94.240
+  Require not ip 90.154.76.205
+</RequireAll>
+

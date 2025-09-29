@@ -1,0 +1,250 @@
+/* ===== ИСПРАВЛЕНИЯ ДЛЯ HEADER В ГОРОДАХ ===== */
+
+/* CSS переменные для корректной работы стилей */
+:root {
+  --font-family: 'Manrope', sans-serif;
+  --content-width: 1920px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --light-color: #1E1E1E;
+  --primary: #972635;
+  --primary-light: #f8e9ec;
+  --secondary: #264773;
+  --secondary-light: #e9eef7;
+  --black: #1A1C1F;
+  --dark-grey: #455062;
+  --grey: #596780;
+  --light-grey: #F5F7FA;
+  --white: #FFFFFF;
+  --border: #E7EBEF;
+  --gold: #FFAC30;
+}
+
+/* Дополнительные стили для header в городах */
+.city-header-fix .header {
+  height: auto !important;
+  min-height: 108px !important;
+}
+
+.city-header-fix .header__upper {
+  min-height: 60px !important;
+}
+
+.city-header-fix .header__lower {
+  min-height: 48px !important;
+}
+
+/* Принудительно применяем стили скрытия header в городах */
+.city-header-fix .header--menu-hidden .header__lower {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.city-header-fix .header--menu-hidden {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1) !important;
+  height: 60px !important;
+}
+
+.city-header-fix .header:hover .header__lower {
+  max-height: 50px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin: 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Исправляем отступы для hero секции в городах */
+.city-header-fix .hero {
+  margin-top: 108px !important;
+  min-height: calc(100vh - 108px) !important;
+}
+
+/* Исправляем проблему с slide__title - расширяем ширину текста */
+.city-header-fix .slide__title,
+.city-header-fix .city-slide-title {
+  max-width: 50vw !important; /* Расширяем до 50vw на больших экранах */
+  padding-right: 20px !important;
+  word-wrap: normal !important; /* Убираем перенос через дефис */
+  overflow-wrap: normal !important; /* Убираем перенос через дефис */
+  hyphens: none !important; /* Полностью отключаем перенос через дефис */
+  word-break: keep-all !important; /* Сохраняем целостность слов */
+  line-height: 1.2 !important;
+  margin-bottom: 30px !important;
+  white-space: normal !important;
+  font-size: clamp(32px, 6vw, 48px) !important;
+  font-weight: 800 !important;
+  color: var(--white) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Стили для выделения города в заголовке */
+.city-header-fix .city-highlight {
+  color: var(--gold) !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  display: inline-block !important;
+  margin-top: 8px !important;
+  font-size: 1.1em !important;
+  background: linear-gradient(135deg, var(--gold) 0%, #ffc107 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Улучшаем отображение заголовков с переносами строк */
+.city-header-fix .slide__title br,
+.city-header-fix .city-slide-title br {
+  display: block !important;
+  content: "" !important;
+  margin-bottom: 8px !important;
+}
+
+/* Стили для слайдера в городах */
+.city-header-fix .slideshow__slide-caption {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.city-header-fix .slideshow__slide-caption-text {
+  padding-top: 15vh !important;
+}
+
+.city-header-fix .hero__content {
+  max-width: 650px !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Дополнительные исправления для планшетов */
+@media (max-width: 1024px) {
+  .city-header-fix .slide__title,
+  .city-header-fix .city-slide-title {
+    max-width: 50vw !important; /* Расширяем до 50vw на планшетах */
+    padding-right: 15px !important;
+    font-size: clamp(28px, 5vw, 40px) !important;
+    hyphens: none !important; /* Отключаем перенос через дефис */
+    word-break: keep-all !important; /* Сохраняем целостность слов */
+  }
+  
+  .city-header-fix .hero__form-container {
+    right: 40px !important;
+    width: 360px !important;
+  }
+  
+  .city-header-fix .city-highlight {
+    font-size: 1em !important;
+    margin-top: 6px !important;
+  }
+}
+
+/* Дополнительные исправления для мобильных устройств */
+@media (max-width: 768px) {
+  .city-header-fix .slide__title,
+  .city-header-fix .city-slide-title {
+    max-width: 80vw !important; /* Расширяем до 80vw на мобильных */
+    padding-right: 0 !important;
+    padding-left: 20px !important;
+    font-size: clamp(28px, 8vw, 42px) !important;
+    hyphens: none !important; /* Отключаем перенос через дефис */
+    word-break: keep-all !important; /* Сохраняем целостность слов */
+  }
+  
+  .city-header-fix .hero__form-container {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    padding: 0 20px !important;
+  }
+  
+  .city-header-fix .hero__inner {
+    padding: 0 20px !important;
+  }
+  
+  .city-header-fix .hero__content {
+    max-width: 100% !important;
+  }
+  
+  .city-header-fix .city-highlight {
+    font-size: 0.9em !important;
+    margin-top: 4px !important;
+  }
+  
+  .city-header-fix .slideshow__slide-caption-text {
+    padding-top: 10vh !important;
+  }
+}
+
+/* Дополнительные исправления для очень маленьких экранов */
+@media (max-width: 480px) {
+  .city-header-fix .slide__title,
+  .city-header-fix .city-slide-title {
+    max-width: 80vw !important; /* Расширяем до 80vw на маленьких экранах */
+    font-size: clamp(24px, 9vw, 32px) !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    hyphens: none !important; /* Отключаем перенос через дефис */
+    word-break: keep-all !important; /* Сохраняем целостность слов */
+  }
+  
+  .city-header-fix .hero__form-container {
+    padding: 0 16px !important;
+  }
+  
+  .city-header-fix .hero__inner {
+    padding: 0 16px !important;
+  }
+  
+  .city-header-fix .city-highlight {
+    font-size: 0.85em !important;
+    margin-top: 3px !important;
+  }
+  
+  .city-header-fix .slideshow__slide-caption-text {
+    padding-top: 8vh !important;
+  }
+}
+
+/* Дополнительные стили для слайдера в городах */
+.city-header-fix .slideshow__slide-caption {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.city-header-fix .slideshow__slide-caption-text {
+  padding-top: 15vh !important;
+}
+
+.city-header-fix .hero__content {
+  max-width: 650px !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Стили для hero секции в городах */
+.city-header-fix .hero {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.city-header-fix .hero__inner {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.city-header-fix .hero__form-container {
+  position: absolute !important;
+  right: 80px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 400px !important;
+  z-index: 100 !important;
+}

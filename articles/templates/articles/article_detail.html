@@ -1,0 +1,156 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load markdown_extras %}
+
+{% block title %}{{ article.meta_title|default:article.title }}{% endblock %}
+{% block meta_description %}{{ article.meta_description|default:article.discr }}{% endblock %}
+
+{% block extra_head %}
+
+<!-- Hreflang для региональных версий -->
+<link rel="alternate" hreflang="ru-RU" href="https://expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="x-default" href="https://expertsmet.ru{{ article.get_absolute_url }}">
+
+<!-- Региональные версии -->
+<link rel="alternate" hreflang="ru-MOW" href="https://moscow.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-SPE" href="https://spb.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-SAM" href="https://samara.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-EKT" href="https://ekaterinburg.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-NVS" href="https://novosibirsk.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-NIZ" href="https://nizhny-novgorod.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-KZN" href="https://kazan.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-CHE" href="https://chelyabinsk.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-KRD" href="https://krasnodar.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-KYA" href="https://krasnoyarsk.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-PER" href="https://perm.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-ROS" href="https://rostov.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-TYU" href="https://tyumen.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-UFA" href="https://ufa.expertsmet.ru{{ article.get_absolute_url }}">
+<link rel="alternate" hreflang="ru-VGG" href="https://volgograd.expertsmet.ru{{ article.get_absolute_url }}">
+
+<!-- Open Graph теги -->
+<meta property="og:title" content="{{ article.title }}">
+<meta property="og:description" content="{{ article.discr }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ canonical_url|default:request.build_absolute_uri }}">
+{% with raw_image=article.safe_image_url|default:random_image_url|default:article.placeholder_image_url %}
+    {% if raw_image %}
+        {% if raw_image|slice:"0:4" == 'http' %}
+            <meta property="og:image" content="{{ raw_image }}">
+        {% else %}
+            <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ raw_image }}">
+        {% endif %}
+    {% endif %}
+{% endwith %}
+
+<!-- Twitter Card теги -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ article.title }}">
+<meta name="twitter:description" content="{{ article.discr }}">
+{% with raw_image=article.safe_image_url|default:random_image_url|default:article.placeholder_image_url %}
+    {% if raw_image %}
+        {% if raw_image|slice:"0:4" == 'http' %}
+            <meta name="twitter:image" content="{{ raw_image }}">
+        {% else %}
+            <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ raw_image }}">
+        {% endif %}
+    {% endif %}
+{% endwith %}
+{% endblock extra_head %}
+
+{% block content %}
+<div class="site-container">
+  <div id="wrapper">
+    <main>
+      <article class="article wrapper flex">
+        <div class="article__main">
+            <nav class="breadcrumb">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a href="{% url 'index' %}" title="Главная">Главная</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                        <a href="{% url 'articles_list' %}" title="Статьи">Статьи</a>
+                    </li>
+                    <li class="breadcrumb__item active" aria-current="page">
+                        {{ article.title }}
+                    </li>
+                </ol>
+            </nav>
+        
+            {% if article.safe_image_url %}
+                <img src="{{ article.safe_image_url }}" alt="{{ article.title }}" class="article__img">
+            {% elif random_image_url %}
+                <img src="{{ random_image_url }}" alt="{{ article.title }}" class="article__img">
+            {% else %}
+                <img src="{{ article.placeholder_image_url }}" alt="{{ article.title }}" class="article__img">
+            {% endif %}
+            
+            <span class="article__data">{{ article.data|date:"d.m.Y" }}</span>
+            <div class="article__main-block">
+                <h1>{{ article.title }}</h1>
+                {{ article.full_text|markdown_format }}
+            </div>
+            {# Дополнительные блоки (например, форма подписки) можно разместить здесь #}
+        </div>
+        {% include 'main/partials/aside.html' %}
+      </article>
+      {% include 'main/partials/popup_tg.html' %}
+      <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "{{ article.title }}",
+          "description": "{{ article.discr }}",
+          {% with raw_image=article.safe_image_url|default:random_image_url|default:article.placeholder_image_url %}
+          "image": "{% if raw_image %}{% if raw_image|slice:"0:4" == 'http' %}{{ raw_image }}{% else %}{{ request.scheme }}://{{ request.get_host }}{{ raw_image }}{% endif %}{% endif %}",
+          {% endwith %}
+          "author": {
+              "@type": "Organization",
+              "name": "EXPERTsmet"
+          },
+          "publisher": {
+              "@type": "Organization",
+              "name": "EXPERTsmet",
+              "url": "https://expertsmet.ru"
+          },
+          "datePublished": "{{ article.data|date:'Y-m-d' }}",
+          "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "{{ canonical_url|default:request.build_absolute_uri }}"
+          }
+      }
+      </script>
+      
+      <!-- Breadcrumb schema отдельно -->
+      <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Главная",
+                  "item": "https://expertsmet.ru{% url 'index' %}"
+              },
+              {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Статьи",
+                  "item": "https://expertsmet.ru{% url 'articles_list' %}"
+              },
+              {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "{{ article.title }}",
+                  "item": "{{ canonical_url|default:request.build_absolute_uri }}"
+              }
+          ]
+      }
+      </script>
+    </main>
+  </div>
+  <div class="fade-screen" id="fadeScreen"></div>
+</div>
+{% endblock content %}

@@ -1,0 +1,532 @@
+
+{% extends 'main/city_base.html' %}
+{% load static %}
+
+{% block title %}Услуги по разработке сметной документации в Челябинске | EXPERTsmet{% endblock %}
+
+{% block meta_description %}Составление смет и ВОР в Челябинск, проверка и прохождение экспертизы. Калькулятор стоимости, сметный аутсорс. Выполним смету на строительство и ремонт — быстро и по нормам. Работаем по всему Челябинск и области.{% endblock %}
+
+{% block meta_keywords %}разработка сметной документации Челябинск, составление сметы Челябинск, экспертиза сметной документации Челябинск, стоимость сметы Челябинск, проверка сметной документации Челябинск, смета на строительство Челябинск, смета на ремонт Челябинск, подготовка сметной документации Челябинск, услуги сметчика Челябинск, проектно-сметная документация Челябинск, сметный аутсорс Челябинск, калькулятор стоимости сметы Челябинск, стоимость сметной документации Челябинск, услуги по проверке смет Челябинск, разработка сметы Челябинск, составление смет Челябинск, стоимость разработки сметы Челябинск, ведомость объёмов работ Челябинск, конъюнктурный анализ Челябинск, сметные расчёты Челябинск, услуги сметных работ Челябинск, заказать смету Челябинск, стоимость экспертизы сметной документации Челябинск{% endblock %}
+
+{% block city_content %}
+ 
+        <!-- Icon sprite -->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+            <symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol>
+            <symbol id="ic-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 19c0-3.3 3.1-5 6-5s6 1.7 6 5"/><path d="M14 19c0-2 2.2-3.5 4.5-3.5 2.1 0 3.5.9 3.5 3.5"/></symbol>
+            <symbol id="ic-doc-check" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M8 15l2.8 2.8L18 10"/></symbol>
+            <symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3.5 3 14.5 0 18"/><path d="M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+            <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/><path d="M8.5 12.5l2.5 2.5 4.5-4.5"/></symbol>
+            <symbol id="ic-bank" viewBox="0 0 24 24"><path d="M3 9h18"/><path d="M4 9l8-5 8 5"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8"/><path d="M3 18h18"/></symbol>
+            <symbol id="ic-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 11h2M12 11h2M16 11h0"/><path d="M8 15h2M12 15h2M16 15h0"/></symbol>
+          </svg>
+      <!-- ===== 1. Первый блок после Hero ===== -->
+      <section id="leadpack" class="exs-section" aria-labelledby="lead-h1">
+        <div class="exs-wrap exs-leadpack">
+          <div class="exs-leadpack__text">
+            <span class="exs-eyebrow">Сметы для Челябинска и области</span>
+            <h1 id="lead-h1">Получите точную смету по госнормативам для Челябинска с гарантией прохождения региональной госэкспертизы</h1>
+            <p class="exs-lead">10+ лет опыта • 500+ смет • Челябинск и Южный Урал</p>
+  
+            <div class="exs-leadpack__benefits" role="list" aria-label="Ключевые выгоды">
+              <div role="listitem" class="exs-kpi"><span aria-hidden="true" class="exs-check">✓</span><div><strong>99%</strong> смет принимаются с первого раза</div></div>
+              <div role="listitem" class="exs-kpi"><span aria-hidden="true" class="exs-check">✓</span><div>Экономия до <strong>15%</strong> бюджета за счёт корректной методики</div></div>
+              <div role="listitem" class="exs-kpi"><span aria-hidden="true" class="exs-check">✓</span><div>Полный комплект для госэкспертизы и банка: от ВОР до КС-2/КС-3</div></div>
+              <div role="listitem" class="exs-kpi"><span aria-hidden="true" class="exs-check">✓</span><div>Сопровождение до утверждения по объектам Челябинской области</div></div>
+            </div>
+  
+            <div class="exs-badge">Документы и допуски</div>
+            <div class="exs-badge" style="margin-left:8px;">Работаем по договору</div>
+          </div>
+  
+          <aside class="exs-leadpack__panel" aria-labelledby="lead-form-title">
+            <h2 id="lead-form-title">Узнайте стоимость сметы для проекта в Челябинске за 30 минут</h2>
+            <form id="lead-form" class="exs-grid" action="#" method="post" novalidate data-analytics="lead-form" aria-describedby="lead-form-hint">
+              <p id="lead-form-hint" class="exs-hint">Заполните 2 поля — мы перезвоним в рабочее время.</p>
+              <div class="exs-form-group">
+                <label class="exs-label" for="type">Тип объекта</label>
+                <select class="exs-select" id="type" name="type" required aria-required="true">
+                  <option value="">Выберите…</option>
+                  <option>Жилой дом</option>
+                  <option>Коммерческий объект</option>
+                  <option>Социальный объект (школа, сад)</option>
+                  <option>Инженерные сети</option>
+                  <option>Реконструкция/капремонт</option>
+                </select>
+              </div>
+              <div class="exs-form-row">
+                <div class="exs-form-group">
+                  <label class="exs-label" for="scope">Площадь / сметная стоимость</label>
+                  <input class="exs-input" id="scope" name="scope" inputmode="text" autocomplete="off" placeholder="15 000 м² или 450 млн ₽" aria-describedby="hint-scope" />
+                  <div id="hint-scope" class="exs-hint">Можно в м² или ориентировочной сумме.</div>
+                </div>
+                <div class="exs-form-group">
+                  <label class="exs-label" for="contact">Телефон или Email</label>
+                  <input class="exs-input" id="contact" name="contact" type="text" placeholder="+7 999 000-00-00" autocomplete="tel email" required aria-required="true" aria-describedby="hint-contact" />
+                  <div id="hint-contact" class="exs-hint">Мы не шлём спам, только по вашему запросу.</div>
+                </div>
+              </div>
+              <div class="exs-form-group">
+                <span class="exs-label">Способ связи</span>
+                <div class="exs-choice" role="radiogroup" aria-label="Способ связи">
+                  <label><input type="radio" name="contact_way" value="call" checked><span class="exs-pill">Звонок</span></label>
+                  <label><input type="radio" name="contact_way" value="wa"><span class="exs-pill">WhatsApp</span></label>
+                  <label><input type="radio" name="contact_way" value="tg"><span class="exs-pill">Telegram</span></label>
+                  <label><input type="radio" name="contact_way" value="mail"><span class="exs-pill">Email</span></label>
+                </div>
+              </div>
+              <button class="exs-btn exs-btn--primary" type="submit">Получить расчёт и примеры смет по Челябинску</button>
+              <small class="exs-hint">Нажимая на кнопку, вы соглашаетесь с обработкой персональных данных.</small>
+            </form>
+          </aside>
+        </div>
+      </section>
+  
+      <!-- ===== 2. Блок проблем ===== -->
+      <section id="problems" class="exs-section exs-problems" aria-labelledby="problems-title">
+        <div class="exs-wrap">
+          <div class="exs-section__head">
+            <h2 id="problems-title">Знакомые проблемы?</h2>
+            <p class="exs-lead">Каждый день промедления = потерянные деньги и упущенные возможности. Мы закрываем узкие места по региональным проектам Челябинска и области.</p>
+          </div>
+          <div class="exs-grid" role="list">
+            <article class="exs-card exs-card--xl" role="listitem">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic exs-ic-32"><use href="#ic-users"/></svg></span><h3 class="exs-card__title">Для строительных компаний</h3></div>
+              <p class="exs-card__desc">Сметный контур перегружен, ошибки в оформлении и несоответствия нормам бьют по финансированию. Подключаем внешний сметный блок: готовим полный комплект документов и защищаем увеличение цены по ПП с учётом региональных индексов Челябинской области.</p>
+            </article>
+            <article class="exs-card exs-card--xl" role="listitem">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic exs-ic-32"><use href="#ic-bank"/></svg></span><h3 class="exs-card__title">Для девелоперов</h3></div>
+              <p class="exs-card__desc">Смета устарела, рост цен ломает бюджет, кредитный комитет требует достоверность. Обновляем сметы по РИМ, готовим пояснительные и архив источников — чтобы финансирование в Челябинске одобрили без возвратов.</p>
+            </article>
+            <article class="exs-card exs-card--xl" role="listitem">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic exs-ic-32"><use href="#ic-doc-check"/></svg></span><h3 class="exs-card__title">Для проектных бюро</h3></div>
+              <p class="exs-card__desc">Нет штатного сметчика — страдают сроки и комплектность. Формируем сметную часть ПСД «под ключ» для объектов в Челябинске и области, унифицируем шаблоны, сопровождаем ответы в экспертизе до положительного заключения.</p>
+            </article>
+            <article class="exs-card exs-card--xl" role="listitem">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic exs-ic-32"><use href="#ic-shield"/></svg></span><h3 class="exs-card__title">Для госзаказчиков</h3></div>
+              <p class="exs-card__desc">Требуется строгое соответствие ФСНБ-2022/ФЕР/ТЕР, актуальные региональные индексы и правильные форматы. Обеспечиваем трассируемость решений и комплект для прохождения региональной госэкспертизы с первого раза.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+  
+      <!-- ===== 3. Спецблок: ПП № 1315 ===== -->
+      <section id="pp1315" class="exs-section" aria-labelledby="pp1315-title">
+        <div class="exs-wrap">
+          <div class="exs-section__head">
+            <span class="exs-eyebrow">Повышение цены</span>
+            <h2 id="pp1315-title">Увеличение цены контракта по ПП</h2>
+            <p class="exs-lead">Готовим обоснование и защищаем повышение сметной стоимости по объектам Челябинска и области до утверждения.</p>
+          </div>
+          <div class="exs-grid exs-grid-3">
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-doc-check"/></svg></span><h3 class="exs-card__title">Что делаем</h3></div>
+              <ul class="exs-list">
+                <li class="exs-li exs-li--pro">Сопоставительные ведомости и корректировка смет</li>
+                <li class="exs-li exs-li--pro">Пояснительная записка и архив обоснований цен/индексов (Челябинская область)</li>
+                <li class="exs-li exs-li--pro">Комплект документов для заказчика/контролёра</li>
+              </ul>
+            </article>
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-shield"/></svg></span><h3 class="exs-card__title">Как защищаем</h3></div>
+              <ul class="exs-list">
+                <li class="exs-li exs-li--pro">Структура возражений и позиционные обоснования под требования региональной экспертизы</li>
+                <li class="exs-li exs-li--pro">Подготовка ответов по типовым вопросам</li>
+                <li class="exs-li exs-li--pro">Сопровождение до подписанного решения</li>
+              </ul>
+            </article>
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-target"/></svg></span><h3 class="exs-card__title">Когда применимо</h3></div>
+              <ul class="exs-list">
+                <li class="exs-li exs-li--pro">Изменение объёмов/условий выполнения работ</li>
+                <li class="exs-li exs-li--pro">Уточнение ресурсной части (РИМ, индексы)</li>
+                <li class="exs-li exs-li--pro">Неучтённые факторы, подтверждённые документально</li>
+              </ul>
+            </article>
+          </div>
+          <div style="margin-top: var(--s-6);">
+            <a class="exs-btn exs-btn--primary" href="#contacts">Разобрать повышение цены по моему контракту</a>
+            <a class="exs-btn exs-btn--ghost" href="#calc">Рассчитать ориентировочную стоимость работ</a>
+          </div>
+        </div>
+      </section>
+  
+      <!-- ===== 4. Решения / Пакеты ===== -->
+      <section id="solutions" class="exs-section exs-solutions" aria-labelledby="solutions-title">
+        <div class="exs-wrap">
+          <div class="exs-section__head">
+            <h2 id="solutions-title">ExpertSmet решает всё сразу</h2>
+            <p class="exs-lead">Выберите сценарий. В каждом пакете — состав и измеримый результат.</p>
+          </div>
+          <div class="exs-audiences" role="tablist" aria-label="Типы клиентов">
+            <button class="exs-aud-btn" role="tab" aria-selected="true" aria-controls="pack-build" id="tab-build">Строительные компании</button>
+            <button class="exs-aud-btn" role="tab" aria-selected="false" aria-controls="pack-dev" id="tab-dev">Девелоперы</button>
+            <button class="exs-aud-btn" role="tab" aria-selected="false" aria-controls="pack-bureau" id="tab-bureau">Проектные бюро</button>
+            <button class="exs-aud-btn" role="tab" aria-selected="false" aria-controls="pack-gov" id="tab-gov">Госзаказчики</button>
+          </div>
+  
+          <!-- Строительные компании -->
+          <div id="pack-build" class="exs-pack" data-active="true" role="tabpanel" tabindex="0" aria-labelledby="tab-build">
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-shield"/></svg></span><h3 class="exs-card__title">Пакет по ПП: защита увеличения цены</h3></div>
+              <p class="exs-card__desc">Готовим корректировки смет и обоснование, сопровождаем согласование по объектам в Челябинске до утверждения.</p>
+              <ul>
+                <li>Сопоставительные ведомости, корректировка ЛС/ОС/ССР</li>
+                <li>Пояснительная записка, архив цен/индексов (регион Челябинская область)</li>
+                <li>Представление и ответы на вопросы контролёра</li>
+              </ul>
+            </article>
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-doc-check"/></svg></span><h3 class="exs-card__title">Аудит и упаковка смет</h3></div>
+              <p class="exs-card__desc">Выверяем соответствие ПД/РД, формируем ВОР и полный комплект документов с трассируемостью источников для региональной экспертизы и банков.</p>
+              <ul>
+                <li>ВОР, ЛС, ОС, ССР, КС-2/КС-3</li>
+                <li>Реестр ссылок и версий, электронные форматы</li>
+                <li>Журнал правок и устранения замечаний</li>
+              </ul>
+            </article>
+          </div>
+  
+          <!-- Девелоперы -->
+          <div id="pack-dev" class="exs-pack" role="tabpanel" tabindex="0" aria-labelledby="tab-dev">
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-bank"/></svg></span><h3 class="exs-card__title">РИМ-актуализация</h3></div>
+              <p class="exs-card__desc">Расчёт по текущим ценам ресурсов с верифицируемыми источниками и прозрачной методикой специально для рынка Челябинска.</p>
+              <ul><li>Подбор источников, ссылки и скрин-кейсы</li><li>Индексация и сценарное бюджетирование</li><li>Презентация для кредитного комитета</li></ul>
+            </article>
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-doc-check"/></svg></span><h3 class="exs-card__title">Пакет для банка</h3></div>
+              <p class="exs-card__desc">Готовим пакет документов и ответы на вопросы, чтобы одобрение в региональных банках прошло без возвратов.</p>
+              <ul><li>Пояснительная записка</li><li>Сводные таблицы затрат</li><li>Архив подтверждающих данных</li></ul>
+            </article>
+          </div>
+  
+          <!-- Проектные бюро -->
+          <div id="pack-bureau" class="exs-pack" role="tabpanel" tabindex="0" aria-labelledby="tab-bureau">
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-doc-check"/></svg></span><h3 class="exs-card__title">ПСД «под ключ»</h3></div>
+              <p class="exs-card__desc">Сметная часть всех разделов: от ВОР до сводного сметного расчёта. Единые стандарты и контроль качества под требования региональной госэкспертизы Челябинской области.</p>
+              <ul><li>Шаблоны и код-стайл</li><li>Внутренний аудит</li><li>Сопровождение в экспертизе</li></ul>
+            </article>
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-shield"/></svg></span><h3 class="exс-card__title">Авторское сопровождение</h3></div>
+              <p class="exс-card__desc">Коммуникация с экспертами, ответы на замечания и фиксация корректировок до итогового положительного заключения.</p>
+              <ul><li>Регламент ответов</li><li>Журнал правок</li><li>Финальный приём</li></ul>
+            </article>
+          </div>
+  
+          <!-- Госзаказчики -->
+          <div id="pack-gov" class="exs-pack" role="tabpanel" tabindex="0" aria-labelledby="tab-gov">
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-shield"/></svg></span><h3 class="exs-card__title">Соответствие нормам</h3></div>
+              <p class="exs-card__desc">ФСНБ-2022/ФЕР/ТЕР, индексы, методики, ведомости — всё в строгом соответствии требованиям региональной госэкспертизы, с полным трассированием.</p>
+              <ul><li>Реестр ссылок и источников</li><li>Номера версий и архив</li><li>Готовность к ГГЭ</li></ul>
+            </article>
+            <article class="exs-card exs-card--xl">
+              <div class="exs-card__head"><span class="exs-icwrap"><svg class="exs-ic"><use href="#ic-bank"/></svg></span><h3 class="exs-card__title">Подготовка к госэкспертизе</h3></div>
+              <p class="exs-card__desc">Формируем полный комплект документов и сопровождаем до одобрения по объектам Челябинска и Челябинской области.</p>
+              <ul><li>Комплект документов</li><li>Сценарии заседаний</li><li>Ответы на вопросы</li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+  
+      <!-- ===== 5. Сравнение вариантов ===== -->
+      <section id="compare" class="exs-section" aria-labelledby="compare-title">
+        <div class="exs-wrap">
+          <div class="exs-section__head">
+            <h2 id="compare-title">Сравнение: частный, штатный или <span style="white-space:nowrap;">ExpertSmet</span></h2>
+            <p class="exs-lead">Сначала критерии, по которым реально принимают решения:</p>
+            <div class="exs-meta" aria-label="Критерии сравнения">
+              <span class="exs-chip">Сроки</span>
+              <span class="exs-chip">Риски/ответственность</span>
+              <span class="exs-chip">Соответствие нормам</span>
+              <span class="exs-chip">Комплект документов</span>
+              <span class="exs-chip">Масштабирование</span>
+              <span class="exs-chip">Экономика</span>
+            </div>
+          </div>
+  
+          <div class="exs-compare__wrap" role="region" aria-label="Сводная таблица сравнения">
+            <table class="exs-compare__table" aria-describedby="compare-caption">
+              <caption id="compare-caption" class="exs-sr-only">Сравнение по ключевым критериям: частный сметчик, штатный сметчик и ExpertSmet</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Критерий</th>
+                  <th scope="col">Частный сметчик</th>
+                  <th scope="col">Штатный сметчик</th>
+                  <th scope="col">ExpertSmet</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Сроки и предсказуемость</th>
+                  <td>Зависит от человека, <strong>нет SLA</strong></td>
+                  <td>В пике — <strong>узкое горлышко</strong></td>
+                  <td class="is-best"><strong>SLA</strong> ответы, параллельная работа команды 3–5 экспертов</td>
+                </tr>
+                <tr>
+                  <th scope="row">Риски и ответственность</th>
+                  <td>Личные договорённости</td>
+                  <td>Ответственность на работодателе</td>
+                  <td class="is-best">Процессы и проверки, экспертиза смет, поддержка в спорных ситуациях</td>
+                </tr>
+                <tr>
+                  <th scope="row">Соответствие нормам</th>
+                  <td>Обновления — на исполнителе</td>
+                  <td>Нужно регулярно доучивать</td>
+                  <td class="is-best">Актуальные ФЕР/ТЕР/ГЭСН-2025, корректная методика (в т.ч. РИМ) и региональные индексы Челябинской области (ФГИС ЦС)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Документы и трассируемость</th>
+                  <td>Часто не хватает пакета для банка/ГГЭ</td>
+                  <td>Зависит от практики отдела</td>
+                  <td class="is-best">Полный комплект для региональной госэкспертизы и банков + соответствие 44-ФЗ/223-ФЗ</td>
+                </tr>
+                <tr>
+                  <th scope="row">Масштабирование</th>
+                  <td>Сложная замена</td>
+                  <td>ФОТ растёт, простои</td>
+                  <td class="is-best">Гибко наращиваем ресурс, несколько проектов без потери качества</td>
+                </tr>
+                <tr>
+                  <th scope="row">Экономика</th>
+                  <td>Дешевле точечно</td>
+                  <td>Дорого на год: софт/налоги/отпуска</td>
+                  <td class="is-best">Оплата за фактическую загрузку, без ФОТ и лицензий на вашей стороне</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+  
+      <!-- ===== 6. Калькулятор ===== -->
+      <section id="calc" class="exs-section" aria-labelledby="calc-title">
+        <div class="exs-wrap">
+          <div class="exs-card exs-card--xl">
+            <h3 id="calc-title">Калькулятор стоимости (оценка)</h3>
+            <p class="exs-hint">Заполните параметры — получите ориентировочную стоимость работ. Точный расчёт делаем после анализа входных данных.</p>
+            <div class="exs-calc-grid">
+              <div class="exs-form-group">
+                <label class="exs-label" for="calc-type">Тип объекта</label>
+                <select id="calc-type" class="exs-select">
+                  <option value="res">Жилой дом</option>
+                  <option value="com">Коммерческий объект</option>
+                  <option value="soc">Социальный объект</option>
+                  <option value="eng">Инженерные сети</option>
+                  <option value="rec">Реконструкция/капремонт</option>
+                </select>
+              </div>
+              <div class="exs-form-group">
+                <label class="exs-label" for="calc-area">Площадь, м²</label>
+                <input id="calc-area" class="exs-input" type="number" placeholder="15000" min="0" />
+              </div>
+              <div class="exs-form-group">
+                <label class="exs-label" for="calc-cost">Сметная стоимость, млн ₽</label>
+                <input id="calc-cost" class="exs-input" type="number" placeholder="450" min="0" step="0.1" />
+              </div>
+              <div class="exs-form-group">
+                <label class="exs-label" for="calc-basis">Основание расчёта</label>
+                <select id="calc-basis" class="exs-select">
+                  <option value="fer">ФЕР</option>
+                  <option value="ter">ТЕР</option>
+                  <option value="rim">РИМ</option>
+                  <option value="1315">ПП № 1315</option>
+                </select>
+              </div>
+              <div class="exs-form-group">
+                <label class="exs-label" for="calc-dest">Куда сдаём</label>
+                <select id="calc-dest" class="exs-select">
+                  <option value="exp">Госэкспертиза</option>
+                  <option value="bank">Банк</option>
+                  <option value="internal">Внутренний контроль</option>
+                </select>
+              </div>
+            </div>
+            <div class="exs-result" id="calc-result"><span>Оценка</span><strong>—</strong></div>
+            <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-top: var(--s-4);">
+              <a class="exs-btn exs-btn--primary" href="#leadpack">Оставить заявку</a>
+              <a class="exs-btn exs-btn--ghost" href="#compare">Сравнить варианты</a>
+            </div>
+            <small class="exs-hint">Расчёт ориентировочный и не является офертой. Итоговая стоимость фиксируется в договоре после аудита исходных данных.</small>
+          </div>
+        </div>
+      </section>
+  
+      <script>
+        // Переключение табов в "Решениях"
+        (function() {
+          const tabs = document.querySelectorAll('.exs-aud-btn');
+          const packs = document.querySelectorAll('.exs-pack');
+          tabs.forEach(btn => {
+            btn.addEventListener('click', () => {
+              tabs.forEach(b => b.setAttribute('aria-selected', 'false'));
+              packs.forEach(p => p.removeAttribute('data-active'));
+              btn.setAttribute('aria-selected', 'true');
+              const target = document.getElementById(btn.getAttribute('aria-controls'));
+              if (target) target.setAttribute('data-active', 'true');
+            });
+          });
+        })();
+    
+        // Калькулятор (оценка) без "скорости"
+        (function () {
+          const typeEl = document.getElementById('calc-type');
+          const areaEl = document.getElementById('calc-area');
+          const costEl = document.getElementById('calc-cost'); // млн ₽
+          const basisEl = document.getElementById('calc-basis');
+          const destEl = document.getElementById('calc-dest');
+          const resultEl = document.getElementById('calc-result');
+    
+          function fmt(n) { return n.toLocaleString('ru-RU', { maximumFractionDigits: 0 }); }
+    
+          function recalc() {
+            const type = (typeEl.value || 'res');
+            const area = parseFloat(areaEl.value || '0');
+            const sum  = parseFloat(costEl.value || '0'); // млн ₽
+            const basis = (basisEl.value || 'fer');
+            const dest  = (destEl.value || 'exp');
+    
+            // Базовая зависимость от масштаба
+            const typeCoef = { res: 1.00, com: 1.10, soc: 1.10, eng: 1.20, rec: 1.30 }[type] || 1;
+            const baseArea = area > 0 ? area * 5 : 0;        // ₽ за м² (условно)
+            const baseCost = sum  > 0 ? sum * 10000 : 0;     // ₽ за млн ₽ стоимости
+            let base = Math.max(baseArea, baseCost) * typeCoef;
+    
+            // Коэффициенты методики и приёмки
+            const methodCoef = { fer: 1.00, ter: 1.05, rim: 1.15, '1315': 1.25 }[basis] || 1;
+            const acceptCoef = { exp: 1.15, bank: 1.10, internal: 1.00 }[dest] || 1;
+    
+            const total = base * methodCoef * acceptCoef;
+            if (!total || total <= 0) {
+              resultEl.innerHTML = '<span>Оценка</span><strong>—</strong>';
+            } else {
+              const low = Math.max(0, total * 0.9);
+              const high = total * 1.1;
+              resultEl.innerHTML = '<span>Ориентировочно</span><strong>' + fmt(low) + '–' + fmt(high) + ' ₽</strong>';
+            }
+          }
+    
+          [typeEl, areaEl, costEl, basisEl, destEl].forEach(el => el && el.addEventListener('input', recalc));
+          [typeEl, basisEl, destEl].forEach(el => el && el.addEventListener('change', recalc));
+          recalc();
+        })();
+      </script>
+      
+      <!-- FAQ секция -->
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="faq-header">
+            <h2 id="faq-title" class="faq-title">Часто задаваемые вопросы по сметной документации в Челябинске</h2>
+            <p class="faq-intro">Ответы на популярные вопросы о профессиональных сметных услугах и государственных расценках в столице Южного Урала</p>
+          </div>
+          
+          <div class="faq-container" role="region" aria-label="Вопросы и ответы">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                <span>Сколько стоит разработка сметной документации в Челябинске?</span>
+                <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5"/>
+                </svg>
+              </button>
+              <div id="faq-answer-1" class="faq-answer" aria-labelledby="faq-1">
+                <p>Стоимость разработки сметной документации в Челябинске: проектно-сметная документация — от 41 000 ₽, локальные сметы — от 19 000 ₽, объектные сметы — от 29 000 ₽. Используем актуальные государственные расценки ФСНБ-2022 и уральские региональные коэффициенты.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                <span>Какие особенности сметной документации в уральском регионе?</span>
+                <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5"/>
+                </svg>
+              </button>
+              <div id="faq-answer-2" class="faq-answer" aria-labelledby="faq-2">
+                <p>В Челябинске учитываем особенности уральского климата, сейсмичность региона, специфику грунтов. Используем региональные коэффициенты для Челябинской области, государственные расценки ГЭСН и ФЕР. Учитываем логистику материалов и доступность местных ресурсов.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                <span>Работаете ли с государственными расценками в Челябинске?</span>
+                <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5"/>
+                </svg>
+              </button>
+              <div id="faq-answer-3" class="faq-answer" aria-labelledby="faq-3">
+                <p>Да, специализируемся на работе с государственными расценками ФСНБ-2022, ГЭСН, ФЕР для Уральского региона. Готовим сметную документацию для государственных закупок, тендеров и бюджетных объектов. Используем актуальные уральские индексы и коэффициенты.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                <span>Как быстро можно получить сметную документацию в Челябинске?</span>
+                <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5"/>
+                </svg>
+              </button>
+              <div id="faq-answer-4" class="faq-answer" aria-labelledby="faq-4">
+                <p>В Челябинске работаем оперативно: локальные сметы — 2-3 дня, объектные сметы — 3-4 дня, проектно-сметная документация — 5-6 дней. При срочности можем ускорить до 24 часов. Учитываем динамику уральского рынка и готовы к быстрому реагированию на ваши запросы.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                <span>Есть ли выезд специалиста для составления сметной документации в Челябинске?</span>
+                <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5"/>
+                </svg>
+              </button>
+              <div id="faq-answer-5" class="faq-answer" aria-labelledby="faq-5">
+                <p>Да, наши специалисты выезжают по всему Челябинску и области для составления сметной документации. Выезд в пределах города — бесплатно, за городом — по договоренности. На месте проводим замеры, осматриваем объект и составляем техническое задание.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                <span>Какие документы нужны для разработки сметной документации в Челябинске?</span>
+                <svg class="faq-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5"/>
+                </svg>
+              </button>
+              <div id="faq-answer-6" class="faq-answer" aria-labelledby="faq-6">
+                <p>Для разработки сметной документации в Челябинске потребуются: техническое задание, проектная документация, ведомости объемов работ, спецификации материалов. Для сложных проектов — данные о грунтах, информация о сейсмичности участка.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+      // FAQ функциональность для городских страниц
+      (function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', function() {
+            const faqItem = this.closest('.faq-item');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Закрываем все открытые вопросы
+            document.querySelectorAll('.faq-item').forEach(item => {
+              item.classList.remove('active');
+            });
+            
+            // Если текущий вопрос не был активен, открываем его
+            if (!isActive) {
+              faqItem.classList.add('active');
+              this.setAttribute('aria-expanded', 'true');
+            } else {
+              this.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+      })();
+      </script>
+      
+      <!-- Секция тарифов -->
+      {% include 'main/partials/pricing.html' %}
+
+{% endblock %}
+

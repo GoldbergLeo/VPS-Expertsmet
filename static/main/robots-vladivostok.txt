@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+
+# Разрешаем индексацию основных страниц
+Allow: /about/
+Allow: /services/
+Allow: /portfolio/
+Allow: /blog/
+Allow: /contact/
+
+# Запрещаем индексацию служебных страниц
+Disallow: /admin/
+Disallow: /static/admin/
+Disallow: /media/
+Disallow: /staticfiles/
+Disallow: /logs/
+Disallow: /venv/
+Disallow: /__pycache__/
+Disallow: /*.py$
+Disallow: /*.sqlite3$
+Disallow: /*.log$
+Disallow: /debug_*
+Disallow: /test_*
+
+# Запрещаем индексацию временных файлов
+Disallow: /.DS_Store
+Disallow: /Thumbs.db
+
+# Разрешаем индексацию изображений и CSS/JS
+Allow: /static/
+Allow: /static/main/
+Allow: /static/main/css/
+Allow: /static/main/js/
+Allow: /static/main/images/
+Allow: /static/main/img/
+
+# Sitemap для vladivostok
+Sitemap: https://vladivostok.expertsmet.ru/sitemap.xml
+
+# Crawl-delay для уважительного отношения к серверу
+Crawl-delay: 1

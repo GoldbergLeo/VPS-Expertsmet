@@ -1,0 +1,395 @@
+/* ===== УЛУЧШЕННАЯ ТИПОГРАФИКА ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
+
+/* Базовые настройки шрифтов для мобильных */
+:root {
+  /* Основные шрифты */
+  --font-family-primary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-secondary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Размеры шрифтов с использованием clamp для адаптивности */
+  --fs-h1: clamp(28px, 8vw, 48px);
+  --fs-h2: clamp(24px, 6vw, 36px);
+  --fs-h3: clamp(20px, 5vw, 28px);
+  --fs-h4: clamp(18px, 4.5vw, 24px);
+  --fs-h5: clamp(16px, 4vw, 20px);
+  --fs-h6: clamp(14px, 3.5vw, 18px);
+  
+  --fs-lead: clamp(16px, 4vw, 20px);
+  --fs-base: clamp(14px, 3.5vw, 16px);
+  --fs-small: clamp(12px, 3vw, 14px);
+  --fs-xs: clamp(11px, 2.5vw, 12px);
+  
+  /* Высота строк */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+  
+  /* Межбуквенные интервалы */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+  
+  /* Веса шрифтов */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+
+/* ===== БАЗОВЫЕ СТИЛИ ТИПОГРАФИКИ ===== */
+
+/* Основные заголовки */
+h1, .hero__title, .page-title {
+  font-family: var(--font-family-primary);
+  font-size: var(--fs-h1);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0 0 1rem 0;
+  color: var(--text, #1f2937);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2, .section__title, .city-specific h2, .stats-city h2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--fs-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  margin: 0 0 1.5rem 0;
+  color: var(--text, #1f2937);
+}
+
+h3, .subsection__title {
+  font-family: var(--font-family-primary);
+  font-size: var(--fs-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  margin: 0 0 1rem 0;
+  color: var(--text, #1f2937);
+}
+
+h4 {
+  font-family: var(--font-family-primary);
+  font-size: var(--fs-h4);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  margin: 0 0 0.75rem 0;
+  color: var(--text, #1f2937);
+}
+
+h5 {
+  font-family: var(--font-family-primary);
+  font-size: var(--fs-h5);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  margin: 0 0 0.5rem 0;
+  color: var(--text, #1f2937);
+}
+
+h6 {
+  font-family: var(--font-family-primary);
+  font-size: var(--fs-h6);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  margin: 0 0 0.5rem 0;
+  color: var(--text, #1f2937);
+  text-transform: uppercase;
+}
+
+/* Основной текст */
+p, .text-base {
+  font-family: var(--font-family-secondary);
+  font-size: var(--fs-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  margin: 0 0 1rem 0;
+  color: var(--text, #1f2937);
+}
+
+/* Ведущий текст */
+.exs-lead, .hero__subtitle, .lead-text {
+  font-family: var(--font-family-secondary);
+  font-size: var(--fs-lead);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  margin: 0 0 1.5rem 0;
+  color: var(--muted, #6b7280);
+}
+
+/* Мелкий текст */
+.small-text, .text-small {
+  font-family: var(--font-family-secondary);
+  font-size: var(--fs-small);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  margin: 0 0 0.5rem 0;
+  color: var(--muted, #6b7280);
+}
+
+/* Очень мелкий текст */
+.xs-text, .text-xs {
+  font-family: var(--font-family-secondary);
+  font-size: var(--fs-xs);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  margin: 0 0 0.25rem 0;
+  color: var(--muted, #6b7280);
+}
+
+/* ===== СПЕЦИАЛЬНЫЕ СТИЛИ ДЛЯ ГОРОДОВ ===== */
+
+/* Заголовки городских секций */
+.city-specific h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--city-primary, #059669);
+}
+
+.city-specific h3 {
+  color: var(--city-primary, #059669);
+  margin-bottom: 1rem;
+}
+
+/* Статистика городов */
+.stat-number {
+  font-family: var(--font-family-primary);
+  font-size: clamp(2.5em, 10vw, 4em);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--city-accent, #34d399);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: var(--font-family-secondary);
+  font-size: var(--fs-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+  color: #f1f5f9;
+  text-align: center;
+}
+
+/* Описание городской информации */
+.city-info__item p {
+  font-family: var(--font-family-secondary);
+  font-size: var(--fs-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  letter-spacing: var(--letter-spacing-normal);
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+/* ===== МЕДИА-ЗАПРОСЫ ДЛЯ РАЗНЫХ РАЗМЕРОВ ЭКРАНОВ ===== */
+
+/* Планшеты (768px и меньше) */
+@media (max-width: 768px) {
+  :root {
+    --fs-h1: clamp(26px, 9vw, 36px);
+    --fs-h2: clamp(22px, 7vw, 28px);
+    --fs-h3: clamp(18px, 6vw, 22px);
+    --fs-lead: clamp(15px, 4.5vw, 17px);
+    --fs-base: clamp(14px, 4vw, 16px);
+  }
+  
+  h1, .hero__title {
+    margin-bottom: 0.75rem;
+  }
+  
+  h2, .section__title {
+    margin-bottom: 1.25rem;
+  }
+  
+  h3 {
+    margin-bottom: 0.75rem;
+  }
+  
+  .exs-lead, .hero__subtitle {
+    margin-bottom: 1.25rem;
+  }
+  
+  p {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Мобильные устройства (480px и меньше) */
+@media (max-width: 480px) {
+  :root {
+    --fs-h1: clamp(24px, 10vw, 32px);
+    --fs-h2: clamp(20px, 8vw, 24px);
+    --fs-h3: clamp(16px, 7vw, 20px);
+    --fs-lead: clamp(14px, 5vw, 16px);
+    --fs-base: clamp(13px, 4.5vw, 15px);
+  }
+  
+  h1, .hero__title {
+    margin-bottom: 0.5rem;
+  }
+  
+  h2, .section__title {
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .exs-lead, .hero__subtitle {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-number {
+    font-size: clamp(2.2em, 12vw, 3em);
+  }
+}
+
+/* Очень маленькие экраны (360px и меньше) */
+@media (max-width: 360px) {
+  :root {
+    --fs-h1: clamp(22px, 11vw, 28px);
+    --fs-h2: clamp(18px, 9vw, 22px);
+    --fs-h3: clamp(14px, 8vw, 18px);
+    --fs-lead: clamp(13px, 5.5vw, 15px);
+    --fs-base: clamp(12px, 5vw, 14px);
+  }
+  
+  .stat-number {
+    font-size: clamp(2em, 14vw, 2.5em);
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ЧИТАЕМОСТИ ===== */
+
+/* Улучшения для длинных строк текста */
+@media (min-width: 768px) {
+  p, .exs-lead {
+    max-width: 65ch; /* Оптимальная длина строки для чтения */
+  }
+  
+  .hero__subtitle {
+    max-width: 55ch;
+  }
+}
+
+/* Улучшения для контраста */
+@media (prefers-contrast: high) {
+  :root {
+    --text: #000000;
+    --muted: #333333;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+  }
+  
+  p, .exs-lead {
+    color: #000000;
+  }
+}
+
+/* Улучшения для уменьшенного движения */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    text-rendering: optimizeSpeed;
+  }
+}
+
+/* ===== ПОДДЕРЖКА DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ffffff;
+    --muted: #a0a0a0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  }
+  
+  p, .exs-lead {
+    color: #ffffff;
+  }
+  
+  .city-info__item p {
+    color: #d1d5db;
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ПЕЧАТИ ===== */
+@media print {
+  h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important;
+    page-break-after: avoid;
+  }
+  
+  p, .exs-lead {
+    color: #000000 !important;
+    orphans: 3;
+    widows: 3;
+  }
+  
+  .stat-number {
+    color: #000000 !important;
+    text-shadow: none;
+  }
+}
+
+/* ===== УЛУЧШЕНИЯ ДЛЯ ДОСТУПНОСТИ ===== */
+
+/* Улучшения для скринридеров */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Улучшения для фокуса */
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus,
+h5:focus,
+h6:focus {
+  outline: 2px solid var(--city-primary, #059669);
+  outline-offset: 2px;
+}
+
+/* Улучшения для выделения текста */
+::selection {
+  background-color: var(--city-light, #d1fae5);
+  color: var(--city-primary, #059669);
+}
+
+::-moz-selection {
+  background-color: var(--city-light, #d1fae5);
+  color: var(--city-primary, #059669);
+}

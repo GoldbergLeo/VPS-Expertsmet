@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # Redis for caching (опционально для кэша)
+  redis:
+    image: redis:7-alpine
+    container_name: expertsmet-redis
+    volumes:
+      - redis_data:/data
+    networks:
+      - expertsmet-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # Django web application
+  web:
+    build:
+      context: .
+      dockerfile: expertsmet/Dockerfile
+    container_name: expertsmet-web
+    environment:
+      - USE_SQLITE=True
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
+      - DEBUG=${DEBUG:-False}
+      - SECRET_KEY=${DJANGO_SECRET_KEY:?DJANGO_SECRET_KEY not set}
+      - ALLOWED_HOSTS=expertsmet.ru,www.expertsmet.ru,*.expertsmet.ru,localhost,127.0.0.1
+      - CSRF_TRUSTED_ORIGINS=https://expertsmet.ru,https://www.expertsmet.ru,https://*.expertsmet.ru
+    volumes:
+      # Static files volume for nginx to serve
+      - static_files:/app/staticfiles
+      - media_files:/app/media
+      - ./expertsmet/logs:/app/logs
+      - ./db.sqlite3:/app/db.sqlite3
+    depends_on:
+      redis:
+        condition: service_started
+    networks:
+      - expertsmet-network
+      - nginx-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  redis_data:
+    driver: local
+  static_files:
+    name: expertsmet_static_files
+    driver: local
+  media_files:
+    name: expertsmet_media_files
+    driver: local
+
+networks:
+  expertsmet-network:
+    driver: bridge
+  nginx-network:
+    external: true
+    name: nginx-multi-domain_nginx-network

@@ -1,0 +1,1588 @@
+{% load static %}
+
+<footer class="footer">
+    <div class="wrapper">
+        <!-- Блок с формой запроса КП с улучшенным дизайном -->
+        <div class="footer__cta">
+            <div class="footer__cta-content">
+                <h3 class="footer__cta-title">Нужна профессиональная сметная документация?</h3>
+                <p class="footer__cta-subtitle">Получите персональное коммерческое предложение для вашего проекта в
+                    течение 2 часов</p>
+            </div>
+            <form class="footer__cta-form">
+                <div class="footer__cta-input-group">
+                    <span class="footer__cta-input-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                    </span>
+                    <input type="tel" class="footer__cta-input" placeholder="Ваш телефон" required>
+                </div>
+                <button type="submit" class="footer__cta-button">
+                    <span>Получить КП</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+            <div class="footer__cta-guarantee">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Отвечаем в течение 30 минут в рабочее время</span>
+            </div>
+        </div>
+
+        <!-- Основная часть футера с обновленной структурой -->
+        <div class="footer__main">
+            <!-- Колонка с логотипом и информацией о компании -->
+            <div class="footer__column footer__column--brand">
+                <div class="footer__logo-block">
+                    <img class="footer__logo" src="{% static 'main/img/logo.png' %}" alt="Логотип EXPERTsmet">
+                    <div class="footer__brand">
+                        <p class="footer__brand-subtitle">Центр сметного дела и экспертизы</p>
+                    </div>
+                </div>
+
+                <!-- Блок с преимуществами с анимацией -->
+                <ul class="footer__benefits">
+                    <li class="footer__benefit">
+                        <div class="footer__benefit-icon-wrap">
+                            <svg class="footer__benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span>Опыт работы с крупными объектами</span>
+                    </li>
+                    <li class="footer__benefit">
+                        <div class="footer__benefit-icon-wrap">
+                            <svg class="footer__benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span>Актуальные расценки и нормативы</span>
+                    </li>
+                    <li class="footer__benefit">
+                        <div class="footer__benefit-icon-wrap">
+                            <svg class="footer__benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span>Защита сметы в экспертизе</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Колонка с услугами (обновленная на основе services) -->
+            <div class="footer__column">
+                <h5 class="footer__column-title">Услуги</h5>
+                <ul class="footer__list">
+                    <li class="footer__list-item footer__list-item--interactive" data-badge="АСД">
+                        <a href="#" class="footer__link">Сметная документация</a>
+                        <div class="footer__dropdown">
+                            <a href="#">Локальные сметы</a>
+                            <a href="#">Объектные сметы</a>
+                            <a href="#">Сводный сметный расчет</a>
+                            <a href="#">Пересчет сметной документации</a>
+                        </div>
+                    </li>
+                    <li class="footer__list-item footer__list-item--interactive" data-badge="ПСД">
+                        <a href="#" class="footer__link">Экспертиза проектов</a>
+                        <div class="footer__dropdown">
+                            <a href="#">Прохождение экспертизы</a>
+                            <a href="#">Сопровождение в экспертизе</a>
+                            <a href="#">Конъюнктурный анализ</a>
+                        </div>
+                    </li>
+                    <li class="footer__list-item footer__list-item--interactive" data-badge="СРД">
+                        <a href="#" class="footer__link">Разработка строительной документации</a>
+                        <div class="footer__dropdown">
+                            <a href="#">Ведомости объемов работ</a>
+                            <a href="#">Исполнительная документация</a>
+                            <a href="#">Закрывающие документы</a>
+                        </div>
+                    </li>
+                    <li class="footer__list-item footer__list-item--interactive" data-badge="ЭСД">
+                        <a href="#" class="footer__link">Экспертиза сметной документации</a>
+                        <div class="footer__dropdown">
+                            <a href="#">Проверка достоверности</a>
+                            <a href="#">Оптимизация затрат</a>
+                            <a href="#">Выявление ошибок</a>
+                        </div>
+                    </li>
+                    <li class="footer__list-item footer__list-item--interactive" data-badge="АСС">
+                        <a href="#" class="footer__link">Сметный аутсорсинг</a>
+                        <div class="footer__dropdown">
+                            <a href="#">Выделенный сметчик</a>
+                            <a href="#">Комплексное сопровождение</a>
+                            <a href="#">Месячные контракты</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Колонка о компании и материалах -->
+            <div class="footer__column">
+                <h5 class="footer__column-title">Полезные материалы</h5>
+                <ul class="footer__list">
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__link footer__link--download">
+                            <span>Образцы смет и КС-2</span>
+                            <svg class="footer__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__link">
+                            <span>Нормативная база ФСНБ 2022</span>
+                            <span class="footer__badge footer__badge--new">Новое</span>
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#calculator" class="footer__link footer__link--calculator">
+                            <span>Калькулятор сметной стоимости</span>
+                            <svg class="footer__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="10" x2="12" y2="16"></line>
+                                <line x1="9" y1="13" x2="15" y2="13"></line>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#" class="footer__link">Часто задаваемые вопросы</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="https://t.me/expertsmet" class="footer__link">Блог о сметном деле</a>
+                    </li>
+                </ul>
+
+                <!-- Поиск по сайту в футере -->
+                <div class="footer__search">
+                    <h5 class="footer__column-title">Поиск по сайту</h5>
+                    <form class="footer__search-form">
+                        <input type="text" class="footer__search-input" placeholder="Поиск...">
+                        <button type="submit" class="footer__search-button">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Колонка с контактами (с интерактивными элементами) -->
+            <div class="footer__column footer__column--contacts">
+                <div class="footer__contact-header">
+                    <h5 class="footer__column-title">Контакты</h5>
+                    <div class="footer__status" id="workingStatus">
+                        <span class="footer__status-dot"></span>
+                        <span class="footer__status-text">Сейчас работаем</span>
+                    </div>
+                </div>
+
+                <div class="footer__address">
+                    <svg class="footer__address-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <div>
+                        <p class="footer__address-text">г. Москва, ул. Шелепихинская набережная, д.34 к.6</p>
+                        <a href="#" class="footer__map-link" id="openMapBtn">
+                            <span>Открыть на карте</span>
+                            <svg class="footer__map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="7 10 12 15 17 10"></polygon>
+                            </svg>
+                        </a>
+                        <!-- Миникарта (скрытая, показывается по клику) -->
+                        <div class="footer__mini-map" id="miniMap">
+                            <div class="footer__mini-map-placeholder">
+                                <!-- Заглушка для карты -->
+                                <div class="footer__mini-map-overlay">Нажмите, чтобы открыть в новом окне</div>
+                            </div>
+                            <button class="footer__mini-map-close" id="closeMiniMap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__contact-info">
+                    <div class="footer__contact-item footer__contact-item--phone">
+                        <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <a href="tel:88003008772" class="footer__contact-link">8 (800) 300 87 72</a>
+                    </div>
+                    <div class="footer__contact-item footer__contact-item--email">
+                        <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:mail@expertsmet.ru" class="footer__contact-link">mail@expertsmet.ru</a>
+                    </div>
+                </div>
+
+                <!-- Кнопки мессенджеров с улучшенным дизайном -->
+                <div class="footer__messenger-buttons">
+                    <a href="https://wa.me/+79175654616"
+                        class="footer__messenger-button footer__messenger-button--whatsapp">
+                        <div class="footer__messenger-icon-wrap">
+                            <svg class="footer__messenger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Написать в WhatsApp</span>
+                    </a>
+                    <a href="https://t.me/expertsmet"
+                        class="footer__messenger-button footer__messenger-button--telegram">
+                        <div class="footer__messenger-icon-wrap">
+                            <svg class="footer__messenger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-17.03 6.698a2.25 2.25 0 0 0-.134 4.108l3.22 1.139v5.173c0 1.064 1.1 1.737 1.99 1.219l2.558-1.486 3.9 2.817c.51.372 1.162.573 1.833.45.579-.105 1.096-.466 1.428-.991.227-.358.367-.787.386-1.254l1.248-13.387a2.247 2.247 0 0 0-1.956-2.471">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Написать в Telegram</span>
+                    </a>
+                </div>
+
+                <!-- Быстрые действия с анимацией -->
+                <div class="footer__quick-actions">
+                    <a href="#" class="footer__quick-action" id="callbackButton">
+                        <svg class="footer__quick-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 19.92z">
+                            </path>
+                        </svg>
+                        <span>Заказать обратный звонок</span>
+                    </a>
+                    <a href="#" class="footer__quick-action" id="askExpertButton">
+                        <svg class="footer__quick-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <span>Задать вопрос эксперту</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Нижняя часть футера с улучшенным дизайном -->
+        <div class="footer__bottom">
+            <div class="footer__copyright">
+                <p>© 2025 EXPERTsmet. Все права защищены.</p>
+            </div>
+            <div class="footer__links">
+                <a href="https://expertsmet.ru/articles/politika-konfidencialnosti.html"
+                    class="footer__link-small">Политика конфиденциальности</a>
+                <a href="#" class="footer__link-small">Пользовательское соглашение</a>
+                <a href="#" class="footer__link-small">Карта сайта</a>
+            </div>
+            <!-- Кнопка для скролла вверх -->
+            <div class="footer__scroll-top" id="scrollToTop">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Плавающая кнопка вызова меню с контактами с улучшенным дизайном -->
+    <div class="footer__float-button" id="footerFloatButton">
+        <svg class="footer__float-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+        </svg>
+        <div class="footer__float-menu" id="footerFloatMenu">
+            <a href="tel:88003008772" class="footer__float-item">
+                <svg class="footer__float-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                </svg>
+                <span>Позвонить</span>
+            </a>
+            <a href="https://wa.me/+79175654616" class="footer__float-item">
+                <svg class="footer__float-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                    </path>
+                </svg>
+                <span>WhatsApp</span>
+            </a>
+            <a href="https://t.me/expertsmet_ai_bot" class="footer__float-item">
+                <svg class="footer__float-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-17.03 6.698a2.25 2.25 0 0 0-.134 4.108l3.22 1.139v5.173c0 1.064 1.1 1.737 1.99 1.219l2.558-1.486 3.9 2.817c.51.372 1.162.573 1.833.45.579-.105 1.096-.466 1.428-.991.227-.358.367-.787.386-1.254l1.248-13.387a2.247 2.247 0 0 0-1.956-2.471">
+                    </path>
+                </svg>
+                <span>Telegram</span>
+            </a>
+            <a href="#" class="footer__float-item" id="floatCallbackBtn">
+                <svg class="footer__float-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 19.92z">
+                    </path>
+                </svg>
+                <span>Обратный звонок</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Модальное окно обратного звонка -->
+    <div class="footer__modal" id="callbackModal">
+        <div class="footer__modal-content">
+            <button class="footer__modal-close" id="closeCallbackModal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h3 class="footer__modal-title">Заказать обратный звонок</h3>
+            <p class="footer__modal-subtitle">Оставьте свои контакты, и мы перезвоним в ближайшее время</p>
+            <form class="footer__modal-form">
+                <div class="footer__modal-field">
+                    <label for="callbackName">Ваше имя</label>
+                    <input type="text" id="callbackName" placeholder="Иван Иванов" required>
+                </div>
+                <div class="footer__modal-field">
+                    <label for="callbackPhone">Номер телефона</label>
+                    <input type="tel" id="callbackPhone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="footer__modal-field">
+                    <label for="callbackTime">Удобное время для звонка</label>
+                    <select id="callbackTime">
+                        <option value="any">В любое время</option>
+                        <option value="morning">Утро (9:00 - 12:00)</option>
+                        <option value="day">День (12:00 - 18:00)</option>
+                        <option value="evening">Вечер (18:00 - 20:00)</option>
+                    </select>
+                </div>
+                <button type="submit" class="footer__modal-button">Заказать звонок</button>
+                <p class="footer__modal-note">Нажимая на кнопку, вы даете согласие на обработку персональных данных</p>
+            </form>
+        </div>
+    </div>
+    <!-- ИСПРАВЛЕННАЯ кнопка чат-бота -->
+<div class="footer__chatbot-button" id="chatbotButton">
+    <div class="footer__chatbot-pulse"></div>
+    <svg class="footer__chatbot-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        <path d="M14 9h.01M10 9h.01M6 9h.01"></path>
+    </svg>
+    <div class="footer__chatbot-text">
+        <span class="footer__chatbot-main-text">💬 Задать вопрос эксперту</span>
+        <span class="footer__chatbot-sub-text">Наши специалисты ответят на все ваши вопросы по сметной документации</span>
+    </div>
+</div>
+
+<!-- ИСПРАВЛЕННОЕ модальное окно чат-бота (позиционированное справа) -->
+<div class="footer__chatbot-modal" id="chatbotModal">
+    <div class="footer__chatbot-container">
+        <!-- Заголовок чата -->
+        <div class="footer__chatbot-header">
+            <div class="footer__chatbot-header-info">
+                <div class="footer__chatbot-avatar">
+                    <div class="footer__chatbot-status"></div>
+                    <img src="{% static 'main/img/team_5.jpg' %}" alt="Анна - Консультант EXPERTsmet" class="footer__chatbot-avatar-img">
+                </div>
+                <div class="footer__chatbot-header-text">
+                    <h3>Анна - Консультант EXPERTsmet</h3>
+                    <span class="footer__chatbot-online">🟢 Сейчас онлайн</span>
+                    <span class="footer__chatbot-response-time">Отвечает в течение минуты</span>
+                </div>
+            </div>
+            <button class="footer__chatbot-close" id="closeChatbotModal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Область сообщений -->
+        <div class="footer__chatbot-messages" id="chatbotMessages">
+            <div class="footer__chatbot-message footer__chatbot-message--bot">
+                <div class="footer__chatbot-message-avatar">
+                    <img src="{% static 'main/img/team_5.jpg' %}" alt="Анна - Консультант EXPERTsmet" class="footer__chatbot-message-avatar-img">
+                </div>
+                <div class="footer__chatbot-message-content">
+                    <p>Привет! 👋 Я Анна, помогу вам с любыми вопросами по сметной документации!</p>
+                    <span class="footer__chatbot-message-time">только что</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Быстрые ответы -->
+        <div class="footer__chatbot-quick-replies" id="chatbotQuickReplies">
+            <button class="footer__chatbot-quick-reply" data-message="💰 Рассчитать стоимость сметы">💰 Рассчитать стоимость</button>
+            <button class="footer__chatbot-quick-reply" data-message="🔍 Нужна экспертиза сметы">🔍 Экспертиза сметы</button>
+            <button class="footer__chatbot-quick-reply" data-message="⏰ Какие сроки выполнения?">⏰ Сроки выполнения</button>
+            <button class="footer__chatbot-quick-reply" data-message="📞 Хочу поговорить с менеджером">📞 Связь с менеджером</button>
+        </div>
+        
+        <!-- Область ввода -->
+        <div class="footer__chatbot-input-area">
+            <div class="footer__chatbot-input-wrapper">
+                <input type="text" id="chatbotInput" placeholder="Напишите ваш вопрос..." class="footer__chatbot-input" maxlength="500">
+                <button type="button" id="chatbotSend" class="footer__chatbot-send">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <div class="footer__chatbot-typing" id="chatbotTyping" style="display: none;">
+                <span></span>
+                <span></span>
+                <span></span>
+                Анна печатает...
+            </div>
+        </div>
+        
+        <!-- Футер чата -->
+        <div class="footer__chatbot-footer">
+            <div class="footer__chatbot-powered">
+                <span>🔒 Безопасный чат</span>
+                <span>•</span>
+                <span>📱 Ответим за 15 секунд</span>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Модальное окно с формой для вопроса эксперту -->
+    <div class="footer__modal" id="expertModal">
+        <div class="footer__modal-content">
+            <button class="footer__modal-close" id="closeExpertModal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h3 class="footer__modal-title">Задать вопрос эксперту</h3>
+            <p class="footer__modal-subtitle">Наши специалисты ответят на все ваши вопросы по сметной документации</p>
+            <form class="footer__modal-form">
+                <div class="footer__modal-field">
+                    <label for="expertName">Ваше имя</label>
+                    <input type="text" id="expertName" placeholder="Иван Иванов" required>
+                </div>
+                <div class="footer__modal-field">
+                    <label for="expertEmail">Email для ответа</label>
+                    <input type="email" id="expertEmail" placeholder="ivanov@example.com" required>
+                </div>
+                <div class="footer__modal-field">
+                    <label for="expertPhone">Телефон</label>
+                    <input type="tel" id="expertPhone" placeholder="+7 (___) ___-__-__">
+                </div>
+                <div class="footer__modal-field">
+                    <label for="expertQuestion">Ваш вопрос</label>
+                    <textarea id="expertQuestion" rows="4" placeholder="Опишите ваш вопрос..." required></textarea>
+                </div>
+                <div class="footer__modal-field footer__modal-field--file">
+                    <label for="expertFile" class="footer__modal-file-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                            <polyline points="13 2 13 9 20 9"></polyline>
+                        </svg>
+                        <span>Прикрепить файл</span>
+                    </label>
+                    <input type="file" id="expertFile" class="footer__modal-file">
+                    <div class="footer__modal-file-info">Максимальный размер файла: 10 MB</div>
+                </div>
+                <button type="submit" class="footer__modal-button">Отправить вопрос</button>
+                <p class="footer__modal-note">Нажимая на кнопку, вы даете согласие на обработку персональных данных</p>
+            </form>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Форма запроса КП
+        const ctaForm = document.querySelector('.footer__cta-form');
+
+        if (ctaForm) {
+            ctaForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const phoneInput = this.querySelector('.footer__cta-input');
+                const phoneValue = phoneInput.value.trim();
+
+                if (phoneValue) {
+                    // Здесь можно добавить валидацию телефона и AJAX-отправку
+
+                    // Имитация успешной отправки
+                    phoneInput.value = '';
+
+                    // Создаем анимированное уведомление об успешной отправке
+                    const successMessage = document.createElement('div');
+                    successMessage.classList.add('footer__cta-success');
+                    successMessage.style.position = 'absolute';
+                    successMessage.style.bottom = '-60px';
+                    successMessage.style.left = '0';
+                    successMessage.style.width = '100%';
+                    successMessage.style.backgroundColor = 'rgba(255, 172, 48, 0.95)';
+                    successMessage.style.color = '#1c1e25';
+                    successMessage.style.padding = '10px 20px';
+                    successMessage.style.borderRadius = '4px';
+                    successMessage.style.textAlign = 'center';
+                    successMessage.style.boxShadow = '0 8px 15px -3px rgba(0, 0, 0, 0.2)';
+                    successMessage.style.zIndex = '10';
+                    successMessage.style.transform = 'translateY(20px)';
+                    successMessage.style.opacity = '0';
+                    successMessage.style.transition = 'all 0.3s ease';
+                    successMessage.innerHTML = '<svg style="display: inline-block; vertical-align: middle; width: 20px; height: 20px; margin-right: 8px; color: #1c1e25;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Спасибо! Мы свяжемся с вами в ближайшее время.';
+
+                    // Удаляем предыдущее сообщение, если оно есть
+                    if (document.querySelector('.footer__cta-success')) {
+                        document.querySelector('.footer__cta-success').remove();
+                    }
+
+                    ctaForm.style.position = 'relative';
+                    ctaForm.appendChild(successMessage);
+
+                    // Анимируем появление
+                    setTimeout(() => {
+                        successMessage.style.opacity = '1';
+                        successMessage.style.transform = 'translateY(0)';
+                    }, 10);
+
+                    // Удаляем через некоторое время
+                    setTimeout(() => {
+                        successMessage.style.opacity = '0';
+                        successMessage.style.transform = 'translateY(-20px)';
+                        setTimeout(() => {
+                            successMessage.remove();
+                        }, 300);
+                    }, 5000);
+                }
+            });
+        }
+
+        // Обработка статуса "Сейчас работаем" в зависимости от времени
+        const statusElement = document.getElementById('workingStatus');
+
+        if (statusElement) {
+            const now = new Date();
+            const hours = now.getHours();
+            const day = now.getDay();
+
+            // Рабочее время: пн-пт с 9:00 до 18:00
+            const isWorkingHours = day >= 1 && day <= 5 && hours >= 9 && hours < 18;
+
+            const statusDot = statusElement.querySelector('.footer__status-dot');
+            const statusText = statusElement.querySelector('.footer__status-text');
+
+            if (!isWorkingHours) {
+                statusDot.style.backgroundColor = '#ef4444'; // Красный
+                statusDot.style.animation = 'none';
+                statusText.textContent = 'Сейчас не работаем';
+                statusText.style.color = '#ef4444'; // Красный
+                statusElement.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
+            }
+        }
+
+        // Обработка миникарты
+        const openMapBtn = document.getElementById('openMapBtn');
+        const miniMap = document.getElementById('miniMap');
+        const closeMiniMap = document.getElementById('closeMiniMap');
+
+        if (openMapBtn && miniMap && closeMiniMap) {
+            openMapBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                miniMap.classList.toggle('active');
+
+                // Изменяем текст и иконку кнопки
+                if (miniMap.classList.contains('active')) {
+                    this.querySelector('span').textContent = 'Скрыть карту';
+                    this.querySelector('svg').style.transform = 'rotate(180deg)';
+                } else {
+                    this.querySelector('span').textContent = 'Открыть на карте';
+                    this.querySelector('svg').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            closeMiniMap.addEventListener('click', function (e) {
+                e.preventDefault();
+                miniMap.classList.remove('active');
+                openMapBtn.querySelector('span').textContent = 'Открыть на карте';
+                openMapBtn.querySelector('svg').style.transform = 'rotate(0deg)';
+            });
+
+            // Открытие карты в новом окне при клике на заглушку
+            document.querySelector('.footer__mini-map-placeholder').addEventListener('click', function () {
+                window.open('https://maps.google.com/?q=Москва,+Шелепихинская+набережная,+34к6', '_blank');
+            });
+        }
+
+        // Обработка модальных окон
+        const callbackButton = document.getElementById('callbackButton');
+        const callbackModal = document.getElementById('callbackModal');
+        const closeCallbackModal = document.getElementById('closeCallbackModal');
+
+        const askExpertButton = document.getElementById('askExpertButton');
+        const expertModal = document.getElementById('expertModal');
+        const closeExpertModal = document.getElementById('closeExpertModal');
+
+        const floatCallbackBtn = document.getElementById('floatCallbackBtn');
+
+        // Функция для открытия/закрытия модальных окон
+        function toggleModal(modal, action) {
+            if (action === 'open') {
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.classList.add('active');
+                }, 10);
+                document.body.style.overflow = 'hidden'; // Блокировка прокрутки
+            } else {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+                document.body.style.overflow = ''; // Восстановление прокрутки
+            }
+        }
+
+        // Обработчики событий для кнопок и модальных окон
+        if (callbackButton && callbackModal && closeCallbackModal) {
+            callbackButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleModal(callbackModal, 'open');
+            });
+
+            closeCallbackModal.addEventListener('click', function () {
+                toggleModal(callbackModal, 'close');
+            });
+        }
+
+        if (askExpertButton && expertModal && closeExpertModal) {
+            askExpertButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleModal(expertModal, 'open');
+            });
+
+            closeExpertModal.addEventListener('click', function () {
+                toggleModal(expertModal, 'close');
+            });
+        }
+
+        if (floatCallbackBtn && callbackModal) {
+            floatCallbackBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleModal(callbackModal, 'open');
+            });
+        }
+
+        // Закрытие модальных окон при клике вне содержимого
+        window.addEventListener('click', function (e) {
+            if (e.target === callbackModal) {
+                toggleModal(callbackModal, 'close');
+            }
+            if (e.target === expertModal) {
+                toggleModal(expertModal, 'close');
+            }
+        });
+
+        // Обработка кнопки скролла вверх
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        if (scrollToTopBtn) {
+            scrollToTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Показываем кнопку только при прокрутке
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.style.opacity = '1';
+                    scrollToTopBtn.style.pointerEvents = 'all';
+                } else {
+                    scrollToTopBtn.style.opacity = '0';
+                    scrollToTopBtn.style.pointerEvents = 'none';
+                }
+            });
+        }
+
+        // Анимация появления для элементов футера при прокрутке
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.footer__column, .footer__cta, .footer__bottom');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight;
+
+                if (elementPosition < screenPosition - 100) {
+                    element.classList.add('animate-in');
+                }
+            });
+        }
+
+        // Добавляем начальные стили для анимации
+        const animatedElements = document.querySelectorAll('.footer__column, .footer__cta, .footer__bottom');
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Стили для анимированных элементов
+        document.head.insertAdjacentHTML('beforeend', `
+        <style>
+            .footer__column.animate-in,
+            .footer__cta.animate-in,
+            .footer__bottom.animate-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        </style>
+        `);
+
+        // Запускаем анимацию при загрузке и прокрутке
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Обработка интерактивных элементов списка
+        const interactiveItems = document.querySelectorAll('.footer__list-item--interactive');
+
+        interactiveItems.forEach(item => {
+            // Добавляем обработку касания для мобильных устройств
+            item.addEventListener('touchstart', function (e) {
+                // Проверяем, открыт ли уже выпадающий список
+                const isActive = this.classList.contains('active');
+
+                // Закрываем все открытые выпадающие списки
+                interactiveItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                // Если текущий элемент не был активен, делаем его активным
+                if (!isActive) {
+                    this.classList.add('active');
+                    e.preventDefault(); // Предотвращаем клик по ссылке
+                }
+            });
+
+            // Для более плавной анимации на десктопах используем обычный ховер
+        });
+
+        // Улучшенная валидация форм
+        const forms = document.querySelectorAll('.footer__cta-form, .footer__modal-form');
+
+        forms.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Проверяем все обязательные поля
+                this.querySelectorAll('[required]').forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add('error');
+
+                        // Добавляем сообщение об ошибке, если его еще нет
+                        if (!field.nextElementSibling || !field.nextElementSibling.classList.contains('error-message')) {
+                            const errorMessage = document.createElement('div');
+                            errorMessage.classList.add('error-message');
+                            errorMessage.textContent = 'Это поле обязательно для заполнения';
+                            errorMessage.style.color = '#ef4444';
+                            errorMessage.style.fontSize = '12px';
+                            errorMessage.style.marginTop = '4px';
+                            field.insertAdjacentElement('afterend', errorMessage);
+                        }
+                    } else {
+                        field.classList.remove('error');
+                        // Удаляем сообщение об ошибке, если оно есть
+                        if (field.nextElementSibling && field.nextElementSibling.classList.contains('error-message')) {
+                            field.nextElementSibling.remove();
+                        }
+
+                        // Дополнительная валидация для телефонов и email
+                        if (field.type === 'tel') {
+                            const phoneRegex = /^(\+7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
+                            if (!phoneRegex.test(field.value)) {
+                                isValid = false;
+                                field.classList.add('error');
+
+                                if (!field.nextElementSibling || !field.nextElementSibling.classList.contains('error-message')) {
+                                    const errorMessage = document.createElement('div');
+                                    errorMessage.classList.add('error-message');
+                                    errorMessage.textContent = 'Введите корректный номер телефона';
+                                    errorMessage.style.color = '#ef4444';
+                                    errorMessage.style.fontSize = '12px';
+                                    errorMessage.style.marginTop = '4px';
+                                    field.insertAdjacentElement('afterend', errorMessage);
+                                }
+                            }
+                        }
+
+                        if (field.type === 'email') {
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!emailRegex.test(field.value)) {
+                                isValid = false;
+                                field.classList.add('error');
+
+                                if (!field.nextElementSibling || !field.nextElementSibling.classList.contains('error-message')) {
+                                    const errorMessage = document.createElement('div');
+                                    errorMessage.classList.add('error-message');
+                                    errorMessage.textContent = 'Введите корректный email';
+                                    errorMessage.style.color = '#ef4444';
+                                    errorMessage.style.fontSize = '12px';
+                                    errorMessage.style.marginTop = '4px';
+                                    field.insertAdjacentElement('afterend', errorMessage);
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Если форма валидна, имитируем отправку
+                if (isValid) {
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    const originalText = submitButton.innerHTML;
+
+                    // Меняем текст кнопки и добавляем анимацию загрузки
+                    submitButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; margin-right: 8px; animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg> Отправка...';
+                    submitButton.style.opacity = '0.8';
+                    submitButton.disabled = true;
+
+                    // Стили для анимации вращения
+                    if (!document.head.querySelector('#spin-animation')) {
+                        const style = document.createElement('style');
+                        style.id = 'spin-animation';
+                        style.textContent = `@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`;
+                        document.head.appendChild(style);
+                    }
+
+                    // Имитация отправки данных через AJAX (здесь можно добавить реальный AJAX-запрос)
+                    setTimeout(() => {
+                        // Сбрасываем форму
+                        this.reset();
+
+                        // Возвращаем оригинальный текст кнопке
+                        submitButton.innerHTML = originalText;
+                        submitButton.style.opacity = '1';
+                        submitButton.disabled = false;
+
+                        // Показываем сообщение об успешной отправке
+                        let successMessage;
+
+                        if (this.classList.contains('footer__cta-form')) {
+                            // Для короткой формы в CTA блоке
+                            successMessage = document.createElement('div');
+                            successMessage.classList.add('footer__cta-success');
+                            successMessage.style.position = 'absolute';
+                            successMessage.style.bottom = '-60px';
+                            successMessage.style.left = '0';
+                            successMessage.style.width = '100%';
+                            successMessage.style.backgroundColor = 'rgba(34, 197, 94, 0.9)';
+                            successMessage.style.color = '#ffffff';
+                            successMessage.style.padding = '10px 20px';
+                            successMessage.style.borderRadius = '8px';
+                            successMessage.style.textAlign = 'center';
+                            successMessage.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                            successMessage.style.zIndex = '10';
+                            successMessage.style.transform = 'translateY(20px)';
+                            successMessage.style.opacity = '0';
+                            successMessage.style.transition = 'all 0.3s ease';
+                        } else {
+                            // Для модальных форм
+                            const modal = this.closest('.footer__modal');
+                            const modalContent = modal.querySelector('.footer__modal-content');
+
+                            // Сохраняем оригинальное содержимое модального окна
+                            const originalContent = modalContent.innerHTML;
+
+                            // Заменяем содержимое на сообщение об успехе
+                            modalContent.innerHTML = `
+                                <div style="text-align: center; padding: 20px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#FFAC30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 60px; height: 60px; margin: 0 auto 20px;">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                    <h3 style="color: #ffffff; font-size: 22px; margin-bottom: 10px;">Спасибо за обращение!</h3>
+                                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 16px; margin-bottom: 30px;">Мы получили вашу заявку и свяжемся с вами в ближайшее время.</p>
+                                    <button id="closeSuccessModal" style="padding: 12px 24px; background-color: #FFAC30; border: none; border-radius: 4px; color: #1c1e25; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Закрыть</button>
+                                </div>
+                            `;
+
+                            // Добавляем обработчик для кнопки закрытия
+                            document.getElementById('closeSuccessModal').addEventListener('click', function () {
+                                // Возвращаем оригинальное содержимое
+                                modalContent.innerHTML = originalContent;
+
+                                // Закрываем модальное окно
+                                toggleModal(modal, 'close');
+
+                                // Переинициализируем обработчики для новых элементов
+                                initializeEventHandlers();
+                            });
+
+                            return; // Выходим из функции, т.к. для модальных окон нет смысла продолжать
+                        }
+
+                        // Удаляем предыдущее сообщение, если оно есть
+                        if (document.querySelector('.footer__cta-success')) {
+                            document.querySelector('.footer__cta-success').remove();
+                        }
+
+                        this.style.position = 'relative';
+                        this.appendChild(successMessage);
+
+                        // Анимируем появление
+                        setTimeout(() => {
+                            successMessage.style.opacity = '1';
+                            successMessage.style.transform = 'translateY(0)';
+                        }, 10);
+
+                        // Удаляем через некоторое время
+                        setTimeout(() => {
+                            successMessage.style.opacity = '0';
+                            successMessage.style.transform = 'translateY(-20px)';
+                            setTimeout(() => {
+                                successMessage.remove();
+                            }, 300);
+                        }, 5000);
+                    }, 1500); // Имитация задержки запроса
+                }
+            });
+
+            // Удаляем сообщение об ошибке при фокусе на поле
+            form.querySelectorAll('input, textarea, select').forEach(field => {
+                field.addEventListener('focus', function () {
+                    this.classList.remove('error');
+                    if (this.nextElementSibling && this.nextElementSibling.classList.contains('error-message')) {
+                        this.nextElementSibling.remove();
+                    }
+                });
+            });
+        });
+
+        // Функция для переинициализации обработчиков событий (используется после динамического изменения DOM)
+        function initializeEventHandlers() {
+            // Все модальные формы
+            document.querySelectorAll('.footer__modal-form').forEach(form => {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    // Логика отправки формы (уже реализована выше)
+                });
+
+                form.querySelectorAll('input, textarea, select').forEach(field => {
+                    field.addEventListener('focus', function () {
+                        this.classList.remove('error');
+                        if (this.nextElementSibling && this.nextElementSibling.classList.contains('error-message')) {
+                            this.nextElementSibling.remove();
+                        }
+                    });
+                });
+            });
+
+            // Кнопки закрытия модальных окон
+            document.querySelectorAll('.footer__modal-close').forEach(button => {
+                button.addEventListener('click', function () {
+                    const modal = this.closest('.footer__modal');
+                    toggleModal(modal, 'close');
+                });
+            });
+        }
+
+        // Маска для телефонного номера
+        const phoneInputs = document.querySelectorAll('input[type="tel"]');
+
+        phoneInputs.forEach(input => {
+            input.addEventListener('input', function (e) {
+                // Удаляем все нецифровые символы из введенного значения
+                let value = this.value.replace(/\D/g, '');
+
+                // Проверяем начало номера (для России)
+                if (value.startsWith('8')) {
+                    value = '7' + value.substring(1);
+                }
+                if (!value.startsWith('7') && value.length > 0) {
+                    value = '7' + value;
+                }
+
+                // Форматируем номер
+                let formattedValue = '';
+                if (value.length > 0) {
+                    formattedValue = '+' + value.substring(0, 1);
+
+                    if (value.length > 1) {
+                        formattedValue += ' (' + value.substring(1, 4);
+                    }
+
+                    if (value.length > 4) {
+                        formattedValue += ') ' + value.substring(4, 7);
+                    }
+
+                    if (value.length > 7) {
+                        formattedValue += '-' + value.substring(7, 9);
+                    }
+
+                    if (value.length > 9) {
+                        formattedValue += '-' + value.substring(9, 11);
+                    }
+                }
+
+                // Устанавливаем отформатированное значение
+                this.value = formattedValue;
+            });
+        });
+    });
+
+
+   // ЧАТБОТ ДЛЯ EXPERTSMET.RU
+
+// Ожидаем загрузки DOM
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🤖 Инициализация чат-бота EXPERTsmet...');
+
+    // Элементы
+    const chatbotButton = document.getElementById('chatbotButton');
+    const chatbotModal = document.getElementById('chatbotModal');
+    const closeChatbotModal = document.getElementById('closeChatbotModal');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSend = document.getElementById('chatbotSend');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const chatbotTyping = document.getElementById('chatbotTyping');
+
+    // Проверяем наличие всех элементов
+    if (!chatbotButton || !chatbotModal || !closeChatbotModal || !chatbotInput || !chatbotSend || !chatbotMessages || !chatbotTyping) {
+        console.error('❌ Не все элементы чата найдены:', {
+            chatbotButton: !!chatbotButton,
+            chatbotModal: !!chatbotModal,
+            closeChatbotModal: !!closeChatbotModal,
+            chatbotInput: !!chatbotInput,
+            chatbotSend: !!chatbotSend,
+            chatbotMessages: !!chatbotMessages,
+            chatbotTyping: !!chatbotTyping
+        });
+        return;
+    }
+
+    console.log('✅ Все элементы чата найдены');
+
+    // Переменные состояния
+    let chatbotShown = false;
+    let chatbotAutoOpened = false;
+    let userInteracted = false;
+    let isTyping = false;
+    let awaitingAIResponse = false;
+    let sessionId = null;
+    let firstAutoResponseGiven = false;
+
+    // Генерация уникального ID пользователя
+    const clientUid = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+    // вместо получения из <title>
+    const h1 = document.querySelector('h1');
+    const pageTitle = h1
+      ? h1.textContent.trim()
+      : 'Услуги по сметной документации';  // либо document.title для запасного варианта
+
+    const welcomeMessage = `Здравствуйте! Вас интересует «${pageTitle}»?`;
+
+    console.log('📄 Заголовок страницы:', pageTitle);
+    console.log('👤 Client UID:', clientUid);
+
+    // Функция открытия/закрытия чат-бота
+    function toggleChatbot(action) {
+        if (!chatbotModal) return;
+        
+        if (action === 'open') {
+            chatbotModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Останавливаем анимации
+            if (chatbotButton) {
+                chatbotButton.classList.remove('attention', 'shake');
+            }
+            
+            // Фокус на поле ввода
+            setTimeout(() => {
+                if (chatbotInput) {
+                    chatbotInput.focus();
+                }
+            }, 400);
+            
+        } else if (action === 'close') {
+            chatbotModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Показ кнопки чатбота
+    function showChatbotButton() {
+        if (chatbotButton && !chatbotShown) {
+            chatbotButton.classList.add('show');
+            chatbotShown = true;
+            
+            // Привлекающая анимация через 3 секунды
+            setTimeout(() => {
+                if (!userInteracted && chatbotButton) {
+                    chatbotButton.classList.add('attention');
+                }
+            }, 3000);
+            
+            // Периодическое "встряхивание"
+            setInterval(() => {
+                if (!userInteracted && chatbotShown && chatbotButton) {
+                    chatbotButton.classList.add('shake');
+                    setTimeout(() => {
+                        if (chatbotButton) {
+                            chatbotButton.classList.remove('shake');
+                        }
+                    }, 600);
+                }
+            }, 20000);
+        }
+    }
+
+    // Ждать окончания "печати" предыдущего сообщения (возвращает Promise)
+    function typeMessageWithPause(text, isUser = false, typingSpeed = 30, pauseAfter = 1000) {
+        return new Promise(resolve => {
+            addMessageWithTypewriter(text, isUser, typingSpeed);
+            // Считаем примерную длительность печати + пауза после (можно регулировать)
+            const duration = text.length * typingSpeed + pauseAfter;
+            setTimeout(resolve, duration);
+        });
+    }
+
+    // Новый autoOpenChatbot с плавной последовательностью
+    async function autoOpenChatbot() {
+        if (!chatbotAutoOpened && !userInteracted) {
+            toggleChatbot('open');
+            chatbotAutoOpened = true;
+            userInteracted = true;
+
+            // 1. Пауза перед первым сообщением
+            await new Promise(r => setTimeout(r, 1200));
+
+            // 2. Первое приветствие
+            await typeMessageWithPause(welcomeMessage, false, 26, 1200);
+
+            // 3. Пауза между первым и вторым сообщением
+            await new Promise(r => setTimeout(r, 1200));
+
+            // 4. Второе сообщение (услуги)
+            await typeMessageWithPause(`🎯 Я помогу вам с любыми вопросами по сметной документации и экспертизе! 
+
+💰 **Наши основные услуги:**
+📋 Составление локальных и объектных смет
+🔍 Экспертиза сметной документации  
+📊 Ведомости объемов работ
+⚡ Срочное выполнение за 24 часа
+
+Что вас интересует больше всего?`, false, 20, 700);
+
+            firstAutoResponseGiven = true;
+        }
+    }
+
+    // Добавление сообщения (обычное)
+    function addMessage(text, isUser = false) {
+        if (!chatbotMessages) return;
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `footer__chatbot-message ${isUser ? 'footer__chatbot-message--user' : 'footer__chatbot-message--bot'}`;
+        
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('ru-RU', {hour: '2-digit', minute: '2-digit'});
+        
+        if (isUser) {
+            messageDiv.innerHTML = `
+                <div class="footer__chatbot-message-content">
+                    <p>${text}</p>
+                    <span class="footer__chatbot-message-time">${timeString}</span>
+                </div>
+            `;
+        } else {
+            messageDiv.innerHTML = `
+                <div class="footer__chatbot-message-avatar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="footer__chatbot-message-content">
+                    <p>${text}</p>
+                    <span class="footer__chatbot-message-time">${timeString}</span>
+                </div>
+            `;
+        }
+        
+        chatbotMessages.appendChild(messageDiv);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Добавление сообщения с эффектом печатания
+    function addMessageWithTypewriter(text, isUser = false, typingSpeed = 30) {
+        if (!chatbotMessages) return;
+        
+        // Скрываем индикатор "печатает"
+        hideTyping();
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `footer__chatbot-message ${isUser ? 'footer__chatbot-message--user' : 'footer__chatbot-message--bot'}`;
+        
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('ru-RU', {hour: '2-digit', minute: '2-digit'});
+        
+        if (isUser) {
+            // Для пользователя печатание не нужно
+            messageDiv.innerHTML = `
+                <div class="footer__chatbot-message-content">
+                    <p>${text}</p>
+                    <span class="footer__chatbot-message-time">${timeString}</span>
+                </div>
+            `;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            return;
+        }
+        
+        // Для бота создаем структуру с пустым текстом
+        messageDiv.innerHTML = `
+            <div class="footer__chatbot-message-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+            <div class="footer__chatbot-message-content">
+                <p class="typewriter-text"></p>
+                <span class="footer__chatbot-message-time">${timeString}</span>
+            </div>
+        `;
+        
+        chatbotMessages.appendChild(messageDiv);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        
+        const textElement = messageDiv.querySelector('.typewriter-text');
+        let index = 0;
+        
+        // Функция печатания по символам
+        function typeNextChar() {
+            if (index < text.length) {
+                textElement.innerHTML += text.charAt(index);
+                index++;
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                setTimeout(typeNextChar, typingSpeed);
+            }
+        }
+        
+        // Начинаем печатание
+        typeNextChar();
+    }
+
+    // Показ/скрытие индикатора "печатает"
+    function showTyping() {
+        if (chatbotTyping) {
+            chatbotTyping.style.display = 'flex';
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+    }
+
+    function hideTyping() {
+        if (chatbotTyping) {
+            chatbotTyping.style.display = 'none';
+        }
+    }
+
+    // Шаблоны ответов для быстрых кнопок
+    const quickResponseTemplates = {
+        'рассчитать стоимость': {
+            first: `💰 **Стоимость сметной документации:**
+
+📋 **Локальная смета:** от 500₽ за объект
+🏢 **Объектная смета:** от 2000₽ 
+📊 **Сводный сметный расчет:** от 3000₽
+🔍 **Экспертиза сметы:** от 1000₽
+
+⚡ **Срочное выполнение за 24 часа** - доплата 50%`,
+            
+            second: `🎯 **Для точного расчета нужно знать:**
+- Тип объекта (жилой/коммерческий)
+- Площадь или объем работ  
+- Регион строительства
+- Необходимые разделы сметы
+
+📞 Звоните **8 (800) 300-87-72** для детального расчета!`
+        },
+
+        'экспертиза': {
+            first: `🔍 **Экспертиза сметной документации** - наша основная специализация!
+
+✅ **Что мы проверяем:**
+- Правильность применения расценок ФСНБ-2022
+- Соответствие объемам работ проекту
+- Обоснованность всех затрат
+- Актуальность нормативной базы`,
+            
+            second: `💡 **Результат экспертизы:**
+- Подробный отчет с выявленными ошибками
+- Рекомендации по оптимизации стоимости
+- Экономия до 15-20% от изначальной суммы
+
+📋 Пришлите вашу смету на **mail@expertsmet.ru** для анализа!`
+        },
+
+        'сроки': {
+            first: `⏰ **Стандартные сроки выполнения работ:**
+
+📋 Локальная смета: **1-2 рабочих дня**
+🏢 Объектная смета: **3-5 рабочих дней**  
+🔍 Экспертиза документации: **2-3 рабочих дня**
+📊 Сводный расчет: **5-7 рабочих дней**`,
+            
+            second: `🚀 **Срочные варианты:**
+⚡ За 24 часа - доплата 50%
+💨 За 12 часов - доплата 100%
+
+📅 Точные сроки зависят от объема и сложности вашего проекта. Когда вам нужен результат?`
+        },
+
+        'менеджер': {
+            first: `📞 **Связь с персональным менеджером:**
+
+👩‍💼 **Елена** - ведущий специалист
+📱 Перезвонит в течение **3-5 минут**
+⭐ Опыт работы со сметами более 8 лет`,
+            
+            second: `✅ **Елена поможет с:**
+- Детальным обсуждением вашей задачи
+- Точным расчетом стоимости услуг
+- Согласованием удобных сроков
+- Ответами на все технические вопросы
+
+📱 **Оставьте номер телефона** или звоните: **8 (800) 300-87-72**`
+        }
+    };
+
+    // Отправка сообщения через ИИ API (только для печатных сообщений)
+    function sendMessageToAI(text) {
+        if (awaitingAIResponse || isTyping) return;
+        
+        awaitingAIResponse = true;
+        showTyping();
+        
+        const payload = {
+            chatInput: text,
+            uid: clientUid
+        };
+        if (sessionId) payload.session_id = sessionId;
+      
+        fetch("https://cloudberg.su/webhook/2bd759eb-d8b5-4c1a-a9aa-f348b14cd90b/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        })
+        .then(r => {
+            if (!r.ok) throw new Error(`Код ${r.status}`);
+            return r.json();
+        })
+        .then(data => {
+            if (!sessionId && data.session_id) {
+                sessionId = data.session_id;
+            }
+            
+            if (data.reply) {
+                hideTyping();
+                addMessageWithTypewriter(data.reply, false);
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка API:', error);
+            hideTyping();
+            addMessageWithTypewriter(`Извините, произошла ошибка при обработке вашего сообщения. Попробуйте позже или свяжитесь с нами по телефону 8 (800) 300-87-72.`, false);
+        })
+        .finally(() => {
+            awaitingAIResponse = false;
+        });
+    }
+
+    // Получение шаблонного ответа для быстрых кнопок
+    function getTemplateResponse(messageKey) {
+        const template = quickResponseTemplates[messageKey];
+        if (template) {
+            return {
+                first: template.first,
+                second: template.second
+            };
+        }
+        
+        return {
+            first: `Спасибо за ваш интерес к "${messageKey}"! 🤔`,
+            second: `📞 **Свяжитесь с нами для получения подробной информации:**
+- Телефон: **8 (800) 300-87-72**
+- Email: **mail@expertsmet.ru**
+- Telegram: **@expertsmet**
+
+⏰ Работаем ежедневно с 9:00 до 21:00`
+        };
+    }
+
+    // Основная функция отправки сообщения
+    function sendMessage(messageText = null, isQuickReply = false) {
+        if (isTyping || awaitingAIResponse) return;
+        
+        const text = messageText || (chatbotInput ? chatbotInput.value.trim() : '');
+        if (!text) return;
+
+        userInteracted = true;
+        
+        // Скрываем быстрые кнопки после первого сообщения
+        const quickReplies = document.getElementById('chatbotQuickReplies');
+        if (quickReplies) {
+            quickReplies.style.display = 'none';
+        }
+        
+        // Добавляем сообщение пользователя
+        addMessage(text, true);
+        if (chatbotInput) {
+            chatbotInput.value = '';
+        }
+
+        if (isQuickReply) {
+            // ДЛЯ БЫСТРЫХ ОТВЕТОВ - только шаблонные ответы, БЕЗ отправки в API
+            const lowerMessage = text.toLowerCase();
+            let responseKey = 'default';
+            
+            if (lowerMessage.includes('стоимость')) responseKey = 'рассчитать стоимость';
+            else if (lowerMessage.includes('экспертиза')) responseKey = 'экспертиза';
+            else if (lowerMessage.includes('сроки')) responseKey = 'сроки';
+            else if (lowerMessage.includes('менеджер')) responseKey = 'менеджер';
+            
+            const templateResponse = getTemplateResponse(responseKey);
+            
+            setTimeout(() => {
+                addMessageWithTypewriter(templateResponse.first, false);
+                
+                setTimeout(() => {
+                    addMessageWithTypewriter(templateResponse.second, false);
+                }, 6000);
+            }, 2000);
+            
+        } else {
+            // ДЛЯ ПЕЧАТНЫХ СООБЩЕНИЙ - отправляем в API
+            sendMessageToAI(text);
+        }
+    }
+
+    // Обработчики событий
+    if (chatbotButton) {
+        chatbotButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            userInteracted = true;
+            toggleChatbot('open');
+        });
+    }
+
+    if (closeChatbotModal) {
+        closeChatbotModal.addEventListener('click', function() {
+            toggleChatbot('close');
+        });
+    }
+
+    if (chatbotSend && chatbotInput) {
+        chatbotSend.addEventListener('click', () => sendMessage());
+        
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    }
+
+    // Быстрые ответы - ТОЛЬКО ШАБЛОНЫ
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('footer__chatbot-quick-reply')) {
+            userInteracted = true;
+            const message = e.target.getAttribute('data-message');
+            sendMessage(message, true); // isQuickReply = true - только шаблон
+        }
+    });
+
+    // Закрытие при клике вне модального окна
+    document.addEventListener('click', function(e) {
+        if (e.target === chatbotModal) {
+            toggleChatbot('close');
+        }
+    });
+
+    // Отслеживание активности пользователя
+    document.addEventListener('click', function() {
+        if (!userInteracted) {
+            userInteracted = true;
+            if (chatbotButton) {
+                chatbotButton.classList.remove('attention');
+            }
+        }
+    });
+
+    // ЗАПУСК СИСТЕМЫ ЧАТБОТА
+
+    console.log('🤖 Инициализация чат-бота EXPERTsmet...');
+
+    // Показ кнопки через 5 секунд
+    setTimeout(() => {
+        showChatbotButton();
+        console.log('✅ Кнопка чат-бота показана');
+    }, 10000);
+
+    // Автооткрытие через 25 секунд
+    setTimeout(() => {
+        autoOpenChatbot();
+        console.log('🚀 Автооткрытие чат-бота');
+    }, 30000);
+
+    console.log('🎯 Чат-бот EXPERTsmet готов к работе!');
+});
+</script>

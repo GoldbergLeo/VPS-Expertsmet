@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
+{# Канонический и OG URL берутся из базового шаблона: 
+   по умолчанию текущий URL или из переменной canonical_url #}
+{% block og_title %}{{ title }}{% endblock %}
+{% block og_description %}{{ meta_description }}{% endblock %}
+
+{% block extra_css %}
+<!-- Стили header из main.css -->
+<link rel="stylesheet" href="{% static 'main/css/header.css' %}">
+<!-- CSS для городских секций -->
+<link rel="stylesheet" href="{% static 'main/css/city-sections.css' %}">
+<!-- CSS для стилизации slide__title в городах -->
+<link rel="stylesheet" href="{% static 'main/css/cities/slide-title.css' %}">
+<!-- CSS для FAQ секции -->
+<link rel="stylesheet" href="{% static 'main/css/cities/faq.css' %}">
+<!-- CSS для базовых стилей exs- классов -->
+<link rel="stylesheet" href="{% static 'main/css/cities/default.css' %}">
+<!-- CSS для мобильной адаптации городов -->
+<link rel="stylesheet" href="{% static 'main/css/cities/mobile-adaptation.css' %}">
+<!-- CSS для улучшенной типографики на мобильных -->
+<link rel="stylesheet" href="{% static 'main/css/cities/mobile-typography.css' %}">
+<!-- CSS для дополнительных улучшений мобильных устройств -->
+<link rel="stylesheet" href="{% static 'main/css/cities/mobile-enhancements.css' %}">
+{% endblock %}
+
+{% block extra_head %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Добавляем класс для исправления header в городах
+    document.body.classList.add('city-header-fix');
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- Hero секция с адаптацией под город -->
+<div data-city="{{ current_city.subdomain }}" data-city-name="{{ current_city.name }}" {% if current_city.name_prep %}data-city-prep="{{ current_city.name_prep }}"{% endif %}>
+    {% include 'main/partials/city_hero.html' %}
+</div>
+
+{% include 'main/partials/advantages.html' %}
+{% include 'main/partials/services.html' %}
+<!-- Городская специфика -->
+{% block city_content %}
+{% endblock %}
+
+
+<!-- Секция заключения экспертизы -->
+{% include 'main/partials/expertise.html' %}
+
+<!-- Секция "Нам доверяют" -->
+{% include 'main/partials/smi.html' %}
+{% include 'main/partials/blog.html' %}
+
+{% include 'main/partials/partners.html' %}
+{% endblock %}

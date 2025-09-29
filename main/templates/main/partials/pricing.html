@@ -1,0 +1,268 @@
+<!-- Секция тарифов на светлом фоне на всю ширину -->
+<section class="pricing-section wrapper">
+    <div class="pricing-container">
+        <div class="pricing-header">
+            <h2 class="pricing-title">
+                {% if current_city %}
+                    Стоимость составления сметы в {{ current_city.name }}
+                {% else %}
+                    Стоимость составления сметы
+                {% endif %}
+            </h2>
+            <p class="pricing-subtitle">Прозрачное ценообразование, Экономия до 70% по сравнению со штатным сметчиком. Мы считаем сметы там, где цена ошибки выше экономии. </p>
+        </div>
+
+        <div class="table-responsive">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Услуги и стоимость</th>
+                        <th>Строительные компании</th>
+                        <th>Девелоперы</th>
+                        <th>Проектные бюро</th>
+                        <th>Госзаказчики</th>
+                        <th>Частные заказчики</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-header-row">
+                        <td><strong>Ваш профиль</strong></td>
+                        <td>Подрядчики и субподрядчики</td>
+                        <td>Застройщики и инвесторы</td>
+                        <td>Архитекторы и проектировщики</td>
+                        <td>Бюджетные организации</td>
+                        <td>Малый бизнес и частные лица</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Составление смет</strong></td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Локальная смета (базовая)</td>
+                        <td>от 12 000 ₽</td>
+                        <td>от 15 000 ₽</td>
+                        <td>от 8 000 ₽</td>
+                        <td>от 14 000 ₽</td>
+                        <td>от 5 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Объектная смета</td>
+                        <td>от 18 000 ₽</td>
+                        <td>от 22 000 ₽</td>
+                        <td>от 12 000 ₽</td>
+                        <td>от 20 000 ₽</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td>Сводный сметный расчет</td>
+                        <td>от 25 000 ₽</td>
+                        <td>от 30 000 ₽</td>
+                        <td>от 18 000 ₽</td>
+                        <td>от 28 000 ₽</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ведомость объемов работ (ВОР)</td>
+                        <td>6 000 ₽</td>
+                        <td>8 000 ₽</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>3 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Конъюнктурный анализ цен</td>
+                        <td>8 000 ₽</td>
+                        <td>10 000 ₽</td>
+                        <td>5 000 ₽</td>
+                        <td>включено</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Экспертиза и сопровождение</strong></td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Проверка сметы перед экспертизой</td>
+                        <td>от 10 000 ₽</td>
+                        <td>от 12 000 ₽</td>
+                        <td>от 8 000 ₽</td>
+                        <td>включено</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td>Сопровождение в госэкспертизе</td>
+                        <td>30% от экспертизы</td>
+                        <td>30% от экспертизы</td>
+                        <td>30% от экспертизы</td>
+                        <td>включено</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td>Корректировка после замечаний</td>
+                        <td>50% от базовой цены</td>
+                        <td>включено</td>
+                        <td>50% от базовой цены</td>
+                        <td>включено</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td>Экспертное заключение</td>
+                        <td>15 000 ₽</td>
+                        <td>включено</td>
+                        <td>12 000 ₽</td>
+                        <td>включено</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Исполнительная документация</strong></td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Акт КС-2 (за позицию)</td>
+                        <td>60 ₽<br><small>мин. 3000 ₽</small></td>
+                        <td>60 ₽<br><small>мин. 3000 ₽</small></td>
+                        <td>80 ₽<br><small>мин. 3000 ₽</small></td>
+                        <td>50 ₽<br><small>мин. 3000 ₽</small></td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td>Справка КС-3</td>
+                        <td>бесплатно<br><small>при заказе КС-2</small></td>
+                        <td>бесплатно<br><small>при заказе КС-2</small></td>
+                        <td>бесплатно<br><small>при заказе КС-2</small></td>
+                        <td>бесплатно<br><small>при заказе КС-2</small></td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td>Журнал КС-6а</td>
+                        <td>5 000 ₽</td>
+                        <td>6 000 ₽</td>
+                        <td><span class="pricing-none">—</span></td>
+                        <td>4 000 ₽</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ведомость М-29</td>
+                        <td>4 000 ₽</td>
+                        <td>5 000 ₽</td>
+                        <td><span class="pricing-none">—</span></td>
+                        <td>3 500 ₽</td>
+                        <td><span class="pricing-none">—</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Специальные опции</strong></td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Срочное выполнение (24 часа)</td>
+                        <td>+100%</td>
+                        <td>+100%</td>
+                        <td>+150%</td>
+                        <td><span class="pricing-none">—</span></td>
+                        <td>+50%</td>
+                    </tr>
+                    <tr>
+                        <td>Ресурсно-индексный метод (РИМ)</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>+2 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Работа с вашим ПО</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>+3 000 ₽</td>
+                    </tr>
+                    <tr>
+                        <td>Выделенный менеджер</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>включено</td>
+                        <td>+5 000 ₽/мес</td>
+                    </tr>
+                    <tr>
+                        <td>Консультация по оптимизации</td>
+                        <td>бесплатно</td>
+                        <td>бесплатно</td>
+                        <td>бесплатно</td>
+                        <td><span class="pricing-none">—</span></td>
+                        <td>2 000 ₽/час</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="pricing-summary">
+                        <td><strong>Типовой проект</strong></td>
+                        <td>от 35 000 ₽<br><small>или 0.5-0.8% СМР</small></td>
+                        <td>от 50 000 ₽<br><small>или 0.4-0.7% СМР</small></td>
+                        <td>от 25 000 ₽<br><small>за раздел ПСД</small></td>
+                        <td>от 40 000 ₽<br><small>фиксированная</small></td>
+                        <td>от 15 000 ₽<br><small>за объект</small></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Срок выполнения</strong></td>
+                        <td>2-3 дня</td>
+                        <td>3-5 дней</td>
+                        <td>3-7 дней</td>
+                        <td>5-10 дней</td>
+                        <td>1-2 дня</td>
+                    </tr>
+                    <tr class="pricing-highlight">
+                        <td><strong>Экономия для вас</strong></td>
+                        <td>до 300 000 ₽/год<br><small>vs штатный сметчик</small></td>
+                        <td>до 15% бюджета<br><small>оптимизация затрат</small></td>
+                        <td>до 200 000 ₽/год<br><small>vs свой отдел</small></td>
+                        <td>0 штрафов<br><small>гарантия точности</small></td>
+                        <td>до 70%<br><small>vs конкуренты</small></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</section>
+
+<style>
+.table-header-row {
+    background-color: #f8f9fa;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.pricing-summary {
+    background-color: #f0f4f8;
+    font-weight: 600;
+}
+
+.pricing-highlight {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.pricing-footer {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.pricing-note {
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.pricing-cta {
+    font-size: 1.1em;
+    color: #212529;
+}
+
+.pricing-table small {
+    display: block;
+    color: #6c757d;
+    font-weight: normal;
+}
+</style>

@@ -1,0 +1,90 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Тест форм{% endblock %}
+
+{% block content %}
+<div class="site-container">
+  <div class="wrapper">
+    <div class="article wrapper flex">
+      <main class="article__main">
+        <h1>Тестирование форм</h1>
+        
+        <!-- Показываем сообщения об ошибках/успехе -->
+        {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+          <div class="message message-{{ message.tags }}">
+            {{ message }}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        <!-- Тестовая форма обратной связи -->
+        <div class="test-form-section">
+          <h3>Тест формы обратной связи</h3>
+          <form method="post" action="{% url 'send_form_email' %}" class="contact-form">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Ваш email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Ваш телефон">
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="form-button">Отправить тестовое сообщение</button>
+          </form>
+        </div>
+        
+        <!-- Тестовая форма подписки -->
+        <div class="test-form-section">
+          <h3>Тест формы подписки</h3>
+          <form method="post" action="{% url 'subscribe' %}" class="subscribe-form">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Ваш email" required>
+            </div>
+            <button type="submit" class="form-button">Подписаться на тест</button>
+          </form>
+        </div>
+        
+        <!-- Тестовая быстрая форма -->
+        <div class="test-form-section">
+          <h3>Тест быстрой формы</h3>
+          <form method="post" action="{% url 'quick_contact' %}" class="quick-contact-form">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" name="phone" placeholder="Ваш телефон" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Краткое сообщение" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="quick-contact-button">Отправить быструю заявку</button>
+          </form>
+        </div>
+        
+      </main>
+      
+      <aside class="article__aside">
+        <h3>Информация о тестировании</h3>
+        <p>Эта страница предназначена для тестирования форм без отправки реальных email.</p>
+        <p>Все данные сохраняются в базе данных, но email не отправляются из-за проблем с SMTP.</p>
+        <p>Для проверки работы форм:</p>
+        <ul>
+          <li>Заполните любую форму</li>
+          <li>Проверьте сообщения об ошибках</li>
+          <li>Проверьте логи в консоли</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,268 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Калькулятор стоимости{% endblock %}
+
+{% block content %}
+<div class="site-container">
+  <div class="wrapper">
+    <div class="article wrapper flex">
+      <main class="article__main">
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a href="{% url 'index' %}">Главная</a>
+          </li>
+          <li class="breadcrumb__item">
+            Калькулятор стоимости
+          </li>
+        </ul>
+        
+        <h1>Калькулятор стоимости сметных услуг</h1>
+        
+        <p>С помощью нашего калькулятора вы можете примерно оценить стоимость наших услуг. Для получения точного расчета свяжитесь с нашими специалистами.</p>
+        
+        <!-- Показываем сообщения об ошибках/успехе -->
+        {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+          <div class="message message-{{ message.tags }}">
+            {{ message }}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        <div class="calculator-container">
+          <form method="post" action="{% url 'calculator' %}" class="calculator-form">
+            {% csrf_token %}
+            
+            <div class="form-section">
+              <h3>Контактная информация</h3>
+              <div class="form-group">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+                {% if form.name.errors %}
+                <div class="error-message">{{ form.name.errors.0 }}</div>
+                {% endif %}
+              </div>
+              
+              <div class="form-group">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {% if form.email.errors %}
+                <div class="error-message">{{ form.email.errors.0 }}</div>
+                {% endif %}
+              </div>
+              
+              <div class="form-group">
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+                {% if form.phone.errors %}
+                <div class="error-message">{{ form.phone.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Тип проекта</h3>
+              <div class="form-group">
+                {{ form.project_type.label_tag }}
+                {{ form.project_type }}
+                {% if form.project_type.errors %}
+                <div class="error-message">{{ form.project_type.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Площадь объекта (кв. м)</h3>
+              <div class="form-group">
+                {{ form.area.label_tag }}
+                {{ form.area }}
+                {% if form.area.errors %}
+                <div class="error-message">{{ form.area.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Сложность проекта</h3>
+              <div class="form-group">
+                {{ form.complexity.label_tag }}
+                {{ form.complexity }}
+                {% if form.complexity.errors %}
+                <div class="error-message">{{ form.complexity.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Требуемые услуги</h3>
+              <div class="checkbox-group">
+                {{ form.services }}
+                {% if form.services.errors %}
+                <div class="error-message">{{ form.services.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Срочность выполнения</h3>
+              <div class="form-group">
+                {{ form.urgency.label_tag }}
+                {{ form.urgency }}
+                {% if form.urgency.errors %}
+                <div class="error-message">{{ form.urgency.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <h3>Дополнительная информация</h3>
+              <div class="form-group">
+                {{ form.additional_info.label_tag }}
+                {{ form.additional_info }}
+                {% if form.additional_info.errors %}
+                <div class="error-message">{{ form.additional_info.errors.0 }}</div>
+                {% endif %}
+              </div>
+            </div>
+            
+            <!-- Скрытое поле для расчетной стоимости -->
+            {{ form.estimated_cost }}
+            
+            <div class="form-section">
+              <h3>Предварительный расчет</h3>
+              <div class="calculation-result">
+                <p>Нажмите кнопку "Рассчитать" для получения примерной стоимости:</p>
+                <button type="button" id="calculate-btn" class="calculate-button">Рассчитать стоимость</button>
+                <div class="result-display">
+                  <p>Примерная стоимость: <span id="cost-value">-</span></p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-section">
+              <button type="submit" class="submit-button">Отправить заявку на расчет</button>
+            </div>
+          </form>
+        </div>
+      </main>
+      
+      <aside class="article__aside">
+        <h3 class="article__aside-news">Последние новости</h3>
+        <ul class="article__aside-list">
+          <li class="article__aside-item">
+            <h4 class="article__aside-title">Как правильно составить смету</h4>
+            <p class="article__aside-discr">Полезные советы по составлению сметной документации</p>
+            <span class="article__aside-data">15.07.2025</span>
+          </li>
+          <li class="article__aside-item">
+            <h4 class="article__aside-title">Новости рынка сметных услуг</h4>
+            <p class="article__aside-discr">Обзор текущих тенденций в сфере сметного дела</p>
+            <span class="article__aside-data">10.07.2025</span>
+          </li>
+        </ul>
+        
+        <form class="article__aside-form" action="{% url 'subscribe' %}" method="post">
+          {% csrf_token %}
+          <label class="article__aside-label">Подписаться на рассылку</label>
+          <input class="article__aside-input" type="email" name="email" placeholder="Ваш email" required>
+          <button class="article__aside-button" type="submit">Подписаться</button>
+        </form>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const calculateBtn = document.getElementById('calculate-btn');
+    const estimatedCostField = document.getElementById('estimated-cost');
+    
+    if (calculateBtn) {
+      calculateBtn.addEventListener('click', function() {
+        // Get form values
+        const projectType = document.getElementById('id_project_type').value;
+        const area = document.getElementById('id_area').value;
+        const complexity = document.getElementById('id_complexity').value;
+        const services = document.querySelectorAll('input[name="services"]:checked');
+        const urgency = document.getElementById('id_urgency').value;
+        
+        // Check if all required fields are filled
+        if (!projectType || !area || !complexity || services.length === 0 || !urgency) {
+          alert('Пожалуйста, заполните все обязательные поля формы');
+          return;
+        }
+        
+        // Simple calculation logic (this would be more complex in a real application)
+        let baseCost = 0;
+        
+        // Base cost by area
+        baseCost = area * 100;
+        
+        // Adjust by project type
+        switch(projectType) {
+          case 'residential':
+            baseCost *= 1.0;
+            break;
+          case 'commercial':
+            baseCost *= 1.3;
+            break;
+          case 'industrial':
+            baseCost *= 1.5;
+            break;
+          case 'infrastructure':
+            baseCost *= 1.7;
+            break;
+          case 'reconstruction':
+            baseCost *= 1.2;
+            break;
+        }
+        
+        // Adjust by complexity
+        switch(complexity) {
+          case 'low':
+            baseCost *= 0.8;
+            break;
+          case 'medium':
+            baseCost *= 1.0;
+            break;
+          case 'high':
+            baseCost *= 1.4;
+            break;
+        }
+        
+        // Adjust by number of services
+        baseCost *= (1 + (services.length * 0.2));
+        
+        // Adjust by urgency
+        switch(urgency) {
+          case 'standard':
+            baseCost *= 1.0;
+            break;
+          case 'expedited':
+            baseCost *= 1.3;
+            break;
+          case 'urgent':
+            baseCost *= 1.7;
+            break;
+        }
+        
+        // Display result
+        const costValueElement = document.getElementById('cost-value');
+        if (costValueElement) {
+          // Simple formatting for Russian rubles
+          const roundedCost = Math.round(baseCost);
+          const formattedCost = roundedCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " ₽";
+          costValueElement.textContent = formattedCost;
+          
+          // Update hidden field for form submission
+          if (estimatedCostField) {
+            estimatedCostField.value = roundedCost;
+          }
+        }
+      });
+    }
+  });
+</script>
+{% endblock %}

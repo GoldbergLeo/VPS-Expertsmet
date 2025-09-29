@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест Москва - ExpertSmet</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .test-info { background: #f0f0f0; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .city-data { background: #e8f4fd; padding: 15px; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Тестовая страница Москвы</h1>
+    
+    <div class="test-info">
+        <h2>Информация о городе:</h2>
+        {% if current_city %}
+            <div class="city-data">
+                <strong>Название:</strong> {{ current_city.name }}<br>
+                <strong>Поддомен:</strong> {{ current_city.subdomain }}<br>
+                <strong>Телефон:</strong> {{ current_city.phone }}<br>
+                <strong>Email:</strong> {{ current_city.email }}<br>
+                <strong>Адрес:</strong> {{ current_city.address }}
+            </div>
+        {% else %}
+            <p style="color: red;">Данные города не загружены!</p>
+        {% endif %}
+    </div>
+    
+    <div class="test-info">
+        <h2>Контекст шаблона:</h2>
+        <p><strong>Title:</strong> {{ title|default:"Не задан" }}</p>
+        <p><strong>Meta description:</strong> {{ meta_description|default:"Не задан" }}</p>
+        <p><strong>Meta keywords:</strong> {{ meta_keywords|default:"Не задан" }}</p>
+    </div>
+    
+    <div class="test-info">
+        <h2>Статические файлы:</h2>
+        <p>Проверка загрузки CSS: <span id="css-test">Загрузка...</span></p>
+        <p>Проверка загрузки JS: <span id="js-test">Загрузка...</span></p>
+    </div>
+    
+    <script>
+        // Проверка загрузки CSS
+        setTimeout(() => {
+            const computedStyle = getComputedStyle(document.body);
+            if (computedStyle.fontFamily && computedStyle.fontFamily !== 'Arial, sans-serif') {
+                document.getElementById('css-test').textContent = 'CSS загружен ✓';
+                document.getElementById('css-test').style.color = 'green';
+            } else {
+                document.getElementById('css-test').textContent = 'CSS не загружен ✗';
+                document.getElementById('css-test').style.color = 'red';
+            }
+        }, 1000);
+        
+        // Проверка загрузки JS
+        document.getElementById('js-test').textContent = 'JS работает ✓';
+        document.getElementById('js-test').style.color = 'green';
+    </script>
+</body>
+</html>
