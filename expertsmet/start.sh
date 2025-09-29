@@ -3,7 +3,7 @@ set -e
 
 export DJANGO_SETTINGS_MODULE=expertsmet.settings_docker
 
-APP_DIR="/app/expertsmet"
+APP_DIR="/app"
 echo "Using application directory: ${APP_DIR}"
 cd "${APP_DIR}"
 

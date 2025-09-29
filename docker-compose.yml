@@ -17,6 +17,8 @@ services:
     build:
       context: .
       dockerfile: expertsmet/Dockerfile
+    env_file:
+      - .env
     container_name: expertsmet-web
     environment:
       - USE_SQLITE=True
@@ -29,7 +31,7 @@ services:
       # Static files volume for nginx to serve
       - static_files:/app/staticfiles
       - media_files:/app/media
-      - ./expertsmet/logs:/app/logs
+      - ./logs:/app/logs
       - ./db.sqlite3:/app/db.sqlite3
     depends_on:
       redis:

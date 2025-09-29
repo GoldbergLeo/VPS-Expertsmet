@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Устанавливаем системные зависимости
 RUN apt-get update && apt-get install -y \
+    curl \
     postgresql-client \
     gettext \
     netcat-traditional \
@@ -30,7 +31,8 @@ RUN mkdir -p /app/logs /app/staticfiles /app/media
 RUN chmod 755 /app/logs /app/staticfiles /app/media
 
 # Создаем пользователя для запуска приложения (безопасность)
-RUN adduser --disabled-password --gecos '' appuser && chown -R appuser:appuser /app
+RUN useradd --create-home --shell /bin/bash appuser \
+    && chown -R appuser:appuser /app
 USER appuser
 
 # Открываем порт

@@ -17,21 +17,21 @@ services:
     build:
       context: .
       dockerfile: expertsmet/Dockerfile
+    env_file:
+      - .env
     container_name: expertsmet-web-prod
-    working_dir: /app/expertsmet
     environment:
       - USE_SQLITE=True
       - REDIS_URL=redis://redis:6379/0
       - DEBUG=False
-      - SECRET_KEY=django-production-key-secure-2024-expertsmet
+      - SECRET_KEY=${DJANGO_SECRET_KEY:?DJANGO_SECRET_KEY not set}
       - ALLOWED_HOSTS=80.242.57.136,127.0.0.1,localhost
       - CSRF_TRUSTED_ORIGINS=http://80.242.57.136,http://127.0.0.1,http://localhost
     volumes:
       - static_files_prod:/app/staticfiles
       - media_files_prod:/app/media
-      - ./expertsmet/logs:/app/logs
+      - ./logs:/app/logs
       - ./db.sqlite3:/app/db.sqlite3
-      - .:/app/expertsmet
     depends_on:
       redis:
         condition: service_started
