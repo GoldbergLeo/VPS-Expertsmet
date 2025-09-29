@@ -16,11 +16,12 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
 
 # Database configuration
 if os.getenv('USE_SQLITE', 'False').lower() in ('true', '1', 'yes', 'on'):
+    sqlite_path = os.getenv('SQLITE_PATH', '/app/data/db.sqlite3')
     # Use SQLite database
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': '/app/db.sqlite3',
+            'NAME': sqlite_path,
         }
     }
 elif 'DATABASE_URL' in os.environ:

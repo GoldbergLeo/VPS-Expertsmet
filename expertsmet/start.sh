@@ -10,6 +10,12 @@ cd "${APP_DIR}"
 echo "USE_SQLITE environment variable: ${USE_SQLITE}"
 
 if [[ "${USE_SQLITE,,}" == "true" ]]; then
+    SQLITE_PATH=${SQLITE_PATH:-/app/data/db.sqlite3}
+    mkdir -p "$(dirname "${SQLITE_PATH}")"
+    if [[ ! -f "${SQLITE_PATH}" ]]; then
+        echo "SQLite database not found at ${SQLITE_PATH}, creating an empty file"
+        : > "${SQLITE_PATH}"
+    fi
     echo "Using SQLite database - skipping PostgreSQL availability check"
 else
     echo "Waiting for PostgreSQL database..."

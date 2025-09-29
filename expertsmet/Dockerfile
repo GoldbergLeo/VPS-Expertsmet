@@ -27,8 +27,8 @@ COPY expertsmet/start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 # Создаем необходимые директории и устанавливаем права
-RUN mkdir -p /app/logs /app/staticfiles /app/media
-RUN chmod 755 /app/logs /app/staticfiles /app/media
+RUN mkdir -p /app/logs /app/staticfiles /app/media /app/data
+RUN chmod 755 /app/logs /app/staticfiles /app/media /app/data
 
 # Создаем пользователя для запуска приложения (безопасность)
 RUN useradd --create-home --shell /bin/bash appuser \

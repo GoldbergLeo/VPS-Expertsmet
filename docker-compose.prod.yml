@@ -31,7 +31,7 @@ services:
       - static_files_prod:/app/staticfiles
       - media_files_prod:/app/media
       - ./logs:/app/logs
-      - ./db.sqlite3:/app/db.sqlite3
+      - ./data:/app/data
     depends_on:
       redis:
         condition: service_started
